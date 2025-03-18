@@ -1,4 +1,6 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports Siticone.Desktop.UI.Winforms
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class analytics
     Inherits System.Windows.Forms.Form
 
@@ -31,9 +33,31 @@ Partial Class analytics
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel1.SuspendLayout()
+        Me.Guna2Panel2.SuspendLayout()
+        Me.Guna2Panel3.SuspendLayout()
+        Me.Guna2Panel4.SuspendLayout()
+        Me.Guna2Panel5.SuspendLayout()
+        Me.Guna2Panel6.SuspendLayout()
+        Me.Guna2Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuButton
@@ -95,23 +119,219 @@ Partial Class analytics
         '
         Me.menuTimer.Interval = 10
         '
-        'dashboard
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel1.BorderRadius = 5
+        Me.Guna2Panel1.Controls.Add(Me.Label3)
+        Me.Guna2Panel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Guna2Panel1.Location = New System.Drawing.Point(31, 105)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(253, 130)
+        Me.Guna2Panel1.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Raleway", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(31, 15)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(157, 25)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "TOTAL REVENUE"
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel2.BorderRadius = 5
+        Me.Guna2Panel2.Controls.Add(Me.Label4)
+        Me.Guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(213, Byte), Integer))
+        Me.Guna2Panel2.Location = New System.Drawing.Point(306, 105)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Size = New System.Drawing.Size(253, 130)
+        Me.Guna2Panel2.TabIndex = 6
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Raleway", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(31, 15)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(167, 25)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "TOTAL BOOKINGS"
+        '
+        'Guna2Panel3
+        '
+        Me.Guna2Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel3.BorderRadius = 5
+        Me.Guna2Panel3.Controls.Add(Me.Label5)
+        Me.Guna2Panel3.FillColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(172, Byte), Integer), CType(CType(143, Byte), Integer))
+        Me.Guna2Panel3.Location = New System.Drawing.Point(581, 105)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.Size = New System.Drawing.Size(253, 130)
+        Me.Guna2Panel3.TabIndex = 7
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Raleway", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(31, 15)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(179, 25)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "AVAILABLE ROOMS"
+        '
+        'Guna2Panel4
+        '
+        Me.Guna2Panel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel4.BorderRadius = 5
+        Me.Guna2Panel4.Controls.Add(Me.Label6)
+        Me.Guna2Panel4.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.Guna2Panel4.Location = New System.Drawing.Point(857, 105)
+        Me.Guna2Panel4.Name = "Guna2Panel4"
+        Me.Guna2Panel4.Size = New System.Drawing.Size(253, 130)
+        Me.Guna2Panel4.TabIndex = 8
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Raleway", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(31, 15)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(172, 25)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "OCCUPANCY RATE"
+        '
+        'Guna2Panel5
+        '
+        Me.Guna2Panel5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel5.BorderRadius = 5
+        Me.Guna2Panel5.Controls.Add(Me.Guna2ComboBox1)
+        Me.Guna2Panel5.Controls.Add(Me.Label7)
+        Me.Guna2Panel5.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel5.Location = New System.Drawing.Point(31, 255)
+        Me.Guna2Panel5.Name = "Guna2Panel5"
+        Me.Guna2Panel5.Size = New System.Drawing.Size(528, 500)
+        Me.Guna2Panel5.TabIndex = 6
+        '
+        'Guna2ComboBox1
+        '
+        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ComboBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.Guna2ComboBox1.BorderRadius = 5
+        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.Black
+        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2ComboBox1.ItemHeight = 30
+        Me.Guna2ComboBox1.Items.AddRange(New Object() {"1 month", "6 months", "12 months"})
+        Me.Guna2ComboBox1.Location = New System.Drawing.Point(346, 20)
+        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
+        Me.Guna2ComboBox1.Size = New System.Drawing.Size(150, 36)
+        Me.Guna2ComboBox1.StartIndex = 0
+        Me.Guna2ComboBox1.TabIndex = 2
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Raleway", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(31, 31)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(94, 25)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "REPORTS"
+        '
+        'Guna2Panel6
+        '
+        Me.Guna2Panel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel6.BorderRadius = 5
+        Me.Guna2Panel6.Controls.Add(Me.Label8)
+        Me.Guna2Panel6.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel6.Location = New System.Drawing.Point(581, 255)
+        Me.Guna2Panel6.Name = "Guna2Panel6"
+        Me.Guna2Panel6.Size = New System.Drawing.Size(530, 230)
+        Me.Guna2Panel6.TabIndex = 7
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Raleway", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(32, 30)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(253, 25)
+        Me.Label8.TabIndex = 2
+        Me.Label8.Text = "MONTHLY REVENUE TREND"
+        '
+        'Guna2Panel7
+        '
+        Me.Guna2Panel7.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel7.BorderRadius = 5
+        Me.Guna2Panel7.Controls.Add(Me.Label9)
+        Me.Guna2Panel7.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel7.Location = New System.Drawing.Point(581, 505)
+        Me.Guna2Panel7.Name = "Guna2Panel7"
+        Me.Guna2Panel7.Size = New System.Drawing.Size(530, 250)
+        Me.Guna2Panel7.TabIndex = 8
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Raleway", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(33, 30)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(181, 25)
+        Me.Label9.TabIndex = 3
+        Me.Label9.Text = "RECENT BOOKINGS"
+        '
+        'analytics
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1142, 790)
+        Me.Controls.Add(Me.Guna2Panel7)
+        Me.Controls.Add(Me.Guna2Panel6)
+        Me.Controls.Add(Me.Guna2Panel5)
+        Me.Controls.Add(Me.Guna2Panel4)
+        Me.Controls.Add(Me.Guna2Panel3)
+        Me.Controls.Add(Me.Guna2Panel2)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.menuButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "dashboard"
-        Me.Text = "  "
+        Me.Name = "analytics"
+        Me.Text = "nb"
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel1.PerformLayout()
+        Me.Guna2Panel2.ResumeLayout(False)
+        Me.Guna2Panel2.PerformLayout()
+        Me.Guna2Panel3.ResumeLayout(False)
+        Me.Guna2Panel3.PerformLayout()
+        Me.Guna2Panel4.ResumeLayout(False)
+        Me.Guna2Panel4.PerformLayout()
+        Me.Guna2Panel5.ResumeLayout(False)
+        Me.Guna2Panel5.PerformLayout()
+        Me.Guna2Panel6.ResumeLayout(False)
+        Me.Guna2Panel6.PerformLayout()
+        Me.Guna2Panel7.ResumeLayout(False)
+        Me.Guna2Panel7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -123,4 +343,20 @@ Partial Class analytics
     Friend WithEvents Label2 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents menuTimer As Timer
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents SiticoneComboBox3 As Siticone.Desktop.UI.Winforms.SiticoneComboBox
+    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
 End Class

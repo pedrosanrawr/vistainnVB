@@ -158,6 +158,11 @@
     <Compile Include="room\roomTable.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="vistainnMSDBDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vistainnMSDBDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="accounts\accTable.resx">
@@ -209,8 +214,21 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="vistainnMSDBDataSet.xsc">
+      <DependentUpon>vistainnMSDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vistainnMSDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vistainnMSDBDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vistainnMSDBDataSet.xss">
+      <DependentUpon>vistainnMSDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconHide.png" />
   </ItemGroup>

@@ -45,7 +45,7 @@
                 menuForm.Left += menuSpeed
                 If menuForm.Left > 0 Then menuForm.Left = 0
             Else
-                menuForm.Left = 0  '
+                menuForm.Left = 0
                 menuTimer.Stop()
                 menuVisible = True
             End If
