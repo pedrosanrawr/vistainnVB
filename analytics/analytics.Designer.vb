@@ -117,7 +117,7 @@ Partial Class analytics
         '
         'menuTimer
         '
-        Me.menuTimer.Interval = 10
+        Me.menuTimer.Interval = 5
         '
         'Guna2Panel1
         '

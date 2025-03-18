@@ -89,11 +89,11 @@ Partial Class profile
         '
         'Timer1
         '
-        Me.Timer1.Interval = 10
+        Me.Timer1.Interval = 5
         '
         'menuTimer
         '
-        Me.menuTimer.Interval = 10
+        Me.menuTimer.Interval = 5
         '
         'profile
         '

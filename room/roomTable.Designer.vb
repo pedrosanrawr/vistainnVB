@@ -97,11 +97,11 @@ Partial Class roomTable
         '
         'Timer1
         '
-        Me.Timer1.Interval = 10
+        Me.Timer1.Interval = 5
         '
         'menuTimer
         '
-        Me.menuTimer.Interval = 10
+        Me.menuTimer.Interval = 5
         '
         'logInButton
         '
@@ -202,7 +202,7 @@ Partial Class roomTable
         Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.Black
         Me.Guna2TextBox1.Location = New System.Drawing.Point(681, 105)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(6)
         Me.Guna2TextBox1.Name = "Guna2TextBox1"
         Me.Guna2TextBox1.PlaceholderText = "Search"
         Me.Guna2TextBox1.SelectedText = ""
