@@ -8,7 +8,6 @@
         Timer1.Start()
 
         menuForm.TopLevel = False
-        menuForm.FormBorderStyle = FormBorderStyle.None
         menuForm.Left = -menuForm.Width
         menuForm.Top = 0
         menuForm.Height = Me.Height

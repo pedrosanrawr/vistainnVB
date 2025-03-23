@@ -31,12 +31,6 @@ Partial Class menuForm
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnTables = New Guna.UI2.WinForms.Guna2Button()
         Me.dropDownIcon = New System.Windows.Forms.PictureBox()
-        Me.pnlNestedTabs = New Guna.UI2.WinForms.Guna2Panel()
-        Me.accButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.roomButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.extrasButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.bookingButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.paymentButton = New Guna.UI2.WinForms.Guna2Button()
         Me.profileButton = New Guna.UI2.WinForms.Guna2Button()
         Me.profileIcon = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.logOutButton = New Guna.UI2.WinForms.Guna2Button()
@@ -45,7 +39,6 @@ Partial Class menuForm
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dropDownIcon, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlNestedTabs.SuspendLayout()
         CType(Me.profileIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logOutIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -139,130 +132,6 @@ Partial Class menuForm
         Me.dropDownIcon.TabIndex = 16
         Me.dropDownIcon.TabStop = False
         '
-        'pnlNestedTabs
-        '
-        Me.pnlNestedTabs.BackColor = System.Drawing.Color.Transparent
-        Me.pnlNestedTabs.Controls.Add(Me.accButton)
-        Me.pnlNestedTabs.Controls.Add(Me.roomButton)
-        Me.pnlNestedTabs.Controls.Add(Me.extrasButton)
-        Me.pnlNestedTabs.Controls.Add(Me.bookingButton)
-        Me.pnlNestedTabs.Controls.Add(Me.paymentButton)
-        Me.pnlNestedTabs.Location = New System.Drawing.Point(0, 354)
-        Me.pnlNestedTabs.Name = "pnlNestedTabs"
-        Me.pnlNestedTabs.Size = New System.Drawing.Size(385, 257)
-        Me.pnlNestedTabs.TabIndex = 5
-        Me.pnlNestedTabs.Visible = False
-        '
-        'accButton
-        '
-        Me.accButton.BackColor = System.Drawing.Color.Transparent
-        Me.accButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.accButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.accButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.accButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.accButton.FillColor = System.Drawing.Color.Transparent
-        Me.accButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.accButton.ForeColor = System.Drawing.Color.White
-        Me.accButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.accButton.ImageOffset = New System.Drawing.Point(32, 0)
-        Me.accButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.accButton.Location = New System.Drawing.Point(0, 208)
-        Me.accButton.Name = "accButton"
-        Me.accButton.Size = New System.Drawing.Size(385, 40)
-        Me.accButton.TabIndex = 11
-        Me.accButton.Text = "ACCOUNTS"
-        Me.accButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.accButton.TextOffset = New System.Drawing.Point(94, 0)
-        Me.accButton.UseTransparentBackground = True
-        '
-        'roomButton
-        '
-        Me.roomButton.BackColor = System.Drawing.Color.Transparent
-        Me.roomButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.roomButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.roomButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.roomButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.roomButton.FillColor = System.Drawing.Color.Transparent
-        Me.roomButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.roomButton.ForeColor = System.Drawing.Color.White
-        Me.roomButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.roomButton.ImageOffset = New System.Drawing.Point(32, 0)
-        Me.roomButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.roomButton.Location = New System.Drawing.Point(0, 8)
-        Me.roomButton.Name = "roomButton"
-        Me.roomButton.Size = New System.Drawing.Size(385, 40)
-        Me.roomButton.TabIndex = 6
-        Me.roomButton.Text = "ROOMS"
-        Me.roomButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.roomButton.TextOffset = New System.Drawing.Point(94, 0)
-        Me.roomButton.UseTransparentBackground = True
-        '
-        'extrasButton
-        '
-        Me.extrasButton.BackColor = System.Drawing.Color.Transparent
-        Me.extrasButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.extrasButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.extrasButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.extrasButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.extrasButton.FillColor = System.Drawing.Color.Transparent
-        Me.extrasButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.extrasButton.ForeColor = System.Drawing.Color.White
-        Me.extrasButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.extrasButton.ImageOffset = New System.Drawing.Point(32, 0)
-        Me.extrasButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.extrasButton.Location = New System.Drawing.Point(0, 161)
-        Me.extrasButton.Name = "extrasButton"
-        Me.extrasButton.Size = New System.Drawing.Size(385, 40)
-        Me.extrasButton.TabIndex = 10
-        Me.extrasButton.Text = "EXTRAS"
-        Me.extrasButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.extrasButton.TextOffset = New System.Drawing.Point(94, 0)
-        Me.extrasButton.UseTransparentBackground = True
-        '
-        'bookingButton
-        '
-        Me.bookingButton.BackColor = System.Drawing.Color.Transparent
-        Me.bookingButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.bookingButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.bookingButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.bookingButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.bookingButton.FillColor = System.Drawing.Color.Transparent
-        Me.bookingButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.bookingButton.ForeColor = System.Drawing.Color.White
-        Me.bookingButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.bookingButton.ImageOffset = New System.Drawing.Point(32, 0)
-        Me.bookingButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.bookingButton.Location = New System.Drawing.Point(0, 61)
-        Me.bookingButton.Name = "bookingButton"
-        Me.bookingButton.Size = New System.Drawing.Size(385, 40)
-        Me.bookingButton.TabIndex = 8
-        Me.bookingButton.Text = "BOOKINGS"
-        Me.bookingButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.bookingButton.TextOffset = New System.Drawing.Point(94, 0)
-        Me.bookingButton.UseTransparentBackground = True
-        '
-        'paymentButton
-        '
-        Me.paymentButton.BackColor = System.Drawing.Color.Transparent
-        Me.paymentButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.paymentButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.paymentButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.paymentButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.paymentButton.FillColor = System.Drawing.Color.Transparent
-        Me.paymentButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.paymentButton.ForeColor = System.Drawing.Color.White
-        Me.paymentButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.paymentButton.ImageOffset = New System.Drawing.Point(32, 0)
-        Me.paymentButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.paymentButton.Location = New System.Drawing.Point(0, 108)
-        Me.paymentButton.Name = "paymentButton"
-        Me.paymentButton.Size = New System.Drawing.Size(385, 40)
-        Me.paymentButton.TabIndex = 9
-        Me.paymentButton.Text = "PAYMENT"
-        Me.paymentButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.paymentButton.TextOffset = New System.Drawing.Point(94, 0)
-        Me.paymentButton.UseTransparentBackground = True
-        '
         'profileButton
         '
         Me.profileButton.BackColor = System.Drawing.Color.Transparent
@@ -345,7 +214,6 @@ Partial Class menuForm
         Me.Controls.Add(Me.btnTables)
         Me.Controls.Add(Me.profileButton)
         Me.Controls.Add(Me.logOutButton)
-        Me.Controls.Add(Me.pnlNestedTabs)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "menuForm"
         Me.Text = "menuForm"
@@ -353,7 +221,6 @@ Partial Class menuForm
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dropDownIcon, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlNestedTabs.ResumeLayout(False)
         CType(Me.profileIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logOutIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -366,12 +233,6 @@ Partial Class menuForm
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents btnTables As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents pnlNestedTabs As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents roomButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents bookingButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents paymentButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents extrasButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents accButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents profileButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents logOutButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents profileIcon As Guna.UI2.WinForms.Guna2PictureBox

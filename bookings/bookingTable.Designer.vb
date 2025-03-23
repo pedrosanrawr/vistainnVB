@@ -31,12 +31,13 @@ Partial Class bookingTable
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.addBookButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.editBookButton = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,47 +103,47 @@ Partial Class bookingTable
         '
         Me.menuTimer.Interval = 5
         '
-        'logInButton
+        'addBookButton
         '
-        Me.logInButton.BackColor = System.Drawing.Color.Transparent
-        Me.logInButton.BorderRadius = 5
-        Me.logInButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.logInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.logInButton.FillColor = System.Drawing.Color.Black
-        Me.logInButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.logInButton.ForeColor = System.Drawing.Color.White
-        Me.logInButton.Location = New System.Drawing.Point(31, 105)
-        Me.logInButton.Name = "logInButton"
-        Me.logInButton.ShadowDecoration.BorderRadius = 5
-        Me.logInButton.ShadowDecoration.Enabled = True
-        Me.logInButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.logInButton.Size = New System.Drawing.Size(130, 50)
-        Me.logInButton.TabIndex = 11
-        Me.logInButton.Text = "ADD"
+        Me.addBookButton.BackColor = System.Drawing.Color.Transparent
+        Me.addBookButton.BorderRadius = 5
+        Me.addBookButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addBookButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.addBookButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.addBookButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.addBookButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.addBookButton.FillColor = System.Drawing.Color.Black
+        Me.addBookButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.addBookButton.ForeColor = System.Drawing.Color.White
+        Me.addBookButton.Location = New System.Drawing.Point(31, 105)
+        Me.addBookButton.Name = "addBookButton"
+        Me.addBookButton.ShadowDecoration.BorderRadius = 5
+        Me.addBookButton.ShadowDecoration.Enabled = True
+        Me.addBookButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.addBookButton.Size = New System.Drawing.Size(130, 50)
+        Me.addBookButton.TabIndex = 11
+        Me.addBookButton.Text = "ADD"
         '
-        'Guna2Button1
+        'editBookButton
         '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button1.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(181, 105)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.BorderRadius = 5
-        Me.Guna2Button1.ShadowDecoration.Enabled = True
-        Me.Guna2Button1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2Button1.Size = New System.Drawing.Size(130, 50)
-        Me.Guna2Button1.TabIndex = 12
-        Me.Guna2Button1.Text = "EDIT"
+        Me.editBookButton.BackColor = System.Drawing.Color.Transparent
+        Me.editBookButton.BorderRadius = 5
+        Me.editBookButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.editBookButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.editBookButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.editBookButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.editBookButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.editBookButton.FillColor = System.Drawing.Color.Black
+        Me.editBookButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.editBookButton.ForeColor = System.Drawing.Color.White
+        Me.editBookButton.Location = New System.Drawing.Point(181, 105)
+        Me.editBookButton.Name = "editBookButton"
+        Me.editBookButton.ShadowDecoration.BorderRadius = 5
+        Me.editBookButton.ShadowDecoration.Enabled = True
+        Me.editBookButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.editBookButton.Size = New System.Drawing.Size(130, 50)
+        Me.editBookButton.TabIndex = 12
+        Me.editBookButton.Text = "EDIT"
         '
         'Guna2Button2
         '
@@ -213,6 +214,10 @@ Partial Class bookingTable
         Me.Guna2Panel1.Size = New System.Drawing.Size(1080, 570)
         Me.Guna2Panel1.TabIndex = 18
         '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 5
+        '
         'bookingTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -223,8 +228,8 @@ Partial Class bookingTable
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Guna2TextBox1)
         Me.Controls.Add(Me.Guna2Button2)
-        Me.Controls.Add(Me.Guna2Button1)
-        Me.Controls.Add(Me.logInButton)
+        Me.Controls.Add(Me.editBookButton)
+        Me.Controls.Add(Me.addBookButton)
         Me.Controls.Add(Me.menuButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -248,10 +253,11 @@ Partial Class bookingTable
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents menuTimer As Timer
-    Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents addBookButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents editBookButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents dialogTimer As Timer
 End Class

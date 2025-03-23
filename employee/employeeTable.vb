@@ -1,4 +1,4 @@
-﻿Public Class accTable
+﻿Public Class employeeTable
     Dim menuForm As New menuForm()
     Dim menuVisible As Boolean = False
     Dim menuSpeed As Integer = 20

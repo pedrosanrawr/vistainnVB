@@ -192,7 +192,7 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAeBJREFUSEvtlU0rRVEUhq/viREZMDCUga8SE/kfMpCJTA1krJRMxJ9gaEb+gAyk
+        DQAACw0B7QfALAAAAeBJREFUSEvtlU0rRVEUhq/viREZMDCUga8SE/kfMpCJTA1krJRMxJ9gaEb+gAyk
         DIwkKWUiUYp8e5/rvLWd7r3O3e6Rgbeezjn7nr3fvdZeZ93Cv6pQXXKtuVi44fO2qC4xJHpFBwOJGpNr
         TWTDJrEsbsR7wJs4F7MC1YsfZ8AR9IgHERqW4kR4TrS5J2LKoq/J9UhMimExJubFpeA3or8TZInIo+SJ
         T8KmUwyU0Yaw+SEDUrT5umAxmGBAKlVAroNt4ffJRrSuBIscF5++VnZaRNciHgVzdkWUOoV3P8PAN3JN
@@ -203,4 +203,7 @@
         NNczTssR/kqkf1mFwgf2n4Wtuke3AQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="dialogTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>222, 17</value>
+  </metadata>
 </root>

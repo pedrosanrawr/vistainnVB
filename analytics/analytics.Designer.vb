@@ -5,7 +5,7 @@ Partial Class analytics
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -27,7 +27,7 @@ Partial Class analytics
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(analytics))
         Me.menuButton = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.refreshButton = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -42,14 +42,14 @@ Partial Class analytics
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.reportsDateButton = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
@@ -70,16 +70,16 @@ Partial Class analytics
         Me.menuButton.TabIndex = 0
         Me.menuButton.TabStop = False
         '
-        'PictureBox2
+        'refreshButton
         '
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 20)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
+        Me.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.refreshButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.refreshButton.Image = CType(resources.GetObject("refreshButton.Image"), System.Drawing.Image)
+        Me.refreshButton.Location = New System.Drawing.Point(111, 20)
+        Me.refreshButton.Name = "refreshButton"
+        Me.refreshButton.Size = New System.Drawing.Size(50, 50)
+        Me.refreshButton.TabIndex = 1
+        Me.refreshButton.TabStop = False
         '
         'PictureBox3
         '
@@ -211,7 +211,7 @@ Partial Class analytics
         '
         Me.Guna2Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel5.BorderRadius = 5
-        Me.Guna2Panel5.Controls.Add(Me.Guna2ComboBox1)
+        Me.Guna2Panel5.Controls.Add(Me.reportsDateButton)
         Me.Guna2Panel5.Controls.Add(Me.Label7)
         Me.Guna2Panel5.FillColor = System.Drawing.Color.White
         Me.Guna2Panel5.Location = New System.Drawing.Point(31, 255)
@@ -219,25 +219,25 @@ Partial Class analytics
         Me.Guna2Panel5.Size = New System.Drawing.Size(528, 500)
         Me.Guna2Panel5.TabIndex = 6
         '
-        'Guna2ComboBox1
+        'reportsDateButton
         '
-        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.Guna2ComboBox1.BorderRadius = 5
-        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.ItemHeight = 30
-        Me.Guna2ComboBox1.Items.AddRange(New Object() {"1 month", "6 months", "12 months"})
-        Me.Guna2ComboBox1.Location = New System.Drawing.Point(346, 20)
-        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
-        Me.Guna2ComboBox1.Size = New System.Drawing.Size(150, 36)
-        Me.Guna2ComboBox1.StartIndex = 0
-        Me.Guna2ComboBox1.TabIndex = 2
+        Me.reportsDateButton.BackColor = System.Drawing.Color.Transparent
+        Me.reportsDateButton.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.reportsDateButton.BorderRadius = 5
+        Me.reportsDateButton.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.reportsDateButton.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.reportsDateButton.FillColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.reportsDateButton.FocusedColor = System.Drawing.Color.Black
+        Me.reportsDateButton.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.reportsDateButton.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.reportsDateButton.ForeColor = System.Drawing.Color.Black
+        Me.reportsDateButton.ItemHeight = 30
+        Me.reportsDateButton.Items.AddRange(New Object() {"1 month", "6 months", "12 months"})
+        Me.reportsDateButton.Location = New System.Drawing.Point(346, 20)
+        Me.reportsDateButton.Name = "reportsDateButton"
+        Me.reportsDateButton.Size = New System.Drawing.Size(150, 36)
+        Me.reportsDateButton.StartIndex = 0
+        Me.reportsDateButton.TabIndex = 2
         '
         'Label7
         '
@@ -311,12 +311,12 @@ Partial Class analytics
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.refreshButton)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "analytics"
         Me.Text = "nb"
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
@@ -337,7 +337,7 @@ Partial Class analytics
     End Sub
 
     Friend WithEvents menuButton As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents refreshButton As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
@@ -358,5 +358,5 @@ Partial Class analytics
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents SiticoneComboBox3 As Siticone.Desktop.UI.Winforms.SiticoneComboBox
-    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents reportsDateButton As Guna.UI2.WinForms.Guna2ComboBox
 End Class

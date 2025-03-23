@@ -31,12 +31,13 @@ Partial Class extrasTable
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.addExtrasButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.editExtrasButton = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,47 +103,47 @@ Partial Class extrasTable
         '
         Me.menuTimer.Interval = 5
         '
-        'logInButton
+        'addExtrasButton
         '
-        Me.logInButton.BackColor = System.Drawing.Color.Transparent
-        Me.logInButton.BorderRadius = 5
-        Me.logInButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.logInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.logInButton.FillColor = System.Drawing.Color.Black
-        Me.logInButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.logInButton.ForeColor = System.Drawing.Color.White
-        Me.logInButton.Location = New System.Drawing.Point(31, 105)
-        Me.logInButton.Name = "logInButton"
-        Me.logInButton.ShadowDecoration.BorderRadius = 5
-        Me.logInButton.ShadowDecoration.Enabled = True
-        Me.logInButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.logInButton.Size = New System.Drawing.Size(130, 50)
-        Me.logInButton.TabIndex = 20
-        Me.logInButton.Text = "ADD"
+        Me.addExtrasButton.BackColor = System.Drawing.Color.Transparent
+        Me.addExtrasButton.BorderRadius = 5
+        Me.addExtrasButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addExtrasButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.addExtrasButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.addExtrasButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.addExtrasButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.addExtrasButton.FillColor = System.Drawing.Color.Black
+        Me.addExtrasButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.addExtrasButton.ForeColor = System.Drawing.Color.White
+        Me.addExtrasButton.Location = New System.Drawing.Point(31, 105)
+        Me.addExtrasButton.Name = "addExtrasButton"
+        Me.addExtrasButton.ShadowDecoration.BorderRadius = 5
+        Me.addExtrasButton.ShadowDecoration.Enabled = True
+        Me.addExtrasButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.addExtrasButton.Size = New System.Drawing.Size(130, 50)
+        Me.addExtrasButton.TabIndex = 20
+        Me.addExtrasButton.Text = "ADD"
         '
-        'Guna2Button1
+        'editExtrasButton
         '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button1.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(181, 105)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.BorderRadius = 5
-        Me.Guna2Button1.ShadowDecoration.Enabled = True
-        Me.Guna2Button1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2Button1.Size = New System.Drawing.Size(130, 50)
-        Me.Guna2Button1.TabIndex = 21
-        Me.Guna2Button1.Text = "EDIT"
+        Me.editExtrasButton.BackColor = System.Drawing.Color.Transparent
+        Me.editExtrasButton.BorderRadius = 5
+        Me.editExtrasButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.editExtrasButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.editExtrasButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.editExtrasButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.editExtrasButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.editExtrasButton.FillColor = System.Drawing.Color.Black
+        Me.editExtrasButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.editExtrasButton.ForeColor = System.Drawing.Color.White
+        Me.editExtrasButton.Location = New System.Drawing.Point(181, 105)
+        Me.editExtrasButton.Name = "editExtrasButton"
+        Me.editExtrasButton.ShadowDecoration.BorderRadius = 5
+        Me.editExtrasButton.ShadowDecoration.Enabled = True
+        Me.editExtrasButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.editExtrasButton.Size = New System.Drawing.Size(130, 50)
+        Me.editExtrasButton.TabIndex = 21
+        Me.editExtrasButton.Text = "EDIT"
         '
         'Guna2Button2
         '
@@ -213,6 +214,10 @@ Partial Class extrasTable
         Me.Guna2Panel1.Size = New System.Drawing.Size(1080, 570)
         Me.Guna2Panel1.TabIndex = 25
         '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 5
+        '
         'extrasTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -223,8 +228,8 @@ Partial Class extrasTable
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Guna2TextBox1)
         Me.Controls.Add(Me.Guna2Button2)
-        Me.Controls.Add(Me.Guna2Button1)
-        Me.Controls.Add(Me.logInButton)
+        Me.Controls.Add(Me.editExtrasButton)
+        Me.Controls.Add(Me.addExtrasButton)
         Me.Controls.Add(Me.menuButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -248,10 +253,11 @@ Partial Class extrasTable
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents menuTimer As Timer
-    Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents addExtrasButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents editExtrasButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents dialogTimer As Timer
 End Class

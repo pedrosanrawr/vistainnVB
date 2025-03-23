@@ -31,11 +31,12 @@ Partial Class paymentTable
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.editPaymentButton = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,26 +102,26 @@ Partial Class paymentTable
         '
         Me.menuTimer.Interval = 5
         '
-        'Guna2Button1
+        'editPaymentButton
         '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button1.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(31, 105)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.BorderRadius = 5
-        Me.Guna2Button1.ShadowDecoration.Enabled = True
-        Me.Guna2Button1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2Button1.Size = New System.Drawing.Size(130, 50)
-        Me.Guna2Button1.TabIndex = 15
-        Me.Guna2Button1.Text = "EDIT"
+        Me.editPaymentButton.BackColor = System.Drawing.Color.Transparent
+        Me.editPaymentButton.BorderRadius = 5
+        Me.editPaymentButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.editPaymentButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.editPaymentButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.editPaymentButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.editPaymentButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.editPaymentButton.FillColor = System.Drawing.Color.Black
+        Me.editPaymentButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.editPaymentButton.ForeColor = System.Drawing.Color.White
+        Me.editPaymentButton.Location = New System.Drawing.Point(31, 105)
+        Me.editPaymentButton.Name = "editPaymentButton"
+        Me.editPaymentButton.ShadowDecoration.BorderRadius = 5
+        Me.editPaymentButton.ShadowDecoration.Enabled = True
+        Me.editPaymentButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.editPaymentButton.Size = New System.Drawing.Size(130, 50)
+        Me.editPaymentButton.TabIndex = 15
+        Me.editPaymentButton.Text = "EDIT"
         '
         'Guna2Button2
         '
@@ -191,6 +192,10 @@ Partial Class paymentTable
         Me.Guna2Panel1.Size = New System.Drawing.Size(1080, 570)
         Me.Guna2Panel1.TabIndex = 20
         '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 5
+        '
         'paymentTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -201,7 +206,7 @@ Partial Class paymentTable
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Guna2TextBox1)
         Me.Controls.Add(Me.Guna2Button2)
-        Me.Controls.Add(Me.Guna2Button1)
+        Me.Controls.Add(Me.editPaymentButton)
         Me.Controls.Add(Me.menuButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -225,9 +230,10 @@ Partial Class paymentTable
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents menuTimer As Timer
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents editPaymentButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents dialogTimer As Timer
 End Class

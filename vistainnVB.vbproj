@@ -82,10 +82,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="accounts\accTable.Designer.vb">
-      <DependentUpon>accTable.vb</DependentUpon>
+    <Compile Include="employee\employeeTable.Designer.vb">
+      <DependentUpon>employeeTable.vb</DependentUpon>
     </Compile>
-    <Compile Include="accounts\accTable.vb">
+    <Compile Include="employee\employeeTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee\addEmployeeDialog.Designer.vb">
+      <DependentUpon>addEmployeeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employee\addEmployeeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee\editEmployeeDialog.Designer.vb">
+      <DependentUpon>editEmployeeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employee\editEmployeeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="extras\addExtrasDialog.Designer.vb">
+      <DependentUpon>addExtrasDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="extras\addExtrasDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bookings\addBookDialog.Designer.vb">
+      <DependentUpon>addBookDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bookings\addBookDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="basePage.vb">
@@ -107,10 +131,46 @@
     <Compile Include="analytics\analytics.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bookings\editBookDialog.Designer.vb">
+      <DependentUpon>editBookDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bookings\editBookDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="extras\editExtraDialog.Designer.vb">
+      <DependentUpon>editExtraDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="extras\editExtraDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu_admin\nestedTabTables.Designer.vb">
+      <DependentUpon>nestedTabTables.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu_admin\nestedTabTables.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="payment\editPaymentDialog.Designer.vb">
+      <DependentUpon>editPaymentDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="payment\editPaymentDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room\editRoomDialog.Designer.vb">
+      <DependentUpon>editRoomDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="room\editRoomDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="extras\extrasTable.Designer.vb">
       <DependentUpon>extrasTable.vb</DependentUpon>
     </Compile>
     <Compile Include="extras\extrasTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room\addRoomDialog.Designer.vb">
+      <DependentUpon>addRoomDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="room\addRoomDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login\logInForm.Designer.vb">
@@ -165,8 +225,35 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="accounts\accTable.resx">
-      <DependentUpon>accTable.vb</DependentUpon>
+    <EmbeddedResource Include="employee\employeeTable.resx">
+      <DependentUpon>employeeTable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee\addEmployeeDialog.resx">
+      <DependentUpon>addEmployeeDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee\editEmployeeDialog.resx">
+      <DependentUpon>editEmployeeDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="extras\addExtrasDialog.resx">
+      <DependentUpon>addExtrasDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bookings\addBookDialog.resx">
+      <DependentUpon>addBookDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bookings\editBookDialog.resx">
+      <DependentUpon>editBookDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="extras\editExtraDialog.resx">
+      <DependentUpon>editExtraDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_admin\nestedTabTables.resx">
+      <DependentUpon>nestedTabTables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="payment\editPaymentDialog.resx">
+      <DependentUpon>editPaymentDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room\addRoomDialog.resx">
+      <DependentUpon>addRoomDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="basePage.resx">
       <DependentUpon>basePage.vb</DependentUpon>
@@ -176,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="analytics\analytics.resx">
       <DependentUpon>analytics.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room\editRoomDialog.resx">
+      <DependentUpon>editRoomDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="extras\extrasTable.resx">
       <DependentUpon>extrasTable.vb</DependentUpon>
@@ -225,9 +315,6 @@
     <None Include="vistainnMSDBDataSet.xss">
       <DependentUpon>vistainnMSDBDataSet.xsd</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconHide.png" />

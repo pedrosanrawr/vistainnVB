@@ -31,13 +31,14 @@ Partial Class roomTable
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.addRoomButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.editRoomButton = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,47 +104,47 @@ Partial Class roomTable
         '
         Me.menuTimer.Interval = 5
         '
-        'logInButton
+        'addRoomButton
         '
-        Me.logInButton.BackColor = System.Drawing.Color.Transparent
-        Me.logInButton.BorderRadius = 5
-        Me.logInButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.logInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.logInButton.FillColor = System.Drawing.Color.Black
-        Me.logInButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.logInButton.ForeColor = System.Drawing.Color.White
-        Me.logInButton.Location = New System.Drawing.Point(31, 105)
-        Me.logInButton.Name = "logInButton"
-        Me.logInButton.ShadowDecoration.BorderRadius = 5
-        Me.logInButton.ShadowDecoration.Enabled = True
-        Me.logInButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.logInButton.Size = New System.Drawing.Size(130, 50)
-        Me.logInButton.TabIndex = 10
-        Me.logInButton.Text = "ADD"
+        Me.addRoomButton.BackColor = System.Drawing.Color.Transparent
+        Me.addRoomButton.BorderRadius = 5
+        Me.addRoomButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addRoomButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.addRoomButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.addRoomButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.addRoomButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.addRoomButton.FillColor = System.Drawing.Color.Black
+        Me.addRoomButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.addRoomButton.ForeColor = System.Drawing.Color.White
+        Me.addRoomButton.Location = New System.Drawing.Point(31, 105)
+        Me.addRoomButton.Name = "addRoomButton"
+        Me.addRoomButton.ShadowDecoration.BorderRadius = 5
+        Me.addRoomButton.ShadowDecoration.Enabled = True
+        Me.addRoomButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.addRoomButton.Size = New System.Drawing.Size(130, 50)
+        Me.addRoomButton.TabIndex = 10
+        Me.addRoomButton.Text = "ADD"
         '
-        'Guna2Button1
+        'editRoomButton
         '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button1.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(181, 105)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.BorderRadius = 5
-        Me.Guna2Button1.ShadowDecoration.Enabled = True
-        Me.Guna2Button1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2Button1.Size = New System.Drawing.Size(130, 50)
-        Me.Guna2Button1.TabIndex = 11
-        Me.Guna2Button1.Text = "EDIT"
+        Me.editRoomButton.BackColor = System.Drawing.Color.Transparent
+        Me.editRoomButton.BorderRadius = 5
+        Me.editRoomButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.editRoomButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.editRoomButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.editRoomButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.editRoomButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.editRoomButton.FillColor = System.Drawing.Color.Black
+        Me.editRoomButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.editRoomButton.ForeColor = System.Drawing.Color.White
+        Me.editRoomButton.Location = New System.Drawing.Point(181, 105)
+        Me.editRoomButton.Name = "editRoomButton"
+        Me.editRoomButton.ShadowDecoration.BorderRadius = 5
+        Me.editRoomButton.ShadowDecoration.Enabled = True
+        Me.editRoomButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.editRoomButton.Size = New System.Drawing.Size(130, 50)
+        Me.editRoomButton.TabIndex = 11
+        Me.editRoomButton.Text = "EDIT"
         '
         'Guna2Button2
         '
@@ -235,6 +236,10 @@ Partial Class roomTable
         Me.Guna2Panel1.Size = New System.Drawing.Size(1080, 570)
         Me.Guna2Panel1.TabIndex = 16
         '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 3
+        '
         'roomTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -246,8 +251,8 @@ Partial Class roomTable
         Me.Controls.Add(Me.Guna2TextBox1)
         Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Guna2Button2)
-        Me.Controls.Add(Me.Guna2Button1)
-        Me.Controls.Add(Me.logInButton)
+        Me.Controls.Add(Me.editRoomButton)
+        Me.Controls.Add(Me.addRoomButton)
         Me.Controls.Add(Me.menuButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -271,11 +276,12 @@ Partial Class roomTable
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents menuTimer As Timer
-    Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents addRoomButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents editRoomButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents dialogTimer As Timer
 End Class
