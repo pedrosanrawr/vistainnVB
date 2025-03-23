@@ -28,18 +28,18 @@ Partial Class paymentTable
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.refreshButton = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
         Me.editPaymentButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.deletePaymentButton = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.searchPaymentTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -83,16 +83,16 @@ Partial Class paymentTable
         Me.PictureBox3.TabIndex = 12
         Me.PictureBox3.TabStop = False
         '
-        'PictureBox2
+        'refreshButton
         '
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 20)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox2.TabIndex = 11
-        Me.PictureBox2.TabStop = False
+        Me.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.refreshButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.refreshButton.Image = CType(resources.GetObject("refreshButton.Image"), System.Drawing.Image)
+        Me.refreshButton.Location = New System.Drawing.Point(111, 20)
+        Me.refreshButton.Name = "refreshButton"
+        Me.refreshButton.Size = New System.Drawing.Size(50, 50)
+        Me.refreshButton.TabIndex = 11
+        Me.refreshButton.TabStop = False
         '
         'Timer1
         '
@@ -123,26 +123,26 @@ Partial Class paymentTable
         Me.editPaymentButton.TabIndex = 15
         Me.editPaymentButton.Text = "EDIT"
         '
-        'Guna2Button2
+        'deletePaymentButton
         '
-        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderRadius = 5
-        Me.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button2.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(181, 105)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.BorderRadius = 5
-        Me.Guna2Button2.ShadowDecoration.Enabled = True
-        Me.Guna2Button2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2Button2.Size = New System.Drawing.Size(130, 50)
-        Me.Guna2Button2.TabIndex = 16
-        Me.Guna2Button2.Text = "DELETE"
+        Me.deletePaymentButton.BackColor = System.Drawing.Color.Transparent
+        Me.deletePaymentButton.BorderRadius = 5
+        Me.deletePaymentButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.deletePaymentButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.deletePaymentButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.deletePaymentButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.deletePaymentButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.deletePaymentButton.FillColor = System.Drawing.Color.Black
+        Me.deletePaymentButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.deletePaymentButton.ForeColor = System.Drawing.Color.White
+        Me.deletePaymentButton.Location = New System.Drawing.Point(181, 105)
+        Me.deletePaymentButton.Name = "deletePaymentButton"
+        Me.deletePaymentButton.ShadowDecoration.BorderRadius = 5
+        Me.deletePaymentButton.ShadowDecoration.Enabled = True
+        Me.deletePaymentButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.deletePaymentButton.Size = New System.Drawing.Size(130, 50)
+        Me.deletePaymentButton.TabIndex = 16
+        Me.deletePaymentButton.Text = "DELETE"
         '
         'PictureBox1
         '
@@ -154,30 +154,30 @@ Partial Class paymentTable
         Me.PictureBox1.TabIndex = 19
         Me.PictureBox1.TabStop = False
         '
-        'Guna2TextBox1
+        'searchPaymentTextBox
         '
-        Me.Guna2TextBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox1.BorderRadius = 5
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(681, 105)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(6)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PlaceholderText = "Search"
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.ShadowDecoration.BorderRadius = 5
-        Me.Guna2TextBox1.ShadowDecoration.Enabled = True
-        Me.Guna2TextBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(430, 50)
-        Me.Guna2TextBox1.TabIndex = 18
+        Me.searchPaymentTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.searchPaymentTextBox.BorderRadius = 5
+        Me.searchPaymentTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.searchPaymentTextBox.DefaultText = ""
+        Me.searchPaymentTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.searchPaymentTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.searchPaymentTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchPaymentTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchPaymentTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.searchPaymentTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.searchPaymentTextBox.ForeColor = System.Drawing.Color.Black
+        Me.searchPaymentTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.searchPaymentTextBox.Location = New System.Drawing.Point(681, 105)
+        Me.searchPaymentTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.searchPaymentTextBox.Name = "searchPaymentTextBox"
+        Me.searchPaymentTextBox.PlaceholderText = "Search"
+        Me.searchPaymentTextBox.SelectedText = ""
+        Me.searchPaymentTextBox.ShadowDecoration.BorderRadius = 5
+        Me.searchPaymentTextBox.ShadowDecoration.Enabled = True
+        Me.searchPaymentTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.searchPaymentTextBox.Size = New System.Drawing.Size(430, 50)
+        Me.searchPaymentTextBox.TabIndex = 18
         '
         'Guna2Panel1
         '
@@ -204,20 +204,20 @@ Partial Class paymentTable
         Me.ClientSize = New System.Drawing.Size(1142, 790)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Guna2TextBox1)
-        Me.Controls.Add(Me.Guna2Button2)
+        Me.Controls.Add(Me.searchPaymentTextBox)
+        Me.Controls.Add(Me.deletePaymentButton)
         Me.Controls.Add(Me.editPaymentButton)
         Me.Controls.Add(Me.menuButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.refreshButton)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "paymentTable"
         Me.Text = "paymentTable"
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -227,13 +227,13 @@ Partial Class paymentTable
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents refreshButton As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents menuTimer As Timer
     Friend WithEvents editPaymentButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents deletePaymentButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents searchPaymentTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer
 End Class

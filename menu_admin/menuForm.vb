@@ -1,7 +1,10 @@
-﻿Public Class menuForm
+﻿Imports System.Runtime.CompilerServices
+Imports System.Runtime.InteropServices
+
+Public Class menuForm
     Dim nestedTabTables As New nestedTabTables()
     Private isExpanded As Boolean = False
-    Private expandedHeight As Integer = 200
+    Private expandedHeight As Integer = 250
     Private selectedButton As Guna.UI2.WinForms.Guna2Button = Nothing
     Private radioButtons As New List(Of Guna.UI2.WinForms.Guna2Button)
 
@@ -18,6 +21,7 @@
         radioButtons.Add(profileButton)
         radioButtons.Add(logOutButton)
         radioButtons.Add(btnAnalytics)
+
     End Sub
 
 

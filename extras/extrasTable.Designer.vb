@@ -28,19 +28,19 @@ Partial Class extrasTable
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.refreshButton = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
         Me.addExtrasButton = New Guna.UI2.WinForms.Guna2Button()
         Me.editExtrasButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.deleteExtrasButton = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.searchTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -84,16 +84,16 @@ Partial Class extrasTable
         Me.PictureBox3.TabIndex = 17
         Me.PictureBox3.TabStop = False
         '
-        'PictureBox2
+        'refreshButton
         '
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(111, 20)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox2.TabIndex = 16
-        Me.PictureBox2.TabStop = False
+        Me.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.refreshButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.refreshButton.Image = CType(resources.GetObject("refreshButton.Image"), System.Drawing.Image)
+        Me.refreshButton.Location = New System.Drawing.Point(111, 20)
+        Me.refreshButton.Name = "refreshButton"
+        Me.refreshButton.Size = New System.Drawing.Size(50, 50)
+        Me.refreshButton.TabIndex = 16
+        Me.refreshButton.TabStop = False
         '
         'Timer1
         '
@@ -145,26 +145,26 @@ Partial Class extrasTable
         Me.editExtrasButton.TabIndex = 21
         Me.editExtrasButton.Text = "EDIT"
         '
-        'Guna2Button2
+        'deleteExtrasButton
         '
-        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderRadius = 5
-        Me.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button2.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(331, 105)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.BorderRadius = 5
-        Me.Guna2Button2.ShadowDecoration.Enabled = True
-        Me.Guna2Button2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2Button2.Size = New System.Drawing.Size(130, 50)
-        Me.Guna2Button2.TabIndex = 22
-        Me.Guna2Button2.Text = "DELETE"
+        Me.deleteExtrasButton.BackColor = System.Drawing.Color.Transparent
+        Me.deleteExtrasButton.BorderRadius = 5
+        Me.deleteExtrasButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.deleteExtrasButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.deleteExtrasButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.deleteExtrasButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.deleteExtrasButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.deleteExtrasButton.FillColor = System.Drawing.Color.Black
+        Me.deleteExtrasButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.deleteExtrasButton.ForeColor = System.Drawing.Color.White
+        Me.deleteExtrasButton.Location = New System.Drawing.Point(331, 105)
+        Me.deleteExtrasButton.Name = "deleteExtrasButton"
+        Me.deleteExtrasButton.ShadowDecoration.BorderRadius = 5
+        Me.deleteExtrasButton.ShadowDecoration.Enabled = True
+        Me.deleteExtrasButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.deleteExtrasButton.Size = New System.Drawing.Size(130, 50)
+        Me.deleteExtrasButton.TabIndex = 22
+        Me.deleteExtrasButton.Text = "DELETE"
         '
         'PictureBox1
         '
@@ -176,30 +176,30 @@ Partial Class extrasTable
         Me.PictureBox1.TabIndex = 24
         Me.PictureBox1.TabStop = False
         '
-        'Guna2TextBox1
+        'searchTextBox
         '
-        Me.Guna2TextBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox1.BorderRadius = 5
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(681, 105)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(6)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PlaceholderText = "Search"
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.ShadowDecoration.BorderRadius = 5
-        Me.Guna2TextBox1.ShadowDecoration.Enabled = True
-        Me.Guna2TextBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(430, 50)
-        Me.Guna2TextBox1.TabIndex = 23
+        Me.searchTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.searchTextBox.BorderRadius = 5
+        Me.searchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.searchTextBox.DefaultText = ""
+        Me.searchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.searchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.searchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.searchTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.searchTextBox.ForeColor = System.Drawing.Color.Black
+        Me.searchTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.searchTextBox.Location = New System.Drawing.Point(681, 105)
+        Me.searchTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.searchTextBox.Name = "searchTextBox"
+        Me.searchTextBox.PlaceholderText = "Search"
+        Me.searchTextBox.SelectedText = ""
+        Me.searchTextBox.ShadowDecoration.BorderRadius = 5
+        Me.searchTextBox.ShadowDecoration.Enabled = True
+        Me.searchTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.searchTextBox.Size = New System.Drawing.Size(430, 50)
+        Me.searchTextBox.TabIndex = 23
         '
         'Guna2Panel1
         '
@@ -226,21 +226,21 @@ Partial Class extrasTable
         Me.ClientSize = New System.Drawing.Size(1142, 790)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Guna2TextBox1)
-        Me.Controls.Add(Me.Guna2Button2)
+        Me.Controls.Add(Me.searchTextBox)
+        Me.Controls.Add(Me.deleteExtrasButton)
         Me.Controls.Add(Me.editExtrasButton)
         Me.Controls.Add(Me.addExtrasButton)
         Me.Controls.Add(Me.menuButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.refreshButton)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "extrasTable"
         Me.Text = "extrasTable"
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -250,14 +250,14 @@ Partial Class extrasTable
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents refreshButton As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents menuTimer As Timer
     Friend WithEvents addExtrasButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents editExtrasButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents deleteExtrasButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents searchTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer
 End Class

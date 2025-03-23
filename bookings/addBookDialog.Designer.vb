@@ -22,7 +22,7 @@ Partial Class addBookDialog
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.roomNumberTextBox = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.bookingIdTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.firstNameTextBox = New Guna.UI2.WinForms.Guna2TextBox()
@@ -45,35 +45,35 @@ Partial Class addBookDialog
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.addButton = New Guna.UI2.WinForms.Guna2Button()
         Me.inDatePickerButton = New Guna.UI2.WinForms.Guna2Button()
         Me.outDateTimeButton = New Guna.UI2.WinForms.Guna2Button()
         Me.inTimeComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.outTimeComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
-        'roomNumberTextBox
+        'bookingIdTextBox
         '
-        Me.roomNumberTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.roomNumberTextBox.BorderRadius = 5
-        Me.roomNumberTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.roomNumberTextBox.DefaultText = ""
-        Me.roomNumberTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.roomNumberTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.roomNumberTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.roomNumberTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.roomNumberTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.roomNumberTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.roomNumberTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.roomNumberTextBox.Location = New System.Drawing.Point(45, 180)
-        Me.roomNumberTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.roomNumberTextBox.Name = "roomNumberTextBox"
-        Me.roomNumberTextBox.PlaceholderText = ""
-        Me.roomNumberTextBox.SelectedText = ""
-        Me.roomNumberTextBox.ShadowDecoration.Enabled = True
-        Me.roomNumberTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.roomNumberTextBox.Size = New System.Drawing.Size(180, 50)
-        Me.roomNumberTextBox.TabIndex = 28
+        Me.bookingIdTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.bookingIdTextBox.BorderRadius = 5
+        Me.bookingIdTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.bookingIdTextBox.DefaultText = ""
+        Me.bookingIdTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.bookingIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.bookingIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.bookingIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.bookingIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.bookingIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.bookingIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.bookingIdTextBox.Location = New System.Drawing.Point(45, 180)
+        Me.bookingIdTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.bookingIdTextBox.Name = "bookingIdTextBox"
+        Me.bookingIdTextBox.PlaceholderText = ""
+        Me.bookingIdTextBox.SelectedText = ""
+        Me.bookingIdTextBox.ShadowDecoration.Enabled = True
+        Me.bookingIdTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.bookingIdTextBox.Size = New System.Drawing.Size(180, 50)
+        Me.bookingIdTextBox.TabIndex = 28
         '
         'Label3
         '
@@ -82,7 +82,7 @@ Partial Class addBookDialog
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(167, 26)
         Me.Label3.TabIndex = 27
-        Me.Label3.Text = "ROOM NUMBER"
+        Me.Label3.Text = "BOOKING ID"
         '
         'Label1
         '
@@ -373,26 +373,26 @@ Partial Class addBookDialog
         Me.Label15.TabIndex = 50
         Me.Label15.Text = "DATE"
         '
-        'logInButton
+        'addButton
         '
-        Me.logInButton.BackColor = System.Drawing.Color.Transparent
-        Me.logInButton.BorderRadius = 5
-        Me.logInButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.logInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.logInButton.FillColor = System.Drawing.Color.Black
-        Me.logInButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.logInButton.ForeColor = System.Drawing.Color.White
-        Me.logInButton.Location = New System.Drawing.Point(225, 704)
-        Me.logInButton.Name = "logInButton"
-        Me.logInButton.ShadowDecoration.BorderRadius = 5
-        Me.logInButton.ShadowDecoration.Enabled = True
-        Me.logInButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.logInButton.Size = New System.Drawing.Size(120, 50)
-        Me.logInButton.TabIndex = 54
-        Me.logInButton.Text = "ADD"
+        Me.addButton.BackColor = System.Drawing.Color.Transparent
+        Me.addButton.BorderRadius = 5
+        Me.addButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.addButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.addButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.addButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.addButton.FillColor = System.Drawing.Color.Black
+        Me.addButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.addButton.ForeColor = System.Drawing.Color.White
+        Me.addButton.Location = New System.Drawing.Point(225, 704)
+        Me.addButton.Name = "addButton"
+        Me.addButton.ShadowDecoration.BorderRadius = 5
+        Me.addButton.ShadowDecoration.Enabled = True
+        Me.addButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.addButton.Size = New System.Drawing.Size(120, 50)
+        Me.addButton.TabIndex = 54
+        Me.addButton.Text = "ADD"
         '
         'inDatePickerButton
         '
@@ -460,28 +460,27 @@ Partial Class addBookDialog
         Me.inTimeComboBox.ShadowDecoration.Enabled = True
         Me.inTimeComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
         Me.inTimeComboBox.Size = New System.Drawing.Size(130, 50)
-        Me.inTimeComboBox.StartIndex = 0
         Me.inTimeComboBox.TabIndex = 57
         '
-        'Guna2ComboBox1
+        'outTimeComboBox
         '
-        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
-        Me.Guna2ComboBox1.BorderRadius = 5
-        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.IntegralHeight = False
-        Me.Guna2ComboBox1.ItemHeight = 44
-        Me.Guna2ComboBox1.Location = New System.Drawing.Point(395, 580)
-        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
-        Me.Guna2ComboBox1.ShadowDecoration.Enabled = True
-        Me.Guna2ComboBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2ComboBox1.Size = New System.Drawing.Size(130, 50)
-        Me.Guna2ComboBox1.TabIndex = 58
+        Me.outTimeComboBox.BackColor = System.Drawing.Color.Transparent
+        Me.outTimeComboBox.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.outTimeComboBox.BorderRadius = 5
+        Me.outTimeComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.outTimeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.outTimeComboBox.FocusedColor = System.Drawing.Color.Black
+        Me.outTimeComboBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.outTimeComboBox.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.outTimeComboBox.ForeColor = System.Drawing.Color.Black
+        Me.outTimeComboBox.IntegralHeight = False
+        Me.outTimeComboBox.ItemHeight = 44
+        Me.outTimeComboBox.Location = New System.Drawing.Point(395, 580)
+        Me.outTimeComboBox.Name = "outTimeComboBox"
+        Me.outTimeComboBox.ShadowDecoration.Enabled = True
+        Me.outTimeComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.outTimeComboBox.Size = New System.Drawing.Size(130, 50)
+        Me.outTimeComboBox.TabIndex = 58
         '
         'addBookDialog
         '
@@ -489,11 +488,11 @@ Partial Class addBookDialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(571, 790)
-        Me.Controls.Add(Me.Guna2ComboBox1)
+        Me.Controls.Add(Me.outTimeComboBox)
         Me.Controls.Add(Me.inTimeComboBox)
         Me.Controls.Add(Me.outDateTimeButton)
         Me.Controls.Add(Me.inDatePickerButton)
-        Me.Controls.Add(Me.logInButton)
+        Me.Controls.Add(Me.addButton)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label13)
@@ -515,7 +514,7 @@ Partial Class addBookDialog
         Me.Controls.Add(Me.firstNameTextBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.roomNumberTextBox)
+        Me.Controls.Add(Me.bookingIdTextBox)
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "addBookDialog"
@@ -525,7 +524,7 @@ Partial Class addBookDialog
 
     End Sub
 
-    Friend WithEvents roomNumberTextBox As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents bookingIdTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents firstNameTextBox As Guna.UI2.WinForms.Guna2TextBox
@@ -548,9 +547,9 @@ Partial Class addBookDialog
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents addButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents inDatePickerButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents outDateTimeButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents inTimeComboBox As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents outTimeComboBox As Guna.UI2.WinForms.Guna2ComboBox
 End Class

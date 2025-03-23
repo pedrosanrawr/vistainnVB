@@ -22,61 +22,61 @@ Partial Class editExtraDialog
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2TextBox5 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.editButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.quantityTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox4 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.itemTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.priceTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.extrasTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'logInButton
+        'editButton
         '
-        Me.logInButton.BackColor = System.Drawing.Color.Transparent
-        Me.logInButton.BorderRadius = 5
-        Me.logInButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.logInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.logInButton.FillColor = System.Drawing.Color.Black
-        Me.logInButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.logInButton.ForeColor = System.Drawing.Color.White
-        Me.logInButton.Location = New System.Drawing.Point(225, 704)
-        Me.logInButton.Name = "logInButton"
-        Me.logInButton.ShadowDecoration.BorderRadius = 5
-        Me.logInButton.ShadowDecoration.Enabled = True
-        Me.logInButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.logInButton.Size = New System.Drawing.Size(120, 50)
-        Me.logInButton.TabIndex = 79
-        Me.logInButton.Text = "EDIT"
+        Me.editButton.BackColor = System.Drawing.Color.Transparent
+        Me.editButton.BorderRadius = 5
+        Me.editButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.editButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.editButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.editButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.editButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.editButton.FillColor = System.Drawing.Color.Black
+        Me.editButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.editButton.ForeColor = System.Drawing.Color.White
+        Me.editButton.Location = New System.Drawing.Point(225, 704)
+        Me.editButton.Name = "editButton"
+        Me.editButton.ShadowDecoration.BorderRadius = 5
+        Me.editButton.ShadowDecoration.Enabled = True
+        Me.editButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.editButton.Size = New System.Drawing.Size(120, 50)
+        Me.editButton.TabIndex = 79
+        Me.editButton.Text = "EDIT"
         '
-        'Guna2TextBox5
+        'quantityTextBox
         '
-        Me.Guna2TextBox5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox5.BorderRadius = 5
-        Me.Guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox5.DefaultText = ""
-        Me.Guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox5.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox5.Location = New System.Drawing.Point(295, 280)
-        Me.Guna2TextBox5.Margin = New System.Windows.Forms.Padding(6)
-        Me.Guna2TextBox5.Name = "Guna2TextBox5"
-        Me.Guna2TextBox5.PlaceholderText = ""
-        Me.Guna2TextBox5.SelectedText = ""
-        Me.Guna2TextBox5.ShadowDecoration.Enabled = True
-        Me.Guna2TextBox5.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2TextBox5.Size = New System.Drawing.Size(230, 50)
-        Me.Guna2TextBox5.TabIndex = 78
+        Me.quantityTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.quantityTextBox.BorderRadius = 5
+        Me.quantityTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.quantityTextBox.DefaultText = ""
+        Me.quantityTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.quantityTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.quantityTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.quantityTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.quantityTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.quantityTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.quantityTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.quantityTextBox.Location = New System.Drawing.Point(295, 280)
+        Me.quantityTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.quantityTextBox.Name = "quantityTextBox"
+        Me.quantityTextBox.PlaceholderText = ""
+        Me.quantityTextBox.SelectedText = ""
+        Me.quantityTextBox.ShadowDecoration.Enabled = True
+        Me.quantityTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.quantityTextBox.Size = New System.Drawing.Size(230, 50)
+        Me.quantityTextBox.TabIndex = 78
         '
         'Label6
         '
@@ -87,28 +87,28 @@ Partial Class editExtraDialog
         Me.Label6.TabIndex = 77
         Me.Label6.Text = "QUANTITY"
         '
-        'Guna2TextBox4
+        'itemTextBox
         '
-        Me.Guna2TextBox4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox4.BorderRadius = 5
-        Me.Guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox4.DefaultText = ""
-        Me.Guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox4.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox4.Location = New System.Drawing.Point(295, 180)
-        Me.Guna2TextBox4.Margin = New System.Windows.Forms.Padding(6)
-        Me.Guna2TextBox4.Name = "Guna2TextBox4"
-        Me.Guna2TextBox4.PlaceholderText = ""
-        Me.Guna2TextBox4.SelectedText = ""
-        Me.Guna2TextBox4.ShadowDecoration.Enabled = True
-        Me.Guna2TextBox4.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2TextBox4.Size = New System.Drawing.Size(230, 50)
-        Me.Guna2TextBox4.TabIndex = 76
+        Me.itemTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.itemTextBox.BorderRadius = 5
+        Me.itemTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.itemTextBox.DefaultText = ""
+        Me.itemTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.itemTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.itemTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.itemTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.itemTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.itemTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.itemTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.itemTextBox.Location = New System.Drawing.Point(295, 180)
+        Me.itemTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.itemTextBox.Name = "itemTextBox"
+        Me.itemTextBox.PlaceholderText = ""
+        Me.itemTextBox.SelectedText = ""
+        Me.itemTextBox.ShadowDecoration.Enabled = True
+        Me.itemTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.itemTextBox.Size = New System.Drawing.Size(230, 50)
+        Me.itemTextBox.TabIndex = 76
         '
         'Label5
         '
@@ -119,28 +119,28 @@ Partial Class editExtraDialog
         Me.Label5.TabIndex = 75
         Me.Label5.Text = "ITEM"
         '
-        'Guna2TextBox1
+        'priceTextBox
         '
-        Me.Guna2TextBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox1.BorderRadius = 5
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(45, 280)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(6)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PlaceholderText = ""
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.ShadowDecoration.Enabled = True
-        Me.Guna2TextBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(230, 50)
-        Me.Guna2TextBox1.TabIndex = 74
+        Me.priceTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.priceTextBox.BorderRadius = 5
+        Me.priceTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.priceTextBox.DefaultText = ""
+        Me.priceTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.priceTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.priceTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.priceTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.priceTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.priceTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.priceTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.priceTextBox.Location = New System.Drawing.Point(45, 280)
+        Me.priceTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.priceTextBox.Name = "priceTextBox"
+        Me.priceTextBox.PlaceholderText = ""
+        Me.priceTextBox.SelectedText = ""
+        Me.priceTextBox.ShadowDecoration.Enabled = True
+        Me.priceTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.priceTextBox.Size = New System.Drawing.Size(230, 50)
+        Me.priceTextBox.TabIndex = 74
         '
         'Label2
         '
@@ -151,28 +151,28 @@ Partial Class editExtraDialog
         Me.Label2.TabIndex = 73
         Me.Label2.Text = "PRICE"
         '
-        'Guna2TextBox2
+        'extrasTextBox
         '
-        Me.Guna2TextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox2.BorderRadius = 5
-        Me.Guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox2.DefaultText = ""
-        Me.Guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox2.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox2.Location = New System.Drawing.Point(45, 180)
-        Me.Guna2TextBox2.Margin = New System.Windows.Forms.Padding(6)
-        Me.Guna2TextBox2.Name = "Guna2TextBox2"
-        Me.Guna2TextBox2.PlaceholderText = ""
-        Me.Guna2TextBox2.SelectedText = ""
-        Me.Guna2TextBox2.ShadowDecoration.Enabled = True
-        Me.Guna2TextBox2.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2TextBox2.Size = New System.Drawing.Size(230, 50)
-        Me.Guna2TextBox2.TabIndex = 72
+        Me.extrasTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.extrasTextBox.BorderRadius = 5
+        Me.extrasTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.extrasTextBox.DefaultText = ""
+        Me.extrasTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.extrasTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.extrasTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.extrasTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.extrasTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.extrasTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.extrasTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.extrasTextBox.Location = New System.Drawing.Point(45, 180)
+        Me.extrasTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.extrasTextBox.Name = "extrasTextBox"
+        Me.extrasTextBox.PlaceholderText = ""
+        Me.extrasTextBox.SelectedText = ""
+        Me.extrasTextBox.ShadowDecoration.Enabled = True
+        Me.extrasTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.extrasTextBox.Size = New System.Drawing.Size(230, 50)
+        Me.extrasTextBox.TabIndex = 72
         '
         'Label3
         '
@@ -200,14 +200,14 @@ Partial Class editExtraDialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(571, 790)
-        Me.Controls.Add(Me.logInButton)
-        Me.Controls.Add(Me.Guna2TextBox5)
+        Me.Controls.Add(Me.editButton)
+        Me.Controls.Add(Me.quantityTextBox)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Guna2TextBox4)
+        Me.Controls.Add(Me.itemTextBox)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Guna2TextBox1)
+        Me.Controls.Add(Me.priceTextBox)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Guna2TextBox2)
+        Me.Controls.Add(Me.extrasTextBox)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -218,14 +218,14 @@ Partial Class editExtraDialog
 
     End Sub
 
-    Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2TextBox5 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents editButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents quantityTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents Guna2TextBox4 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents itemTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents priceTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents extrasTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
 End Class

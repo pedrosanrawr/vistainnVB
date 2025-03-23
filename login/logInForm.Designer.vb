@@ -26,7 +26,7 @@ Partial Class logInForm
         Me.sidePanel = New System.Windows.Forms.Panel()
         Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.forgotPasswordLabelLink = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.passwordTextBox = New Guna.UI2.WinForms.Guna2TextBox()
@@ -42,7 +42,7 @@ Partial Class logInForm
         '
         Me.sidePanel.Controls.Add(Me.logInButton)
         Me.sidePanel.Controls.Add(Me.Label4)
-        Me.sidePanel.Controls.Add(Me.Label3)
+        Me.sidePanel.Controls.Add(Me.forgotPasswordLabelLink)
         Me.sidePanel.Controls.Add(Me.Label2)
         Me.sidePanel.Controls.Add(Me.Label1)
         Me.sidePanel.Controls.Add(Me.passwordTextBox)
@@ -86,16 +86,16 @@ Partial Class logInForm
         Me.Label4.Text = """YOUR GETAWAY TO RELAXATION AND COMFORT"""
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label3
+        'forgotPasswordLabelLink
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(323, 440)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(167, 22)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "FORGOT PASSWORD"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.forgotPasswordLabelLink.AutoSize = True
+        Me.forgotPasswordLabelLink.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.forgotPasswordLabelLink.Location = New System.Drawing.Point(323, 440)
+        Me.forgotPasswordLabelLink.Name = "forgotPasswordLabelLink"
+        Me.forgotPasswordLabelLink.Size = New System.Drawing.Size(167, 22)
+        Me.forgotPasswordLabelLink.TabIndex = 7
+        Me.forgotPasswordLabelLink.Text = "FORGOT PASSWORD"
+        Me.forgotPasswordLabelLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
         '
@@ -215,7 +215,7 @@ Partial Class logInForm
     Friend WithEvents sidePanel As Panel
     Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents forgotPasswordLabelLink As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents passwordTextBox As Guna.UI2.WinForms.Guna2TextBox
