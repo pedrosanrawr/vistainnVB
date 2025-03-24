@@ -31,6 +31,11 @@
         InitializeDialog(editRoomDialog)
         SDialog(addRoomDialog)
         SDialog(editRoomDialog)
+
+        Me.roomDGV.Rows.Add("1", "Deluxe Room", "101", "100$", "Luxury", "1", "1", "Smart TV", "Yes", "Wi-Fi", "Available")
+        Me.roomDGV.Rows.Add("2", "Standard Room", "102", "75$", "Standard", "1", "1", "Cable TV", "No", "None", "Occupied")
+        Me.roomDGV.Rows.Add("3", "Suite", "103", "200$", "Premium", "2", "2", "Smart TV, Sound System", "Yes", "Full", "Available")
+        Me.roomDGV.Rows.Add("4", "Single Room", "104", "50$", "Budget", "1", "1", "None", "No", "None", "Maintenance")
     End Sub
 
     Private Sub InitializeDialog(dialog As Form)

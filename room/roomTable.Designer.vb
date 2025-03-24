@@ -1,4 +1,6 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿Imports Guna.UI2.WinForms
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class roomTable
     Inherits System.Windows.Forms.Form
 
@@ -24,6 +26,9 @@ Partial Class roomTable
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(roomTable))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.menuButton = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,11 +43,25 @@ Partial Class roomTable
         Me.searchRoomButton = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.roomDGV = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.roomId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomCategory = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomBedroom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomBathroom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomTechnology = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomKitchen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomGeneral = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.roomStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel1.SuspendLayout()
+        CType(Me.roomDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menuButton
@@ -227,6 +246,7 @@ Partial Class roomTable
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel1.BorderRadius = 5
+        Me.Guna2Panel1.Controls.Add(Me.roomDGV)
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
         Me.Guna2Panel1.Location = New System.Drawing.Point(31, 185)
         Me.Guna2Panel1.Name = "Guna2Panel1"
@@ -236,9 +256,155 @@ Partial Class roomTable
         Me.Guna2Panel1.Size = New System.Drawing.Size(1080, 570)
         Me.Guna2Panel1.TabIndex = 16
         '
+        'roomDGV
+        '
+        Me.roomDGV.AllowUserToAddRows = False
+        Me.roomDGV.AllowUserToDeleteRows = False
+        Me.roomDGV.AllowUserToResizeColumns = False
+        Me.roomDGV.AllowUserToResizeRows = False
+        Me.roomDGV.AlternatingRowsDefaultCellStyle = Me.roomDGV.DefaultCellStyle
+        Me.roomDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
+        Me.roomDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Raleway", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.roomDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.roomDGV.ColumnHeadersHeight = 40
+        Me.roomDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.roomId, Me.roomName, Me.roomNo, Me.roomPrice, Me.roomCategory, Me.roomBedroom, Me.roomBathroom, Me.roomTechnology, Me.roomKitchen, Me.roomGeneral, Me.roomStatus})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.roomDGV.DefaultCellStyle = DataGridViewCellStyle2
+        Me.roomDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.roomDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.roomDGV.Location = New System.Drawing.Point(0, 0)
+        Me.roomDGV.Name = "roomDGV"
+        Me.roomDGV.ReadOnly = True
+        Me.roomDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.roomDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.roomDGV.RowHeadersVisible = False
+        Me.roomDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.roomDGV.RowTemplate.Height = 40
+        Me.roomDGV.RowTemplate.ReadOnly = True
+        Me.roomDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.roomDGV.Size = New System.Drawing.Size(1080, 570)
+        Me.roomDGV.TabIndex = 0
+        Me.roomDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.roomDGV.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.roomDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.roomDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.roomDGV.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.roomDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.roomDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Black
+        Me.roomDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.roomDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.roomDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.roomDGV.ThemeStyle.HeaderStyle.Height = 40
+        Me.roomDGV.ThemeStyle.ReadOnly = True
+        Me.roomDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.roomDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.roomDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.roomDGV.ThemeStyle.RowsStyle.Height = 40
+        Me.roomDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.roomDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
+        '
         'dialogTimer
         '
         Me.dialogTimer.Interval = 3
+        '
+        'roomId
+        '
+        Me.roomId.HeaderText = "ID"
+        Me.roomId.Name = "roomId"
+        Me.roomId.ReadOnly = True
+        Me.roomId.Width = 50
+        '
+        'roomName
+        '
+        Me.roomName.HeaderText = "NAME"
+        Me.roomName.Name = "roomName"
+        Me.roomName.ReadOnly = True
+        Me.roomName.Width = 85
+        '
+        'roomNo
+        '
+        Me.roomNo.HeaderText = "ROOM NO"
+        Me.roomNo.Name = "roomNo"
+        Me.roomNo.ReadOnly = True
+        Me.roomNo.Width = 110
+        '
+        'roomPrice
+        '
+        Me.roomPrice.HeaderText = "PRICE"
+        Me.roomPrice.Name = "roomPrice"
+        Me.roomPrice.ReadOnly = True
+        Me.roomPrice.Width = 85
+        '
+        'roomCategory
+        '
+        Me.roomCategory.HeaderText = "CATEGORY"
+        Me.roomCategory.Name = "roomCategory"
+        Me.roomCategory.ReadOnly = True
+        Me.roomCategory.Width = 110
+        '
+        'roomBedroom
+        '
+        Me.roomBedroom.HeaderText = "BEDROOM"
+        Me.roomBedroom.Name = "roomBedroom"
+        Me.roomBedroom.ReadOnly = True
+        Me.roomBedroom.Width = 110
+        '
+        'roomBathroom
+        '
+        Me.roomBathroom.HeaderText = "BATHROOM"
+        Me.roomBathroom.Name = "roomBathroom"
+        Me.roomBathroom.ReadOnly = True
+        Me.roomBathroom.Width = 110
+        '
+        'roomTechnology
+        '
+        Me.roomTechnology.HeaderText = "TECHNOLOGY"
+        Me.roomTechnology.Name = "roomTechnology"
+        Me.roomTechnology.ReadOnly = True
+        Me.roomTechnology.Width = 130
+        '
+        'roomKitchen
+        '
+        Me.roomKitchen.HeaderText = "KITCHEN"
+        Me.roomKitchen.Name = "roomKitchen"
+        Me.roomKitchen.ReadOnly = True
+        Me.roomKitchen.Width = 110
+        '
+        'roomGeneral
+        '
+        Me.roomGeneral.HeaderText = "GENERAL"
+        Me.roomGeneral.Name = "roomGeneral"
+        Me.roomGeneral.ReadOnly = True
+        Me.roomGeneral.Width = 110
+        '
+        'roomStatus
+        '
+        Me.roomStatus.HeaderText = "STATUS"
+        Me.roomStatus.Name = "roomStatus"
+        Me.roomStatus.ReadOnly = True
+        Me.roomStatus.Width = 110
         '
         'roomTable
         '
@@ -265,6 +431,8 @@ Partial Class roomTable
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
+        CType(Me.roomDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -284,4 +452,18 @@ Partial Class roomTable
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer
+    Friend WithEvents roomDGV As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents Guna2DataGridViewStyler1 As Guna.UI2.WinForms.Guna2DataGridViewStyler
+    Friend WithEvents Guna2DataGridViewStyler2 As Guna.UI2.WinForms.Guna2DataGridViewStyler
+    Friend WithEvents roomId As DataGridViewTextBoxColumn
+    Friend WithEvents roomName As DataGridViewTextBoxColumn
+    Friend WithEvents roomNo As DataGridViewTextBoxColumn
+    Friend WithEvents roomPrice As DataGridViewTextBoxColumn
+    Friend WithEvents roomCategory As DataGridViewTextBoxColumn
+    Friend WithEvents roomBedroom As DataGridViewTextBoxColumn
+    Friend WithEvents roomBathroom As DataGridViewTextBoxColumn
+    Friend WithEvents roomTechnology As DataGridViewTextBoxColumn
+    Friend WithEvents roomKitchen As DataGridViewTextBoxColumn
+    Friend WithEvents roomGeneral As DataGridViewTextBoxColumn
+    Friend WithEvents roomStatus As DataGridViewTextBoxColumn
 End Class

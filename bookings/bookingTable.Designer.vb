@@ -24,6 +24,9 @@ Partial Class bookingTable
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(bookingTable))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.menuButton = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,10 +41,25 @@ Partial Class bookingTable
         Me.searchBookTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.bookDGV = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.bookingId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookFname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookLname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookPhoneNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookRoomName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookRoomNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookPax = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookCheckInDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookCheckInTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookCheckOutdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookCheckOutTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refreshBookButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel1.SuspendLayout()
+        CType(Me.bookDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menuButton
@@ -205,6 +223,7 @@ Partial Class bookingTable
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel1.BorderRadius = 5
+        Me.Guna2Panel1.Controls.Add(Me.bookDGV)
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
         Me.Guna2Panel1.Location = New System.Drawing.Point(31, 185)
         Me.Guna2Panel1.Name = "Guna2Panel1"
@@ -217,6 +236,157 @@ Partial Class bookingTable
         'dialogTimer
         '
         Me.dialogTimer.Interval = 5
+        '
+        'bookDGV
+        '
+        Me.bookDGV.AllowUserToAddRows = False
+        Me.bookDGV.AllowUserToDeleteRows = False
+        Me.bookDGV.AllowUserToResizeColumns = False
+        Me.bookDGV.AllowUserToResizeRows = False
+        Me.bookDGV.AlternatingRowsDefaultCellStyle = Me.bookDGV.DefaultCellStyle
+        Me.bookDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
+        Me.bookDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Raleway", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bookDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.bookDGV.ColumnHeadersHeight = 40
+        Me.bookDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookingId, Me.bookFname, Me.bookLname, Me.bookEmail, Me.bookPhoneNo, Me.bookRoomName, Me.bookRoomNo, Me.bookPax, Me.bookCheckInDate, Me.bookCheckInTime, Me.bookCheckOutdate, Me.bookCheckOutTime})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.bookDGV.DefaultCellStyle = DataGridViewCellStyle2
+        Me.bookDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bookDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.bookDGV.Location = New System.Drawing.Point(0, 0)
+        Me.bookDGV.Name = "bookDGV"
+        Me.bookDGV.ReadOnly = True
+        Me.bookDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bookDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.bookDGV.RowHeadersVisible = False
+        Me.bookDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.bookDGV.RowTemplate.Height = 40
+        Me.bookDGV.RowTemplate.ReadOnly = True
+        Me.bookDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.bookDGV.Size = New System.Drawing.Size(1080, 570)
+        Me.bookDGV.TabIndex = 1
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.bookDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Black
+        Me.bookDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.bookDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bookDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.bookDGV.ThemeStyle.HeaderStyle.Height = 40
+        Me.bookDGV.ThemeStyle.ReadOnly = True
+        Me.bookDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.bookDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bookDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.bookDGV.ThemeStyle.RowsStyle.Height = 40
+        Me.bookDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.bookDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
+        '
+        'bookingId
+        '
+        Me.bookingId.HeaderText = "ID"
+        Me.bookingId.Name = "bookingId"
+        Me.bookingId.ReadOnly = True
+        Me.bookingId.Width = 50
+        '
+        'bookFname
+        '
+        Me.bookFname.HeaderText = "FIRST NAME"
+        Me.bookFname.Name = "bookFname"
+        Me.bookFname.ReadOnly = True
+        Me.bookFname.Width = 120
+        '
+        'bookLname
+        '
+        Me.bookLname.HeaderText = "LAST NAME"
+        Me.bookLname.Name = "bookLname"
+        Me.bookLname.ReadOnly = True
+        Me.bookLname.Width = 120
+        '
+        'bookEmail
+        '
+        Me.bookEmail.HeaderText = "EMAIL"
+        Me.bookEmail.Name = "bookEmail"
+        Me.bookEmail.ReadOnly = True
+        Me.bookEmail.Width = 75
+        '
+        'bookPhoneNo
+        '
+        Me.bookPhoneNo.HeaderText = "PHONE NO"
+        Me.bookPhoneNo.Name = "bookPhoneNo"
+        Me.bookPhoneNo.ReadOnly = True
+        '
+        'bookRoomName
+        '
+        Me.bookRoomName.HeaderText = "ROOM NAME"
+        Me.bookRoomName.Name = "bookRoomName"
+        Me.bookRoomName.ReadOnly = True
+        Me.bookRoomName.Width = 120
+        '
+        'bookRoomNo
+        '
+        Me.bookRoomNo.HeaderText = "ROOM NO"
+        Me.bookRoomNo.Name = "bookRoomNo"
+        Me.bookRoomNo.ReadOnly = True
+        '
+        'bookPax
+        '
+        Me.bookPax.HeaderText = "PAX"
+        Me.bookPax.Name = "bookPax"
+        Me.bookPax.ReadOnly = True
+        Me.bookPax.Width = 50
+        '
+        'bookCheckInDate
+        '
+        Me.bookCheckInDate.HeaderText = "CHECK IN DATE"
+        Me.bookCheckInDate.Name = "bookCheckInDate"
+        Me.bookCheckInDate.ReadOnly = True
+        Me.bookCheckInDate.Width = 130
+        '
+        'bookCheckInTime
+        '
+        Me.bookCheckInTime.HeaderText = "CHECK IN TIME"
+        Me.bookCheckInTime.Name = "bookCheckInTime"
+        Me.bookCheckInTime.ReadOnly = True
+        Me.bookCheckInTime.Width = 130
+        '
+        'bookCheckOutdate
+        '
+        Me.bookCheckOutdate.HeaderText = "CHECK OUT DATE"
+        Me.bookCheckOutdate.Name = "bookCheckOutdate"
+        Me.bookCheckOutdate.ReadOnly = True
+        Me.bookCheckOutdate.Width = 150
+        '
+        'bookCheckOutTime
+        '
+        Me.bookCheckOutTime.HeaderText = "CHECK OUT TIME"
+        Me.bookCheckOutTime.Name = "bookCheckOutTime"
+        Me.bookCheckOutTime.ReadOnly = True
+        Me.bookCheckOutTime.Width = 150
         '
         'bookingTable
         '
@@ -242,6 +412,8 @@ Partial Class bookingTable
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.refreshBookButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
+        CType(Me.bookDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -260,4 +432,17 @@ Partial Class bookingTable
     Friend WithEvents searchBookTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer
+    Friend WithEvents bookDGV As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents bookingId As DataGridViewTextBoxColumn
+    Friend WithEvents bookFname As DataGridViewTextBoxColumn
+    Friend WithEvents bookLname As DataGridViewTextBoxColumn
+    Friend WithEvents bookEmail As DataGridViewTextBoxColumn
+    Friend WithEvents bookPhoneNo As DataGridViewTextBoxColumn
+    Friend WithEvents bookRoomName As DataGridViewTextBoxColumn
+    Friend WithEvents bookRoomNo As DataGridViewTextBoxColumn
+    Friend WithEvents bookPax As DataGridViewTextBoxColumn
+    Friend WithEvents bookCheckInDate As DataGridViewTextBoxColumn
+    Friend WithEvents bookCheckInTime As DataGridViewTextBoxColumn
+    Friend WithEvents bookCheckOutdate As DataGridViewTextBoxColumn
+    Friend WithEvents bookCheckOutTime As DataGridViewTextBoxColumn
 End Class

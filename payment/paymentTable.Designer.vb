@@ -24,6 +24,9 @@ Partial Class paymentTable
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(paymentTable))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.menuButton = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -37,10 +40,18 @@ Partial Class paymentTable
         Me.searchPaymentTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.bookDGV = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.paymentId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.paymentMethod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.oxPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel1.SuspendLayout()
+        CType(Me.bookDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menuButton
@@ -183,6 +194,7 @@ Partial Class paymentTable
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel1.BorderRadius = 5
+        Me.Guna2Panel1.Controls.Add(Me.bookDGV)
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
         Me.Guna2Panel1.Location = New System.Drawing.Point(31, 185)
         Me.Guna2Panel1.Name = "Guna2Panel1"
@@ -195,6 +207,109 @@ Partial Class paymentTable
         'dialogTimer
         '
         Me.dialogTimer.Interval = 5
+        '
+        'bookDGV
+        '
+        Me.bookDGV.AllowUserToAddRows = False
+        Me.bookDGV.AllowUserToDeleteRows = False
+        Me.bookDGV.AllowUserToResizeColumns = False
+        Me.bookDGV.AllowUserToResizeRows = False
+        Me.bookDGV.AlternatingRowsDefaultCellStyle = Me.bookDGV.DefaultCellStyle
+        Me.bookDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
+        Me.bookDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Raleway", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bookDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.bookDGV.ColumnHeadersHeight = 40
+        Me.bookDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.paymentId, Me.paymentMethod, Me.oxPrice, Me.totalPrice, Me.status})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.bookDGV.DefaultCellStyle = DataGridViewCellStyle2
+        Me.bookDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bookDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.bookDGV.Location = New System.Drawing.Point(0, 0)
+        Me.bookDGV.Name = "bookDGV"
+        Me.bookDGV.ReadOnly = True
+        Me.bookDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bookDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.bookDGV.RowHeadersVisible = False
+        Me.bookDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.bookDGV.RowTemplate.Height = 40
+        Me.bookDGV.RowTemplate.ReadOnly = True
+        Me.bookDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.bookDGV.Size = New System.Drawing.Size(1080, 570)
+        Me.bookDGV.TabIndex = 2
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.bookDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Black
+        Me.bookDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.bookDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bookDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.bookDGV.ThemeStyle.HeaderStyle.Height = 40
+        Me.bookDGV.ThemeStyle.ReadOnly = True
+        Me.bookDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.bookDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.bookDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bookDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.bookDGV.ThemeStyle.RowsStyle.Height = 40
+        Me.bookDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.bookDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
+        '
+        'paymentId
+        '
+        Me.paymentId.HeaderText = "ID"
+        Me.paymentId.Name = "paymentId"
+        Me.paymentId.ReadOnly = True
+        '
+        'paymentMethod
+        '
+        Me.paymentMethod.HeaderText = "PAYMENT METHOD"
+        Me.paymentMethod.Name = "paymentMethod"
+        Me.paymentMethod.ReadOnly = True
+        Me.paymentMethod.Width = 245
+        '
+        'oxPrice
+        '
+        Me.oxPrice.HeaderText = "ORDER EXTRAS PRICE"
+        Me.oxPrice.Name = "oxPrice"
+        Me.oxPrice.ReadOnly = True
+        Me.oxPrice.Width = 270
+        '
+        'totalPrice
+        '
+        Me.totalPrice.HeaderText = "TOTAL PRICE"
+        Me.totalPrice.Name = "totalPrice"
+        Me.totalPrice.ReadOnly = True
+        Me.totalPrice.Width = 270
+        '
+        'status
+        '
+        Me.status.HeaderText = "STATUS"
+        Me.status.Name = "status"
+        Me.status.ReadOnly = True
+        Me.status.Width = 195
         '
         'paymentTable
         '
@@ -219,6 +334,8 @@ Partial Class paymentTable
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
+        CType(Me.bookDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -236,4 +353,10 @@ Partial Class paymentTable
     Friend WithEvents searchPaymentTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer
+    Friend WithEvents bookDGV As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents paymentId As DataGridViewTextBoxColumn
+    Friend WithEvents paymentMethod As DataGridViewTextBoxColumn
+    Friend WithEvents oxPrice As DataGridViewTextBoxColumn
+    Friend WithEvents totalPrice As DataGridViewTextBoxColumn
+    Friend WithEvents status As DataGridViewTextBoxColumn
 End Class
