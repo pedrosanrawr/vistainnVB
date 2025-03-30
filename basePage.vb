@@ -1,6 +1,4 @@
-﻿Imports System.Net.Security
-
-Public Class basePage
+﻿Public Class basePage
     Public Property FormToLoad As Form
 
     Private Sub basePage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
