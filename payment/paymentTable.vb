@@ -1,5 +1,5 @@
 ﻿Public Class paymentTable
-    Dim menuForm As New menuForm()
+    Dim menuForm As Form
     Dim editPaymentDialog As New editPaymentDialog()
     Dim overlayPanel As New Panel()
     Dim menuVisible As Boolean = False
@@ -9,6 +9,15 @@
     Private Sub bookingTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
         Timer1.Start()
+
+        Select Case Employee.Role
+            Case "Staff"
+                menuForm = New menuFormStaff()
+            Case "Manager"
+                menuForm = New menuFormManager()
+            Case "Admin"
+                menuForm = New menuForm()
+        End Select
 
         overlayPanel.Dock = DockStyle.Fill
         overlayPanel.BackColor = Color.Transparent

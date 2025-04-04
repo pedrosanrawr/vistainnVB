@@ -1,5 +1,9 @@
-﻿Public Class roomTable
-    Dim menuForm As New menuForm()
+﻿Imports System.Data.SqlClient
+Imports TheArtOfDev.HtmlRenderer.Adapters
+
+Public Class roomTable
+    Dim menuForm As Form
+    Dim database As New database()
     Dim addRoomDialog As New addRoomDialog()
     Dim editRoomDialog As New editRoomDialog()
     Dim overlayPanel As New Panel()
@@ -10,6 +14,15 @@
     Private Sub roomTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
         Timer1.Start()
+
+        Select Case Employee.Role
+            Case "Staff"
+                menuForm = New menuFormStaff()
+            Case "Manager"
+                menuForm = New menuFormManager()
+            Case "Admin"
+                menuForm = New menuForm()
+        End Select
 
         overlayPanel.Dock = DockStyle.Fill
         overlayPanel.BackColor = Color.Transparent
@@ -32,10 +45,7 @@
         SDialog(addRoomDialog)
         SDialog(editRoomDialog)
 
-        Me.roomDGV.Rows.Add("1", "Deluxe Room", "101", "100$", "Luxury", "1", "1", "Smart TV", "Yes", "Wi-Fi", "Available")
-        Me.roomDGV.Rows.Add("2", "Standard Room", "102", "75$", "Standard", "1", "1", "Cable TV", "No", "None", "Occupied")
-        Me.roomDGV.Rows.Add("3", "Suite", "103", "200$", "Premium", "2", "2", "Smart TV, Sound System", "Yes", "Full", "Available")
-        Me.roomDGV.Rows.Add("4", "Single Room", "104", "50$", "Budget", "1", "1", "None", "No", "None", "Maintenance")
+        LoadRoomData()
     End Sub
 
     Private Sub InitializeDialog(dialog As Form)
@@ -115,5 +125,50 @@
             dialogTimer.Stop()
             overlayPanel.Visible = False
         End If
+    End Sub
+
+    Public Sub LoadRoomData()
+        Dim query As String = "SELECT * FROM rooms"
+
+        Using conn As New SqlConnection(database.connectionString)
+            Dim adapter As New SqlDataAdapter(query, conn)
+            Dim dt As New DataTable()
+
+            Try
+                conn.Open()
+                adapter.Fill(dt)
+
+                roomDGV.DataSource = dt
+                roomDGV.Columns("rImage").Visible = False
+
+                roomDGV.Columns("roomPrice").DefaultCellStyle.Format = "C2"
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Using
+    End Sub
+
+    Private Sub roomDGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles roomDGV.CellClick
+        If e.RowIndex >= 0 Then
+            Dim selectedRow As DataGridViewRow = roomDGV.Rows(e.RowIndex)
+
+            Dim roomId As String = selectedRow.Cells("roomId").Value.ToString()
+            Dim roomNo As String = selectedRow.Cells("roomNo").Value.ToString()
+            Dim roomName As String = selectedRow.Cells("roomName").Value.ToString()
+            Dim roomPrice As Decimal = selectedRow.Cells("roomPrice").Value.ToString()
+            Dim roomCapacity As String = selectedRow.Cells("roomCategory").Value.ToString()
+            Dim roomBedroom As String = selectedRow.Cells("roomBedroom").Value.ToString()
+            Dim roomBathroom As String = selectedRow.Cells("roomBathroom").Value.ToString()
+            Dim roomKitchen As String = selectedRow.Cells("roomKitchen").Value.ToString()
+            Dim roomTechnology As String = selectedRow.Cells("roomTechnology").Value.ToString()
+            Dim roomGeneral As String = selectedRow.Cells("roomGeneral").Value.ToString()
+            Dim roomStatus As String = selectedRow.Cells("roomStatus").Value.ToString()
+
+            editRoomDialog.PopulateFields(roomId, roomNo, roomName, roomPrice, roomCapacity, roomBedroom, roomBathroom, roomKitchen, roomTechnology, roomGeneral, roomStatus)
+        End If
+    End Sub
+
+    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
+        LoadRoomData()
     End Sub
 End Class

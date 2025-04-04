@@ -1,5 +1,5 @@
 ﻿Public Class bookingTable
-    Dim menuForm As New menuForm()
+    Dim menuForm As Form
     Dim addBookDialog As New addBookDialog()
     Dim editBookDialog As New editBookDialog()
     Dim overlayPanel As New Panel()
@@ -10,6 +10,15 @@
     Private Sub bookingTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
         Timer1.Start()
+
+        Select Case Employee.Role
+            Case "Staff"
+                menuForm = New menuFormStaff()
+            Case "Manager"
+                menuForm = New menuFormManager()
+            Case "Admin"
+                menuForm = New menuForm()
+        End Select
 
         overlayPanel.Dock = DockStyle.Fill
         overlayPanel.BackColor = Color.Transparent

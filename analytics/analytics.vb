@@ -1,11 +1,20 @@
 ﻿Public Class analytics
-    Dim menuForm As New menuForm()
+    Dim menuForm As Form
     Dim menuVisible As Boolean = False
     Dim menuSpeed As Integer = 20
 
     Private Sub dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
         Timer1.Start()
+
+        Select Case Employee.Role
+            Case "Staff"
+                menuForm = New menuFormStaff()
+            Case "Manager"
+                menuForm = New menuFormManager()
+            Case "Admin"
+                menuForm = New menuForm()
+        End Select
 
         menuForm.TopLevel = False
         menuForm.Left = -menuForm.Width

@@ -82,6 +82,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="database.vb" />
     <Compile Include="employee\employeeTable.Designer.vb">
       <DependentUpon>employeeTable.vb</DependentUpon>
     </Compile>
@@ -147,6 +148,30 @@
       <DependentUpon>nestedTabTables.vb</DependentUpon>
     </Compile>
     <Compile Include="menu_admin\nestedTabTables.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="menu_manager\menuFormManager.Designer.vb">
+      <DependentUpon>menuFormManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu_manager\menuFormManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu_manager\nestedTabTablesManager.Designer.vb">
+      <DependentUpon>nestedTabTablesManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu_manager\nestedTabTablesManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="menu_staff\menuFormStaff.Designer.vb">
+      <DependentUpon>menuFormStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu_staff\menuFormStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu_staff\nestedTabTablesStaff.Designer.vb">
+      <DependentUpon>nestedTabTablesStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu_staff\nestedTabTablesStaff.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="payment\editPaymentDialog.Designer.vb">
@@ -218,11 +243,6 @@
     <Compile Include="room\roomTable.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vistainnMSDBDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>vistainnMSDBDataSet.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="employee\employeeTable.resx">
@@ -248,6 +268,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu_admin\nestedTabTables.resx">
       <DependentUpon>nestedTabTables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_manager\menuFormManager.resx">
+      <DependentUpon>menuFormManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_manager\nestedTabTablesManager.resx">
+      <DependentUpon>nestedTabTablesManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_staff\menuFormStaff.resx">
+      <DependentUpon>menuFormStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu_staff\nestedTabTablesStaff.resx">
+      <DependentUpon>nestedTabTablesStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="payment\editPaymentDialog.resx">
       <DependentUpon>editPaymentDialog.vb</DependentUpon>
@@ -304,23 +336,15 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="vistainnMSDBDataSet.xsc">
-      <DependentUpon>vistainnMSDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="vistainnMSDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>vistainnMSDBDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="vistainnMSDBDataSet.xss">
-      <DependentUpon>vistainnMSDBDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconHide.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconShow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

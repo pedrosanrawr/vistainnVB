@@ -44,7 +44,6 @@ Partial Class roomTable
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.roomDGV = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         Me.roomId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.roomName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.roomNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,6 +55,7 @@ Partial Class roomTable
         Me.roomKitchen = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.roomGeneral = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.roomStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -325,12 +325,9 @@ Partial Class roomTable
         Me.roomDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
         Me.roomDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
         '
-        'dialogTimer
-        '
-        Me.dialogTimer.Interval = 3
-        '
         'roomId
         '
+        Me.roomId.DataPropertyName = "rId"
         Me.roomId.HeaderText = "ID"
         Me.roomId.Name = "roomId"
         Me.roomId.ReadOnly = True
@@ -338,6 +335,7 @@ Partial Class roomTable
         '
         'roomName
         '
+        Me.roomName.DataPropertyName = "rName"
         Me.roomName.HeaderText = "NAME"
         Me.roomName.Name = "roomName"
         Me.roomName.ReadOnly = True
@@ -345,6 +343,7 @@ Partial Class roomTable
         '
         'roomNo
         '
+        Me.roomNo.DataPropertyName = "rRoomNo"
         Me.roomNo.HeaderText = "ROOM NO"
         Me.roomNo.Name = "roomNo"
         Me.roomNo.ReadOnly = True
@@ -352,6 +351,7 @@ Partial Class roomTable
         '
         'roomPrice
         '
+        Me.roomPrice.DataPropertyName = "rPrice"
         Me.roomPrice.HeaderText = "PRICE"
         Me.roomPrice.Name = "roomPrice"
         Me.roomPrice.ReadOnly = True
@@ -359,6 +359,7 @@ Partial Class roomTable
         '
         'roomCategory
         '
+        Me.roomCategory.DataPropertyName = "rCategory"
         Me.roomCategory.HeaderText = "CATEGORY"
         Me.roomCategory.Name = "roomCategory"
         Me.roomCategory.ReadOnly = True
@@ -366,6 +367,7 @@ Partial Class roomTable
         '
         'roomBedroom
         '
+        Me.roomBedroom.DataPropertyName = "rBedroom"
         Me.roomBedroom.HeaderText = "BEDROOM"
         Me.roomBedroom.Name = "roomBedroom"
         Me.roomBedroom.ReadOnly = True
@@ -373,6 +375,7 @@ Partial Class roomTable
         '
         'roomBathroom
         '
+        Me.roomBathroom.DataPropertyName = "rBathroom"
         Me.roomBathroom.HeaderText = "BATHROOM"
         Me.roomBathroom.Name = "roomBathroom"
         Me.roomBathroom.ReadOnly = True
@@ -380,6 +383,7 @@ Partial Class roomTable
         '
         'roomTechnology
         '
+        Me.roomTechnology.DataPropertyName = "rTechnology"
         Me.roomTechnology.HeaderText = "TECHNOLOGY"
         Me.roomTechnology.Name = "roomTechnology"
         Me.roomTechnology.ReadOnly = True
@@ -387,6 +391,7 @@ Partial Class roomTable
         '
         'roomKitchen
         '
+        Me.roomKitchen.DataPropertyName = "rKitchen"
         Me.roomKitchen.HeaderText = "KITCHEN"
         Me.roomKitchen.Name = "roomKitchen"
         Me.roomKitchen.ReadOnly = True
@@ -394,6 +399,7 @@ Partial Class roomTable
         '
         'roomGeneral
         '
+        Me.roomGeneral.DataPropertyName = "rGeneral"
         Me.roomGeneral.HeaderText = "GENERAL"
         Me.roomGeneral.Name = "roomGeneral"
         Me.roomGeneral.ReadOnly = True
@@ -401,10 +407,15 @@ Partial Class roomTable
         '
         'roomStatus
         '
+        Me.roomStatus.DataPropertyName = "rStatus"
         Me.roomStatus.HeaderText = "STATUS"
         Me.roomStatus.Name = "roomStatus"
         Me.roomStatus.ReadOnly = True
         Me.roomStatus.Width = 110
+        '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 3
         '
         'roomTable
         '

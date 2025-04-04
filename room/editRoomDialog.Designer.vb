@@ -33,11 +33,9 @@ Partial Class editRoomDialog
         Me.Label8 = New System.Windows.Forms.Label()
         Me.bedroomTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.capacityTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.rateTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.roomTypeTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.roomNoTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,6 +44,8 @@ Partial Class editRoomDialog
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.statusComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.capacityComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.roomTypeComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
         'logInButton
@@ -229,29 +229,6 @@ Partial Class editRoomDialog
         Me.Label7.TabIndex = 33
         Me.Label7.Text = "BEDROOM"
         '
-        'capacityTextBox
-        '
-        Me.capacityTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.capacityTextBox.BorderRadius = 5
-        Me.capacityTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.capacityTextBox.DefaultText = ""
-        Me.capacityTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.capacityTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.capacityTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.capacityTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.capacityTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.capacityTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.capacityTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.capacityTextBox.Location = New System.Drawing.Point(45, 500)
-        Me.capacityTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.capacityTextBox.Name = "capacityTextBox"
-        Me.capacityTextBox.PlaceholderText = ""
-        Me.capacityTextBox.SelectedText = ""
-        Me.capacityTextBox.ShadowDecoration.Enabled = True
-        Me.capacityTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.capacityTextBox.Size = New System.Drawing.Size(180, 50)
-        Me.capacityTextBox.TabIndex = 32
-        '
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
@@ -292,29 +269,6 @@ Partial Class editRoomDialog
         Me.Label5.Size = New System.Drawing.Size(167, 26)
         Me.Label5.TabIndex = 29
         Me.Label5.Text = "RATE"
-        '
-        'roomTypeTextBox
-        '
-        Me.roomTypeTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.roomTypeTextBox.BorderRadius = 5
-        Me.roomTypeTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.roomTypeTextBox.DefaultText = ""
-        Me.roomTypeTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.roomTypeTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.roomTypeTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.roomTypeTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.roomTypeTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.roomTypeTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.roomTypeTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.roomTypeTextBox.Location = New System.Drawing.Point(45, 340)
-        Me.roomTypeTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.roomTypeTextBox.Name = "roomTypeTextBox"
-        Me.roomTypeTextBox.PlaceholderText = ""
-        Me.roomTypeTextBox.SelectedText = ""
-        Me.roomTypeTextBox.ShadowDecoration.Enabled = True
-        Me.roomTypeTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.roomTypeTextBox.Size = New System.Drawing.Size(180, 50)
-        Me.roomTypeTextBox.TabIndex = 28
         '
         'Label4
         '
@@ -368,12 +322,13 @@ Partial Class editRoomDialog
         Me.roomIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.roomIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.roomIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.roomIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.roomIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.roomIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
         Me.roomIdTextBox.Location = New System.Drawing.Point(45, 180)
         Me.roomIdTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.roomIdTextBox.Name = "roomIdTextBox"
         Me.roomIdTextBox.PlaceholderText = ""
+        Me.roomIdTextBox.ReadOnly = True
         Me.roomIdTextBox.SelectedText = ""
         Me.roomIdTextBox.ShadowDecoration.Enabled = True
         Me.roomIdTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -422,6 +377,7 @@ Partial Class editRoomDialog
         Me.statusComboBox.ForeColor = System.Drawing.Color.Black
         Me.statusComboBox.IntegralHeight = False
         Me.statusComboBox.ItemHeight = 44
+        Me.statusComboBox.Items.AddRange(New Object() {"Available", "Occupied", "Maintenance"})
         Me.statusComboBox.Location = New System.Drawing.Point(45, 580)
         Me.statusComboBox.Name = "statusComboBox"
         Me.statusComboBox.ShadowDecoration.Enabled = True
@@ -429,12 +385,56 @@ Partial Class editRoomDialog
         Me.statusComboBox.Size = New System.Drawing.Size(180, 50)
         Me.statusComboBox.TabIndex = 86
         '
+        'capacityComboBox
+        '
+        Me.capacityComboBox.BackColor = System.Drawing.Color.Transparent
+        Me.capacityComboBox.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.capacityComboBox.BorderRadius = 5
+        Me.capacityComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.capacityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.capacityComboBox.FocusedColor = System.Drawing.Color.Black
+        Me.capacityComboBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.capacityComboBox.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.capacityComboBox.ForeColor = System.Drawing.Color.Black
+        Me.capacityComboBox.IntegralHeight = False
+        Me.capacityComboBox.ItemHeight = 44
+        Me.capacityComboBox.Items.AddRange(New Object() {"Single", "Duo", "Family", "Team"})
+        Me.capacityComboBox.Location = New System.Drawing.Point(45, 500)
+        Me.capacityComboBox.Name = "capacityComboBox"
+        Me.capacityComboBox.ShadowDecoration.Enabled = True
+        Me.capacityComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.capacityComboBox.Size = New System.Drawing.Size(180, 50)
+        Me.capacityComboBox.TabIndex = 87
+        '
+        'roomTypeComboBox
+        '
+        Me.roomTypeComboBox.BackColor = System.Drawing.Color.Transparent
+        Me.roomTypeComboBox.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.roomTypeComboBox.BorderRadius = 5
+        Me.roomTypeComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.roomTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.roomTypeComboBox.FocusedColor = System.Drawing.Color.Black
+        Me.roomTypeComboBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.roomTypeComboBox.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.roomTypeComboBox.ForeColor = System.Drawing.Color.Black
+        Me.roomTypeComboBox.IntegralHeight = False
+        Me.roomTypeComboBox.ItemHeight = 44
+        Me.roomTypeComboBox.Items.AddRange(New Object() {"Single", "Double", "Suite", "Family", "Deluxe", "King", "Queen", "Studio", "Penthouse", "Presedential Suite"})
+        Me.roomTypeComboBox.Location = New System.Drawing.Point(45, 340)
+        Me.roomTypeComboBox.Name = "roomTypeComboBox"
+        Me.roomTypeComboBox.ShadowDecoration.Enabled = True
+        Me.roomTypeComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.roomTypeComboBox.Size = New System.Drawing.Size(180, 50)
+        Me.roomTypeComboBox.TabIndex = 88
+        '
         'editRoomDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(571, 790)
+        Me.Controls.Add(Me.roomTypeComboBox)
+        Me.Controls.Add(Me.capacityComboBox)
         Me.Controls.Add(Me.statusComboBox)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.logInButton)
@@ -451,9 +451,7 @@ Partial Class editRoomDialog
         Me.Controls.Add(Me.roomIdTextBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.capacityTextBox)
         Me.Controls.Add(Me.rateTextBox)
-        Me.Controls.Add(Me.roomTypeTextBox)
         Me.Controls.Add(Me.roomNoTextBox)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -478,11 +476,9 @@ Partial Class editRoomDialog
     Friend WithEvents Label8 As Label
     Friend WithEvents bedroomTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents capacityTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents rateTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents roomTypeTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents roomNoTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
@@ -491,4 +487,6 @@ Partial Class editRoomDialog
     Friend WithEvents Label1 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents statusComboBox As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents capacityComboBox As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents roomTypeComboBox As Guna.UI2.WinForms.Guna2ComboBox
 End Class

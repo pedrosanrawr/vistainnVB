@@ -1,4 +1,7 @@
-﻿Public Class logInForm
+﻿Imports System.Data.SqlClient
+
+Public Class logInForm
+    Dim database As New database()
     Private Sub logInForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         passwordTextBox.PasswordChar = "•"c
     End Sub
@@ -24,6 +27,49 @@
     End Sub
 
     Private Sub logInButton_Click(sender As Object, e As EventArgs) Handles logInButton.Click
-        parentPage.loadForm(New analytics())
+        Dim email As String = emailTextBox.Text
+        Dim password As String = passwordTextBox.Text
+        Dim role As String = ""
+
+        Dim conn As New SqlConnection(database.connectionString)
+
+        Try
+            conn.Open()
+            Dim query As String = "SELECT eRole FROM employee where eEmail=@eEmail AND ePassword=@ePassword"
+            Dim cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@eEmail", email)
+            cmd.Parameters.AddWithValue("@ePassword", password)
+
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+            If reader.Read() Then
+                Employee.Email = email
+                Employee.Role = reader("eRole").ToString()
+                role = reader("eRole").ToString()
+
+                Select Case role
+                    Case "Admin"
+                        basePage.loadForm(New analytics)
+                    Case "Staff"
+                        basePage.loadForm(New bookingTable)
+                    Case "Manager"
+                        basePage.loadForm(New roomTable)
+                End Select
+            Else
+                MessageBox.Show("The username or password is incorrect", "Log In Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        conn.Close()
     End Sub
+End Class
+
+Class Employee
+    Public Shared Property Email As String
+    Public Shared Property Role As String
+
 End Class
