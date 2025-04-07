@@ -89,6 +89,7 @@ Partial Class logInForm
         'forgotPasswordLabelLink
         '
         Me.forgotPasswordLabelLink.AutoSize = True
+        Me.forgotPasswordLabelLink.Cursor = System.Windows.Forms.Cursors.Hand
         Me.forgotPasswordLabelLink.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.forgotPasswordLabelLink.Location = New System.Drawing.Point(323, 440)
         Me.forgotPasswordLabelLink.Name = "forgotPasswordLabelLink"

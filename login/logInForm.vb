@@ -35,36 +35,49 @@ Public Class logInForm
 
         Try
             conn.Open()
-            Dim query As String = "SELECT eRole FROM employee where eEmail=@eEmail AND ePassword=@ePassword"
-            Dim cmd As New SqlCommand(query, conn)
+
+            Dim checkEmailQuery As String = "SELECT eRole, ePassword FROM employee WHERE eEmail=@eEmail"
+            Dim cmd As New SqlCommand(checkEmailQuery, conn)
             cmd.Parameters.AddWithValue("@eEmail", email)
-            cmd.Parameters.AddWithValue("@ePassword", password)
 
             Dim reader As SqlDataReader = cmd.ExecuteReader()
 
             If reader.Read() Then
-                Employee.Email = email
-                Employee.Role = reader("eRole").ToString()
-                role = reader("eRole").ToString()
+                Dim storedPassword As String = reader("ePassword").ToString()
 
-                Select Case role
-                    Case "Admin"
-                        basePage.loadForm(New analytics)
-                    Case "Staff"
-                        basePage.loadForm(New bookingTable)
-                    Case "Manager"
-                        basePage.loadForm(New roomTable)
-                End Select
+                If storedPassword = password Then
+                    Employee.Email = email
+                    Employee.Role = reader("eRole").ToString()
+                    role = Employee.Role
+
+                    Select Case role
+                        Case "Admin"
+                            basePage.loadForm(New analytics())
+                        Case "Staff"
+                            basePage.loadForm(New bookingTable())
+                        Case "Manager"
+                            basePage.loadForm(New roomTable())
+                    End Select
+                Else
+                    MessageBox.Show("The password you entered is incorrect.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
             Else
-                MessageBox.Show("The username or password is incorrect", "Log In Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("The email address is not registered or invalid. Please check your email.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
             reader.Close()
+
         Catch ex As Exception
             MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close()
         End Try
+    End Sub
 
-        conn.Close()
+    Private Sub forgotPasswordLabelLink_Click(sender As Object, e As EventArgs) Handles forgotPasswordLabelLink.Click
+        Dim forgotPassword_send As New forgotPassword_send()
+        forgotPassword_send.ShowDialog()
     End Sub
 End Class
 

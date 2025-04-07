@@ -22,7 +22,7 @@ Partial Class editRoomDialog
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.editRoomButton = New Guna.UI2.WinForms.Guna2Button()
         Me.generalTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.technologyTextBox = New Guna.UI2.WinForms.Guna2TextBox()
@@ -48,26 +48,26 @@ Partial Class editRoomDialog
         Me.roomTypeComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
-        'logInButton
+        'editRoomButton
         '
-        Me.logInButton.BackColor = System.Drawing.Color.Transparent
-        Me.logInButton.BorderRadius = 5
-        Me.logInButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.logInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.logInButton.FillColor = System.Drawing.Color.Black
-        Me.logInButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.logInButton.ForeColor = System.Drawing.Color.White
-        Me.logInButton.Location = New System.Drawing.Point(225, 704)
-        Me.logInButton.Name = "logInButton"
-        Me.logInButton.ShadowDecoration.BorderRadius = 5
-        Me.logInButton.ShadowDecoration.Enabled = True
-        Me.logInButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.logInButton.Size = New System.Drawing.Size(120, 50)
-        Me.logInButton.TabIndex = 43
-        Me.logInButton.Text = "EDIT"
+        Me.editRoomButton.BackColor = System.Drawing.Color.Transparent
+        Me.editRoomButton.BorderRadius = 5
+        Me.editRoomButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.editRoomButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.editRoomButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.editRoomButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.editRoomButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.editRoomButton.FillColor = System.Drawing.Color.Black
+        Me.editRoomButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.editRoomButton.ForeColor = System.Drawing.Color.White
+        Me.editRoomButton.Location = New System.Drawing.Point(225, 704)
+        Me.editRoomButton.Name = "editRoomButton"
+        Me.editRoomButton.ShadowDecoration.BorderRadius = 5
+        Me.editRoomButton.ShadowDecoration.Enabled = True
+        Me.editRoomButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.editRoomButton.Size = New System.Drawing.Size(120, 50)
+        Me.editRoomButton.TabIndex = 43
+        Me.editRoomButton.Text = "EDIT"
         '
         'generalTextBox
         '
@@ -437,7 +437,7 @@ Partial Class editRoomDialog
         Me.Controls.Add(Me.capacityComboBox)
         Me.Controls.Add(Me.statusComboBox)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.logInButton)
+        Me.Controls.Add(Me.editRoomButton)
         Me.Controls.Add(Me.generalTextBox)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.technologyTextBox)
@@ -465,7 +465,7 @@ Partial Class editRoomDialog
 
     End Sub
 
-    Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents editRoomButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents generalTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents technologyTextBox As Guna.UI2.WinForms.Guna2TextBox

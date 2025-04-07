@@ -6,10 +6,13 @@ Public Class roomTable
     Dim database As New database()
     Dim addRoomDialog As New addRoomDialog()
     Dim editRoomDialog As New editRoomDialog()
+    Dim roomPhotos As New roomPhotos()
     Dim overlayPanel As New Panel()
     Dim menuVisible As Boolean = False
     Dim slidingIn As Boolean = False
     Dim editingIn As Boolean = False
+    Dim roomPhotosIn As Boolean = False
+    Dim HideButtons As New HideButtons()
 
     Private Sub roomTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
@@ -42,8 +45,13 @@ Public Class roomTable
 
         InitializeDialog(addRoomDialog)
         InitializeDialog(editRoomDialog)
+        InitializeDialog(roomPhotos)
         SDialog(addRoomDialog)
         SDialog(editRoomDialog)
+        SDialog(roomPhotos)
+        HideButtons.hideButtonsRooms(Me)
+        AddHandler addRoomDialog.RoomAdded, AddressOf AddRoomDialog_RoomAdded
+        AddHandler editRoomDialog.RoomEdited, AddressOf EditRoomDialog_RoomEdited
 
         LoadRoomData()
     End Sub
@@ -98,10 +106,18 @@ Public Class roomTable
         dialogTimer.Start()
     End Sub
 
+    Private Sub roomPhotosButton_Click(sender As Object, e As EventArgs) Handles roomPhotosButton.Click
+        overlayPanel.Visible = True
+        roomPhotosIn = True
+        dialogTimer.Start()
+    End Sub
+
     Private Sub overlayPanel_Click(sender As Object, e As EventArgs)
         slidingIn = False
         editingIn = False
+        roomPhotosIn = False
         dialogTimer.Start()
+        roomPhotos.LoadRoomPhotos()
     End Sub
 
     Private Sub dialogTimer_Tick(sender As Object, e As EventArgs) Handles dialogTimer.Tick
@@ -109,6 +125,8 @@ Public Class roomTable
             SlideDialogIn(addRoomDialog)
         ElseIf editingIn Then
             SlideDialogIn(editRoomDialog)
+        ElseIf roomPhotosIn Then
+            SlideDialogIn(roomPhotos)
         Else
             SlideDialogsOut()
         End If
@@ -121,7 +139,8 @@ Public Class roomTable
     Private Sub SlideDialogsOut()
         If addRoomDialog.Left < Me.Width Then addRoomDialog.Left += 20
         If editRoomDialog.Left < Me.Width Then editRoomDialog.Left += 20
-        If addRoomDialog.Left >= Me.Width AndAlso editRoomDialog.Left >= Me.Width Then
+        If roomPhotos.Left < Me.Width Then roomPhotos.Left += 20
+        If addRoomDialog.Left >= Me.Width AndAlso editRoomDialog.Left >= Me.Width AndAlso roomPhotos.Left >= Me.Width Then
             dialogTimer.Stop()
             overlayPanel.Visible = False
         End If
@@ -169,6 +188,14 @@ Public Class roomTable
     End Sub
 
     Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
+        LoadRoomData()
+    End Sub
+
+    Private Sub AddRoomDialog_RoomAdded(sender As Object, e As EventArgs)
+        LoadRoomData()
+    End Sub
+
+    Private Sub EditRoomDialog_RoomEdited(sender As Object, e As EventArgs)
         LoadRoomData()
     End Sub
 End Class

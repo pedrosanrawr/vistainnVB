@@ -48,6 +48,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v24.2, Version=24.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>packages\DevExpress.Data.24.2.6\lib\net462\DevExpress.Data.v24.2.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
@@ -144,6 +147,25 @@
     <Compile Include="extras\editExtraDialog.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HideButtons.vb" />
+    <Compile Include="login\changePassword.Designer.vb">
+      <DependentUpon>changePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login\changePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login\fogotPassword_verify.Designer.vb">
+      <DependentUpon>fogotPassword_verify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login\fogotPassword_verify.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login\forgotPassword_send.Designer.vb">
+      <DependentUpon>forgotPassword_send.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login\forgotPassword_send.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="menu_admin\nestedTabTables.Designer.vb">
       <DependentUpon>nestedTabTables.vb</DependentUpon>
     </Compile>
@@ -237,12 +259,19 @@
     <Compile Include="profile\profile.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="room\roomPhotos.Designer.vb">
+      <DependentUpon>roomPhotos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="room\roomPhotos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="room\roomTable.Designer.vb">
       <DependentUpon>roomTable.vb</DependentUpon>
     </Compile>
     <Compile Include="room\roomTable.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="room\roomValidations.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="employee\employeeTable.resx">
@@ -265,6 +294,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="extras\editExtraDialog.resx">
       <DependentUpon>editExtraDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login\changePassword.resx">
+      <DependentUpon>changePassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login\fogotPassword_verify.resx">
+      <DependentUpon>fogotPassword_verify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login\forgotPassword_send.resx">
+      <DependentUpon>forgotPassword_send.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu_admin\nestedTabTables.resx">
       <DependentUpon>nestedTabTables.vb</DependentUpon>
@@ -319,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="profile\profile.resx">
       <DependentUpon>profile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room\roomPhotos.resx">
+      <DependentUpon>roomPhotos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="room\roomTable.resx">
       <DependentUpon>roomTable.vb</DependentUpon>

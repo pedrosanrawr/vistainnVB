@@ -2,9 +2,10 @@
 
 Public Class addRoomDialog
     Dim database As New database()
+    Public Event RoomAdded As EventHandler
 
     Private Sub btnAddRoom_Click(sender As Object, e As EventArgs) Handles addButton.Click
-        Dim rName As String = roomTypeTextBox.Text
+        Dim rName As String = roomTypeComboBox.Text
         Dim rRoomNo As String = roomNoTextBox.Text
         Dim rPrice As Decimal
         Decimal.TryParse(rateTextBox.Text, rPrice)
@@ -16,8 +17,16 @@ Public Class addRoomDialog
         Dim rGeneral As String = generalTextBox.Text
         Dim rStatus As String = statusComboBox.Text
 
-        If String.IsNullOrWhiteSpace(rName) OrElse String.IsNullOrWhiteSpace(rRoomNo) OrElse rPrice <= 0 OrElse String.IsNullOrWhiteSpace(rCategory) Then
-            MessageBox.Show("Please fill all required fields correctly.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Dim validationMessage As String = roomValidations.ValidateRoomFields(rName, rRoomNo, rCategory, rBedroom, rBathroom,
+                                                                           rTechnology, rKitchen, rGeneral, rStatus, rPrice)
+
+        If Not String.IsNullOrEmpty(validationMessage) Then
+            MessageBox.Show(validationMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If roomValidations.RoomNumberExists(rRoomNo, database.connectionString) Then
+            MessageBox.Show("The room number already exists. Please choose a different room number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
@@ -44,7 +53,7 @@ Public Class addRoomDialog
 
                 If rowsAffected > 0 Then
                     MessageBox.Show("Room added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Me.Close()
+                    RaiseEvent RoomAdded(Me, EventArgs.Empty)
                 Else
                     MessageBox.Show("An error occurred while adding the room.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -52,8 +61,6 @@ Public Class addRoomDialog
                 MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End Using
-
-        roomTable.LoadRoomData()
     End Sub
-
 End Class
+

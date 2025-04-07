@@ -6,6 +6,7 @@
     Dim menuVisible As Boolean = False
     Dim slidingIn As Boolean = False
     Dim editingIn As Boolean = False
+    Dim HideButtons As New HideButtons()
 
     Private Sub bookingTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
@@ -40,6 +41,7 @@
         InitializeDialog(editExtraDialog)
         SDialog(addExtrasDialog)
         SDialog(editExtraDialog)
+        HideButtons.hideButtonsExtras(Me)
     End Sub
 
     Private Sub InitializeDialog(dialog As Form)

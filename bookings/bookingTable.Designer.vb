@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class bookingTable
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class bookingTable
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(bookingTable))
@@ -40,7 +40,6 @@ Partial Class bookingTable
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.searchBookTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         Me.bookDGV = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.bookingId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookFname = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,6 +53,7 @@ Partial Class bookingTable
         Me.bookCheckInTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookCheckOutdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookCheckOutTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refreshBookButton, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,10 +233,6 @@ Partial Class bookingTable
         Me.Guna2Panel1.Size = New System.Drawing.Size(1080, 570)
         Me.Guna2Panel1.TabIndex = 18
         '
-        'dialogTimer
-        '
-        Me.dialogTimer.Interval = 5
-        '
         'bookDGV
         '
         Me.bookDGV.AllowUserToAddRows = False
@@ -388,6 +384,10 @@ Partial Class bookingTable
         Me.bookCheckOutTime.ReadOnly = True
         Me.bookCheckOutTime.Width = 150
         '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 5
+        '
         'bookingTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -445,4 +445,5 @@ Partial Class bookingTable
     Friend WithEvents bookCheckInTime As DataGridViewTextBoxColumn
     Friend WithEvents bookCheckOutdate As DataGridViewTextBoxColumn
     Friend WithEvents bookCheckOutTime As DataGridViewTextBoxColumn
+    Friend WithEvents toolTipAdd As ToolTip
 End Class

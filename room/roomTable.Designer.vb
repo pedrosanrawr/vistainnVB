@@ -38,7 +38,6 @@ Partial Class roomTable
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
         Me.addRoomButton = New Guna.UI2.WinForms.Guna2Button()
         Me.editRoomButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.deleteRoomButton = New Guna.UI2.WinForms.Guna2Button()
         Me.roomPhotosButton = New Guna.UI2.WinForms.Guna2Button()
         Me.searchRoomButton = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -165,27 +164,6 @@ Partial Class roomTable
         Me.editRoomButton.TabIndex = 11
         Me.editRoomButton.Text = "EDIT"
         '
-        'deleteRoomButton
-        '
-        Me.deleteRoomButton.BackColor = System.Drawing.Color.Transparent
-        Me.deleteRoomButton.BorderRadius = 5
-        Me.deleteRoomButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.deleteRoomButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.deleteRoomButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.deleteRoomButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.deleteRoomButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.deleteRoomButton.FillColor = System.Drawing.Color.Black
-        Me.deleteRoomButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.deleteRoomButton.ForeColor = System.Drawing.Color.White
-        Me.deleteRoomButton.Location = New System.Drawing.Point(331, 105)
-        Me.deleteRoomButton.Name = "deleteRoomButton"
-        Me.deleteRoomButton.ShadowDecoration.BorderRadius = 5
-        Me.deleteRoomButton.ShadowDecoration.Enabled = True
-        Me.deleteRoomButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.deleteRoomButton.Size = New System.Drawing.Size(130, 50)
-        Me.deleteRoomButton.TabIndex = 12
-        Me.deleteRoomButton.Text = "DELETE"
-        '
         'roomPhotosButton
         '
         Me.roomPhotosButton.BackColor = System.Drawing.Color.Transparent
@@ -198,7 +176,7 @@ Partial Class roomTable
         Me.roomPhotosButton.FillColor = System.Drawing.Color.Black
         Me.roomPhotosButton.Font = New System.Drawing.Font("Raleway", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.roomPhotosButton.ForeColor = System.Drawing.Color.White
-        Me.roomPhotosButton.Location = New System.Drawing.Point(481, 105)
+        Me.roomPhotosButton.Location = New System.Drawing.Point(331, 105)
         Me.roomPhotosButton.Name = "roomPhotosButton"
         Me.roomPhotosButton.ShadowDecoration.BorderRadius = 5
         Me.roomPhotosButton.ShadowDecoration.Enabled = True
@@ -427,7 +405,6 @@ Partial Class roomTable
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.searchRoomButton)
         Me.Controls.Add(Me.roomPhotosButton)
-        Me.Controls.Add(Me.deleteRoomButton)
         Me.Controls.Add(Me.editRoomButton)
         Me.Controls.Add(Me.addRoomButton)
         Me.Controls.Add(Me.menuButton)
@@ -457,7 +434,6 @@ Partial Class roomTable
     Friend WithEvents menuTimer As Timer
     Friend WithEvents addRoomButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents editRoomButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents deleteRoomButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents roomPhotosButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents searchRoomButton As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents PictureBox1 As PictureBox
