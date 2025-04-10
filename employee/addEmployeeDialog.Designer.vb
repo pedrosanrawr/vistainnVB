@@ -29,8 +29,6 @@ Partial Class addEmployeeDialog
         Me.Label5 = New System.Windows.Forms.Label()
         Me.firstNameTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.employeeIdTextBox = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lastNameTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -78,20 +76,20 @@ Partial Class addEmployeeDialog
         Me.emailTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.emailTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.emailTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.emailTextBox.Location = New System.Drawing.Point(295, 280)
+        Me.emailTextBox.Location = New System.Drawing.Point(45, 480)
         Me.emailTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.emailTextBox.Name = "emailTextBox"
         Me.emailTextBox.PlaceholderText = ""
         Me.emailTextBox.SelectedText = ""
         Me.emailTextBox.ShadowDecoration.Enabled = True
         Me.emailTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.emailTextBox.Size = New System.Drawing.Size(230, 50)
+        Me.emailTextBox.Size = New System.Drawing.Size(480, 50)
         Me.emailTextBox.TabIndex = 88
         '
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(291, 256)
+        Me.Label6.Location = New System.Drawing.Point(41, 456)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(167, 26)
         Me.Label6.TabIndex = 87
@@ -142,7 +140,7 @@ Partial Class addEmployeeDialog
         Me.firstNameTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.firstNameTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.firstNameTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.firstNameTextBox.Location = New System.Drawing.Point(45, 280)
+        Me.firstNameTextBox.Location = New System.Drawing.Point(45, 180)
         Me.firstNameTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.firstNameTextBox.Name = "firstNameTextBox"
         Me.firstNameTextBox.PlaceholderText = ""
@@ -155,43 +153,11 @@ Partial Class addEmployeeDialog
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(41, 256)
+        Me.Label2.Location = New System.Drawing.Point(41, 156)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(167, 26)
         Me.Label2.TabIndex = 83
         Me.Label2.Text = "FIRST NAME"
-        '
-        'employeeIdTextBox
-        '
-        Me.employeeIdTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.employeeIdTextBox.BorderRadius = 5
-        Me.employeeIdTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.employeeIdTextBox.DefaultText = ""
-        Me.employeeIdTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.employeeIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.employeeIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.employeeIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.employeeIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.employeeIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.employeeIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.employeeIdTextBox.Location = New System.Drawing.Point(45, 180)
-        Me.employeeIdTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.employeeIdTextBox.Name = "employeeIdTextBox"
-        Me.employeeIdTextBox.PlaceholderText = ""
-        Me.employeeIdTextBox.SelectedText = ""
-        Me.employeeIdTextBox.ShadowDecoration.Enabled = True
-        Me.employeeIdTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.employeeIdTextBox.Size = New System.Drawing.Size(230, 50)
-        Me.employeeIdTextBox.TabIndex = 82
-        '
-        'Label3
-        '
-        Me.Label3.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(41, 156)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(167, 26)
-        Me.Label3.TabIndex = 81
-        Me.Label3.Text = "EMPLOYEE ID"
         '
         'Label1
         '
@@ -217,7 +183,7 @@ Partial Class addEmployeeDialog
         Me.lastNameTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.lastNameTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.lastNameTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.lastNameTextBox.Location = New System.Drawing.Point(45, 380)
+        Me.lastNameTextBox.Location = New System.Drawing.Point(45, 280)
         Me.lastNameTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.lastNameTextBox.Name = "lastNameTextBox"
         Me.lastNameTextBox.PlaceholderText = ""
@@ -230,7 +196,7 @@ Partial Class addEmployeeDialog
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(41, 356)
+        Me.Label4.Location = New System.Drawing.Point(41, 256)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(167, 26)
         Me.Label4.TabIndex = 90
@@ -239,7 +205,7 @@ Partial Class addEmployeeDialog
         'Label7
         '
         Me.Label7.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(41, 456)
+        Me.Label7.Location = New System.Drawing.Point(41, 356)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(167, 26)
         Me.Label7.TabIndex = 92
@@ -248,7 +214,7 @@ Partial Class addEmployeeDialog
         'Label8
         '
         Me.Label8.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(291, 356)
+        Me.Label8.Location = New System.Drawing.Point(291, 256)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(167, 26)
         Me.Label8.TabIndex = 94
@@ -257,7 +223,7 @@ Partial Class addEmployeeDialog
         'Label9
         '
         Me.Label9.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(291, 456)
+        Me.Label9.Location = New System.Drawing.Point(291, 356)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(167, 26)
         Me.Label9.TabIndex = 96
@@ -309,7 +275,7 @@ Partial Class addEmployeeDialog
         Me.genderComboBox.IntegralHeight = False
         Me.genderComboBox.ItemHeight = 44
         Me.genderComboBox.Items.AddRange(New Object() {"Male", "Female"})
-        Me.genderComboBox.Location = New System.Drawing.Point(295, 380)
+        Me.genderComboBox.Location = New System.Drawing.Point(295, 280)
         Me.genderComboBox.Name = "genderComboBox"
         Me.genderComboBox.ShadowDecoration.Enabled = True
         Me.genderComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -329,7 +295,8 @@ Partial Class addEmployeeDialog
         Me.roleComboBox.ForeColor = System.Drawing.Color.Black
         Me.roleComboBox.IntegralHeight = False
         Me.roleComboBox.ItemHeight = 44
-        Me.roleComboBox.Location = New System.Drawing.Point(45, 480)
+        Me.roleComboBox.Items.AddRange(New Object() {"Admin", "Manager", "Staff"})
+        Me.roleComboBox.Location = New System.Drawing.Point(45, 380)
         Me.roleComboBox.Name = "roleComboBox"
         Me.roleComboBox.ShadowDecoration.Enabled = True
         Me.roleComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -349,7 +316,8 @@ Partial Class addEmployeeDialog
         Me.nationalityComboBox.ForeColor = System.Drawing.Color.Black
         Me.nationalityComboBox.IntegralHeight = False
         Me.nationalityComboBox.ItemHeight = 44
-        Me.nationalityComboBox.Location = New System.Drawing.Point(295, 480)
+        Me.nationalityComboBox.Items.AddRange(New Object() {"Filipino"})
+        Me.nationalityComboBox.Location = New System.Drawing.Point(295, 380)
         Me.nationalityComboBox.Name = "nationalityComboBox"
         Me.nationalityComboBox.ShadowDecoration.Enabled = True
         Me.nationalityComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -379,8 +347,6 @@ Partial Class addEmployeeDialog
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.firstNameTextBox)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.employeeIdTextBox)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "addEmployeeDialog"
@@ -397,8 +363,6 @@ Partial Class addEmployeeDialog
     Friend WithEvents Label5 As Label
     Friend WithEvents firstNameTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents employeeIdTextBox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents lastNameTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label

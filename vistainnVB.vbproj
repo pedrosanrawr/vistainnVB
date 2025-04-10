@@ -104,6 +104,7 @@
     <Compile Include="employee\editEmployeeDialog.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="employee\employeeValidation.vb" />
     <Compile Include="extras\addExtrasDialog.Designer.vb">
       <DependentUpon>addExtrasDialog.vb</DependentUpon>
     </Compile>

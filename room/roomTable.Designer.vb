@@ -26,9 +26,9 @@ Partial Class roomTable
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(roomTable))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.menuButton = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -39,7 +39,7 @@ Partial Class roomTable
         Me.addRoomButton = New Guna.UI2.WinForms.Guna2Button()
         Me.editRoomButton = New Guna.UI2.WinForms.Guna2Button()
         Me.roomPhotosButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.searchRoomButton = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.searchRoomTextbox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.roomDGV = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -185,30 +185,30 @@ Partial Class roomTable
         Me.roomPhotosButton.TabIndex = 13
         Me.roomPhotosButton.Text = "ROOM PHOTOS"
         '
-        'searchRoomButton
+        'searchRoomTextbox
         '
-        Me.searchRoomButton.BackColor = System.Drawing.Color.Transparent
-        Me.searchRoomButton.BorderRadius = 5
-        Me.searchRoomButton.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.searchRoomButton.DefaultText = ""
-        Me.searchRoomButton.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.searchRoomButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.searchRoomButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.searchRoomButton.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.searchRoomButton.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.searchRoomButton.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.searchRoomButton.ForeColor = System.Drawing.Color.Black
-        Me.searchRoomButton.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.searchRoomButton.Location = New System.Drawing.Point(681, 105)
-        Me.searchRoomButton.Margin = New System.Windows.Forms.Padding(6)
-        Me.searchRoomButton.Name = "searchRoomButton"
-        Me.searchRoomButton.PlaceholderText = "Search"
-        Me.searchRoomButton.SelectedText = ""
-        Me.searchRoomButton.ShadowDecoration.BorderRadius = 5
-        Me.searchRoomButton.ShadowDecoration.Enabled = True
-        Me.searchRoomButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.searchRoomButton.Size = New System.Drawing.Size(430, 50)
-        Me.searchRoomButton.TabIndex = 14
+        Me.searchRoomTextbox.BackColor = System.Drawing.Color.Transparent
+        Me.searchRoomTextbox.BorderRadius = 5
+        Me.searchRoomTextbox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.searchRoomTextbox.DefaultText = ""
+        Me.searchRoomTextbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.searchRoomTextbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.searchRoomTextbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchRoomTextbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchRoomTextbox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.searchRoomTextbox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.searchRoomTextbox.ForeColor = System.Drawing.Color.Black
+        Me.searchRoomTextbox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.searchRoomTextbox.Location = New System.Drawing.Point(681, 105)
+        Me.searchRoomTextbox.Margin = New System.Windows.Forms.Padding(6)
+        Me.searchRoomTextbox.Name = "searchRoomTextbox"
+        Me.searchRoomTextbox.PlaceholderText = "Search"
+        Me.searchRoomTextbox.SelectedText = ""
+        Me.searchRoomTextbox.ShadowDecoration.BorderRadius = 5
+        Me.searchRoomTextbox.ShadowDecoration.Enabled = True
+        Me.searchRoomTextbox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.searchRoomTextbox.Size = New System.Drawing.Size(430, 50)
+        Me.searchRoomTextbox.TabIndex = 14
         '
         'PictureBox1
         '
@@ -243,37 +243,37 @@ Partial Class roomTable
         Me.roomDGV.AlternatingRowsDefaultCellStyle = Me.roomDGV.DefaultCellStyle
         Me.roomDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
         Me.roomDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Raleway", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.roomDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Raleway", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.roomDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.roomDGV.ColumnHeadersHeight = 40
         Me.roomDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.roomId, Me.roomName, Me.roomNo, Me.roomPrice, Me.roomCategory, Me.roomBedroom, Me.roomBathroom, Me.roomTechnology, Me.roomKitchen, Me.roomGeneral, Me.roomStatus})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.roomDGV.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.roomDGV.DefaultCellStyle = DataGridViewCellStyle5
         Me.roomDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.roomDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.roomDGV.Location = New System.Drawing.Point(0, 0)
         Me.roomDGV.Name = "roomDGV"
         Me.roomDGV.ReadOnly = True
         Me.roomDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.roomDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.roomDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.roomDGV.RowHeadersVisible = False
         Me.roomDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.roomDGV.RowTemplate.Height = 40
@@ -403,7 +403,7 @@ Partial Class roomTable
         Me.ClientSize = New System.Drawing.Size(1142, 790)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.searchRoomButton)
+        Me.Controls.Add(Me.searchRoomTextbox)
         Me.Controls.Add(Me.roomPhotosButton)
         Me.Controls.Add(Me.editRoomButton)
         Me.Controls.Add(Me.addRoomButton)
@@ -435,7 +435,7 @@ Partial Class roomTable
     Friend WithEvents addRoomButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents editRoomButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents roomPhotosButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents searchRoomButton As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents searchRoomTextbox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer

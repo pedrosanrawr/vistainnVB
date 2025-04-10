@@ -329,6 +329,7 @@ Partial Class editEmployeeDialog
         Me.roleComboBox.ForeColor = System.Drawing.Color.Black
         Me.roleComboBox.IntegralHeight = False
         Me.roleComboBox.ItemHeight = 44
+        Me.roleComboBox.Items.AddRange(New Object() {"Admin", "Manager", "Staff"})
         Me.roleComboBox.Location = New System.Drawing.Point(45, 480)
         Me.roleComboBox.Name = "roleComboBox"
         Me.roleComboBox.ShadowDecoration.Enabled = True
@@ -349,6 +350,7 @@ Partial Class editEmployeeDialog
         Me.nationalityComboBox.ForeColor = System.Drawing.Color.Black
         Me.nationalityComboBox.IntegralHeight = False
         Me.nationalityComboBox.ItemHeight = 44
+        Me.nationalityComboBox.Items.AddRange(New Object() {"Filipino"})
         Me.nationalityComboBox.Location = New System.Drawing.Point(295, 480)
         Me.nationalityComboBox.Name = "nationalityComboBox"
         Me.nationalityComboBox.ShadowDecoration.Enabled = True

@@ -1,4 +1,6 @@
-﻿Public Class employeeTable
+﻿Imports System.Data.SqlClient
+
+Public Class employeeTable
     Dim menuForm As Form
     Dim addEmployeeDialog As New addEmployeeDialog()
     Dim editEmployeeDialog As New editEmployeeDialog()
@@ -6,6 +8,8 @@
     Dim menuVisible As Boolean = False
     Dim slidingIn As Boolean = False
     Dim editingIn As Boolean = False
+    Dim database As New database()
+    Dim employeeBindingSource As New BindingSource()
 
     Private Sub accTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
@@ -40,6 +44,10 @@
         InitializeDialog(editEmployeeDialog)
         SDialog(addEmployeeDialog)
         SDialog(editEmployeeDialog)
+        AddHandler addEmployeeDialog.EmployeeAdded, AddressOf AddEmployeeDialog_EmployeeAdded
+        AddHandler editEmployeeDialog.EmployeeEdited, AddressOf EditEmployeeDialog_EmployeeEdited
+
+        LoadEmployeeData()
     End Sub
 
     Private Sub InitializeDialog(dialog As Form)
@@ -118,6 +126,70 @@
         If addEmployeeDialog.Left >= Me.Width AndAlso editEmployeeDialog.Left >= Me.Width Then
             dialogTimer.Stop()
             overlayPanel.Visible = False
+        End If
+    End Sub
+
+    Public Sub LoadEmployeeData()
+        Dim query As String = "SELECT * FROM employee"
+
+        Using conn As New SqlConnection(database.connectionString)
+            Dim adapter As New SqlDataAdapter(query, conn)
+            Dim dt As New DataTable()
+
+            Try
+                conn.Open()
+                adapter.Fill(dt)
+
+                employeeBindingSource.DataSource = dt
+
+                employeeDGV.DataSource = employeeBindingSource
+
+                employeeDGV.Columns("eProfilePic").Visible = False
+                employeeDGV.Columns("ePassword").Visible = False
+                employeeDGV.Columns("eSalt").Visible = False
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Using
+    End Sub
+
+    Private Sub employeeDGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles employeeDGV.CellClick
+        If e.RowIndex >= 0 Then
+            Dim selectedRow As DataGridViewRow = employeeDGV.Rows(e.RowIndex)
+
+            Dim employeeId As Integer = selectedRow.Cells("employeeId").Value.ToString()
+            Dim employeeFname As String = selectedRow.Cells("employeeFname").Value.ToString()
+            Dim employeeLname As String = selectedRow.Cells("employeeLname").Value.ToString()
+            Dim employeeRole As String = selectedRow.Cells("employeeRole").Value.ToString()
+            Dim employeeEmail As String = selectedRow.Cells("employeeEmail").Value.ToString()
+            Dim employeePhoneNo As String = selectedRow.Cells("employeePhoneNo").Value.ToString()
+            Dim employeeGender As String = selectedRow.Cells("employeeGender").Value.ToString()
+            Dim employeeNationality As String = selectedRow.Cells("employeeNationality").Value.ToString()
+            Dim employeeAddress As String = selectedRow.Cells("employeeAddress").Value.ToString()
+
+            editEmployeeDialog.PopulateFields(employeeId, employeeFname, employeeLname, employeeRole, employeeEmail, employeePhoneNo, employeeGender, employeeNationality, employeeAddress)
+        End If
+    End Sub
+
+    Private Sub refreshAccButton_Click(sender As Object, e As EventArgs) Handles refreshAccButton.Click
+        LoadEmployeeData()
+    End Sub
+
+    Private Sub AddEmployeeDialog_EmployeeAdded(sender As Object, e As EventArgs)
+        LoadEmployeeData()
+    End Sub
+
+    Private Sub EditEmployeeDialog_EmployeeEdited(sender As Object, e As EventArgs)
+        LoadEmployeeData()
+    End Sub
+
+    Private Sub searchAccTextBox_TextChanged(sender As Object, e As EventArgs) Handles searchAccTextBox.TextChanged
+        Dim filter As String = searchAccTextBox.Text
+
+        If String.IsNullOrWhiteSpace(filter) Then
+            employeeBindingSource.Filter = Nothing
+        Else
+            employeeBindingSource.Filter = String.Format("eFname LIKE '%{0}%' OR eLname LIKE '%{0}%' OR eEmail LIKE '%{0}%' OR ePhoneNo LIKE '%{0}%'", filter)
         End If
     End Sub
 End Class

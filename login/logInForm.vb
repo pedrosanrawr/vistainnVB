@@ -36,19 +36,25 @@ Public Class logInForm
         Try
             conn.Open()
 
-            Dim checkEmailQuery As String = "SELECT eRole, ePassword FROM employee WHERE eEmail=@eEmail"
+            Dim checkEmailQuery As String = "SELECT eRole, ePassword, eSalt FROM employee WHERE eEmail=@eEmail"
             Dim cmd As New SqlCommand(checkEmailQuery, conn)
             cmd.Parameters.AddWithValue("@eEmail", email)
 
             Dim reader As SqlDataReader = cmd.ExecuteReader()
 
             If reader.Read() Then
-                Dim storedPassword As String = reader("ePassword").ToString()
+                Dim storedHash As String = reader("ePassword").ToString()
+                Dim storedSaltBase64 As String = reader("eSalt").ToString()
+                Dim storedSalt As Byte() = Convert.FromBase64String(storedSaltBase64)
 
-                If storedPassword = password Then
+                Dim inputHash As String = addEmployeeDialog.HashPasswordWithSalt(password, storedSalt)
+
+                If storedHash = inputHash Then
                     Employee.Email = email
                     Employee.Role = reader("eRole").ToString()
                     role = Employee.Role
+
+                    reader.Close()
 
                     Select Case role
                         Case "Admin"
@@ -61,7 +67,6 @@ Public Class logInForm
                 Else
                     MessageBox.Show("The password you entered is incorrect.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
-
             Else
                 MessageBox.Show("The email address is not registered or invalid. Please check your email.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If

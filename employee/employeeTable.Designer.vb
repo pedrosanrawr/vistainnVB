@@ -24,9 +24,9 @@ Partial Class employeeTable
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(employeeTable))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.menuButton = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -40,8 +40,7 @@ Partial Class employeeTable
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.searchAccTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.bookDGV = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.employeeDGV = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.employeeId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.employeeFname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.employeeLname = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,12 +50,13 @@ Partial Class employeeTable
         Me.employeeGender = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.employeeNationality = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.employeeAddress = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refreshAccButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
-        CType(Me.bookDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.employeeDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menuButton
@@ -220,7 +220,7 @@ Partial Class employeeTable
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel1.BorderRadius = 5
-        Me.Guna2Panel1.Controls.Add(Me.bookDGV)
+        Me.Guna2Panel1.Controls.Add(Me.employeeDGV)
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
         Me.Guna2Panel1.Location = New System.Drawing.Point(31, 185)
         Me.Guna2Panel1.Name = "Guna2Panel1"
@@ -230,81 +230,78 @@ Partial Class employeeTable
         Me.Guna2Panel1.Size = New System.Drawing.Size(1080, 570)
         Me.Guna2Panel1.TabIndex = 30
         '
-        'dialogTimer
+        'employeeDGV
         '
-        Me.dialogTimer.Interval = 5
-        '
-        'bookDGV
-        '
-        Me.bookDGV.AllowUserToAddRows = False
-        Me.bookDGV.AllowUserToDeleteRows = False
-        Me.bookDGV.AllowUserToResizeColumns = False
-        Me.bookDGV.AllowUserToResizeRows = False
-        Me.bookDGV.AlternatingRowsDefaultCellStyle = Me.bookDGV.DefaultCellStyle
-        Me.bookDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
-        Me.bookDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Raleway", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bookDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.bookDGV.ColumnHeadersHeight = 40
-        Me.bookDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.employeeId, Me.employeeFname, Me.employeeLname, Me.employeeRole, Me.employeeEmail, Me.employeePhoneNo, Me.employeeGender, Me.employeeNationality, Me.employeeAddress})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.bookDGV.DefaultCellStyle = DataGridViewCellStyle2
-        Me.bookDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bookDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.bookDGV.Location = New System.Drawing.Point(0, 0)
-        Me.bookDGV.Name = "bookDGV"
-        Me.bookDGV.ReadOnly = True
-        Me.bookDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bookDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.bookDGV.RowHeadersVisible = False
-        Me.bookDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.bookDGV.RowTemplate.Height = 40
-        Me.bookDGV.RowTemplate.ReadOnly = True
-        Me.bookDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.bookDGV.Size = New System.Drawing.Size(1080, 570)
-        Me.bookDGV.TabIndex = 4
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.bookDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Black
-        Me.bookDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.bookDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bookDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.bookDGV.ThemeStyle.HeaderStyle.Height = 40
-        Me.bookDGV.ThemeStyle.ReadOnly = True
-        Me.bookDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.bookDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bookDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.bookDGV.ThemeStyle.RowsStyle.Height = 40
-        Me.bookDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
-        Me.bookDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.employeeDGV.AllowUserToAddRows = False
+        Me.employeeDGV.AllowUserToDeleteRows = False
+        Me.employeeDGV.AllowUserToResizeColumns = False
+        Me.employeeDGV.AllowUserToResizeRows = False
+        Me.employeeDGV.AlternatingRowsDefaultCellStyle = Me.employeeDGV.DefaultCellStyle
+        Me.employeeDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
+        Me.employeeDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Raleway", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.employeeDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.employeeDGV.ColumnHeadersHeight = 40
+        Me.employeeDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.employeeId, Me.employeeFname, Me.employeeLname, Me.employeeRole, Me.employeeEmail, Me.employeePhoneNo, Me.employeeGender, Me.employeeNationality, Me.employeeAddress})
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.employeeDGV.DefaultCellStyle = DataGridViewCellStyle8
+        Me.employeeDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.employeeDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.employeeDGV.Location = New System.Drawing.Point(0, 0)
+        Me.employeeDGV.Name = "employeeDGV"
+        Me.employeeDGV.ReadOnly = True
+        Me.employeeDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.employeeDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        Me.employeeDGV.RowHeadersVisible = False
+        Me.employeeDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.employeeDGV.RowTemplate.Height = 40
+        Me.employeeDGV.RowTemplate.ReadOnly = True
+        Me.employeeDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.employeeDGV.Size = New System.Drawing.Size(1080, 570)
+        Me.employeeDGV.TabIndex = 4
+        Me.employeeDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.employeeDGV.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.employeeDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.employeeDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.employeeDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.employeeDGV.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.employeeDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.employeeDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Black
+        Me.employeeDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.employeeDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.employeeDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.employeeDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.employeeDGV.ThemeStyle.HeaderStyle.Height = 40
+        Me.employeeDGV.ThemeStyle.ReadOnly = True
+        Me.employeeDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.employeeDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.employeeDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.employeeDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.employeeDGV.ThemeStyle.RowsStyle.Height = 40
+        Me.employeeDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.employeeDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
         '
         'employeeId
         '
+        Me.employeeId.DataPropertyName = "eId"
         Me.employeeId.HeaderText = "ID"
         Me.employeeId.Name = "employeeId"
         Me.employeeId.ReadOnly = True
@@ -312,6 +309,7 @@ Partial Class employeeTable
         '
         'employeeFname
         '
+        Me.employeeFname.DataPropertyName = "eFname"
         Me.employeeFname.HeaderText = "FIRST NAME"
         Me.employeeFname.Name = "employeeFname"
         Me.employeeFname.ReadOnly = True
@@ -319,6 +317,7 @@ Partial Class employeeTable
         '
         'employeeLname
         '
+        Me.employeeLname.DataPropertyName = "eLname"
         Me.employeeLname.HeaderText = "LAST NAME"
         Me.employeeLname.Name = "employeeLname"
         Me.employeeLname.ReadOnly = True
@@ -326,18 +325,21 @@ Partial Class employeeTable
         '
         'employeeRole
         '
+        Me.employeeRole.DataPropertyName = "eRole"
         Me.employeeRole.HeaderText = "ROLE"
         Me.employeeRole.Name = "employeeRole"
         Me.employeeRole.ReadOnly = True
         '
         'employeeEmail
         '
+        Me.employeeEmail.DataPropertyName = "eEmail"
         Me.employeeEmail.HeaderText = "EMAIL"
         Me.employeeEmail.Name = "employeeEmail"
         Me.employeeEmail.ReadOnly = True
         '
         'employeePhoneNo
         '
+        Me.employeePhoneNo.DataPropertyName = "ePhoneNo"
         Me.employeePhoneNo.HeaderText = "PHONE NO"
         Me.employeePhoneNo.Name = "employeePhoneNo"
         Me.employeePhoneNo.ReadOnly = True
@@ -345,12 +347,14 @@ Partial Class employeeTable
         '
         'employeeGender
         '
+        Me.employeeGender.DataPropertyName = "eGender"
         Me.employeeGender.HeaderText = "GENDER"
         Me.employeeGender.Name = "employeeGender"
         Me.employeeGender.ReadOnly = True
         '
         'employeeNationality
         '
+        Me.employeeNationality.DataPropertyName = "eNationality"
         Me.employeeNationality.HeaderText = "NATIONALITY"
         Me.employeeNationality.Name = "employeeNationality"
         Me.employeeNationality.ReadOnly = True
@@ -358,10 +362,15 @@ Partial Class employeeTable
         '
         'employeeAddress
         '
+        Me.employeeAddress.DataPropertyName = "eAddress"
         Me.employeeAddress.HeaderText = "ADDRESS"
         Me.employeeAddress.Name = "employeeAddress"
         Me.employeeAddress.ReadOnly = True
         Me.employeeAddress.Width = 230
+        '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 5
         '
         'employeeTable
         '
@@ -388,7 +397,7 @@ Partial Class employeeTable
         CType(Me.refreshAccButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
-        CType(Me.bookDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.employeeDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -407,7 +416,7 @@ Partial Class employeeTable
     Friend WithEvents searchAccTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer
-    Friend WithEvents bookDGV As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents employeeDGV As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents employeeId As DataGridViewTextBoxColumn
     Friend WithEvents employeeFname As DataGridViewTextBoxColumn
     Friend WithEvents employeeLname As DataGridViewTextBoxColumn

@@ -13,6 +13,7 @@ Public Class roomTable
     Dim editingIn As Boolean = False
     Dim roomPhotosIn As Boolean = False
     Dim HideButtons As New HideButtons()
+    Dim roomBindingSource As New BindingSource()
 
     Private Sub roomTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
@@ -146,6 +147,8 @@ Public Class roomTable
         End If
     End Sub
 
+    '/////////////////////////////////'
+
     Public Sub LoadRoomData()
         Dim query As String = "SELECT * FROM rooms"
 
@@ -157,9 +160,11 @@ Public Class roomTable
                 conn.Open()
                 adapter.Fill(dt)
 
-                roomDGV.DataSource = dt
-                roomDGV.Columns("rImage").Visible = False
+                roomBindingSource.DataSource = dt
 
+                roomDGV.DataSource = roomBindingSource
+
+                roomDGV.Columns("rImage").Visible = False
                 roomDGV.Columns("roomPrice").DefaultCellStyle.Format = "C2"
             Catch ex As Exception
                 MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -197,5 +202,15 @@ Public Class roomTable
 
     Private Sub EditRoomDialog_RoomEdited(sender As Object, e As EventArgs)
         LoadRoomData()
+    End Sub
+
+    Private Sub searchRoomTextbox_TextChanged(sender As Object, e As EventArgs) Handles searchRoomTextbox.TextChanged
+        Dim filter As String = searchRoomTextbox.Text
+
+        If String.IsNullOrWhiteSpace(filter) Then
+            roomBindingSource.Filter = Nothing
+        Else
+            roomBindingSource.Filter = String.Format("rRoomNo LIKE '%{0}%' OR rName LIKE '%{0}%' OR rCategory LIKE '%{0}%' OR rStatus LIKE '%{0}%'", filter)
+        End If
     End Sub
 End Class
