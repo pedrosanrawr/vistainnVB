@@ -113,7 +113,9 @@ Partial Class profile
         'profilePicture
         '
         Me.profilePicture.BorderRadius = 60
+        Me.profilePicture.Image = CType(resources.GetObject("profilePicture.Image"), System.Drawing.Image)
         Me.profilePicture.ImageRotate = 0!
+        Me.profilePicture.InitialImage = CType(resources.GetObject("profilePicture.InitialImage"), System.Drawing.Image)
         Me.profilePicture.Location = New System.Drawing.Point(289, 138)
         Me.profilePicture.Name = "profilePicture"
         Me.profilePicture.Size = New System.Drawing.Size(120, 120)
@@ -287,7 +289,7 @@ Partial Class profile
         Me.Controls.Add(Me.refreshButton)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "profile"
-        Me.Text = "profile"
+        Me.Text = " "
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).EndInit()

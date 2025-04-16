@@ -10,6 +10,7 @@ Public Class employeeTable
     Dim editingIn As Boolean = False
     Dim database As New database()
     Dim employeeBindingSource As New BindingSource()
+    Public Event EmployeeDeleted As EventHandler
 
     Private Sub accTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
@@ -190,6 +191,54 @@ Public Class employeeTable
             employeeBindingSource.Filter = Nothing
         Else
             employeeBindingSource.Filter = String.Format("eFname LIKE '%{0}%' OR eLname LIKE '%{0}%' OR eEmail LIKE '%{0}%' OR ePhoneNo LIKE '%{0}%'", filter)
+        End If
+    End Sub
+
+    Private Sub deleteAccButton_Click(sender As Object, e As EventArgs) Handles deleteAccButton.Click
+        If employeeDGV.CurrentRow Is Nothing Then
+            MessageBox.Show("Please select an account to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        Dim confirmResult As DialogResult = MessageBox.Show(
+            "Are you sure you want to delete this account? This action cannot be undone.",
+            "Confirm Delete",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning
+        )
+
+        If confirmResult = DialogResult.Yes Then
+            Dim selectedRow As DataGridViewRow = employeeDGV.CurrentRow
+            Dim selectedEmail As String = selectedRow.Cells("employeeEmail").Value.ToString()
+
+            Dim conn As New SqlConnection(database.connectionString)
+            Dim query As String = "DELETE FROM employee WHERE eEmail = @eEmail"
+            Dim cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@eEmail", selectedEmail)
+
+            Try
+                conn.Open()
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+                If rowsAffected > 0 Then
+                    RaiseEvent EmployeeDeleted(Me, EventArgs.Empty)
+
+                    If selectedEmail = Employee.Email Then
+                        MessageBox.Show("Your account has been deleted. You will now be logged out.", "Account Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        Me.Hide()
+                        basePage.loadForm(New logInForm(basePage))
+                    Else
+                        LoadEmployeeData()
+                        MessageBox.Show("Account successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
+                Else
+                    MessageBox.Show("No account was deleted. It may not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                conn.Close()
+            End Try
         End If
     End Sub
 End Class

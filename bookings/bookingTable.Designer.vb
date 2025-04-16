@@ -34,14 +34,13 @@ Partial Class bookingTable
         Me.refreshBookButton = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.addBookButton = New Guna.UI2.WinForms.Guna2Button()
         Me.editBookButton = New Guna.UI2.WinForms.Guna2Button()
         Me.deleteBookButton = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.searchBookTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.bookDGV = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.bookingId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookFname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookLname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -121,27 +120,6 @@ Partial Class bookingTable
         '
         Me.menuTimer.Interval = 5
         '
-        'addBookButton
-        '
-        Me.addBookButton.BackColor = System.Drawing.Color.Transparent
-        Me.addBookButton.BorderRadius = 5
-        Me.addBookButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.addBookButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.addBookButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.addBookButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.addBookButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.addBookButton.FillColor = System.Drawing.Color.Black
-        Me.addBookButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.addBookButton.ForeColor = System.Drawing.Color.White
-        Me.addBookButton.Location = New System.Drawing.Point(31, 105)
-        Me.addBookButton.Name = "addBookButton"
-        Me.addBookButton.ShadowDecoration.BorderRadius = 5
-        Me.addBookButton.ShadowDecoration.Enabled = True
-        Me.addBookButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.addBookButton.Size = New System.Drawing.Size(130, 50)
-        Me.addBookButton.TabIndex = 11
-        Me.addBookButton.Text = "ADD"
-        '
         'editBookButton
         '
         Me.editBookButton.BackColor = System.Drawing.Color.Transparent
@@ -154,7 +132,7 @@ Partial Class bookingTable
         Me.editBookButton.FillColor = System.Drawing.Color.Black
         Me.editBookButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.editBookButton.ForeColor = System.Drawing.Color.White
-        Me.editBookButton.Location = New System.Drawing.Point(181, 105)
+        Me.editBookButton.Location = New System.Drawing.Point(31, 105)
         Me.editBookButton.Name = "editBookButton"
         Me.editBookButton.ShadowDecoration.BorderRadius = 5
         Me.editBookButton.ShadowDecoration.Enabled = True
@@ -175,7 +153,7 @@ Partial Class bookingTable
         Me.deleteBookButton.FillColor = System.Drawing.Color.Black
         Me.deleteBookButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.deleteBookButton.ForeColor = System.Drawing.Color.White
-        Me.deleteBookButton.Location = New System.Drawing.Point(331, 105)
+        Me.deleteBookButton.Location = New System.Drawing.Point(181, 105)
         Me.deleteBookButton.Name = "deleteBookButton"
         Me.deleteBookButton.ShadowDecoration.BorderRadius = 5
         Me.deleteBookButton.ShadowDecoration.Enabled = True
@@ -250,7 +228,7 @@ Partial Class bookingTable
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.bookDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.bookDGV.ColumnHeadersHeight = 40
-        Me.bookDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookingId, Me.bookFname, Me.bookLname, Me.bookEmail, Me.bookPhoneNo, Me.bookRoomName, Me.bookRoomNo, Me.bookPax, Me.bookCheckInDate, Me.bookCheckInTime, Me.bookCheckOutdate, Me.bookCheckOutTime})
+        Me.bookDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookId, Me.bookFname, Me.bookLname, Me.bookEmail, Me.bookPhoneNo, Me.bookRoomName, Me.bookRoomNo, Me.bookPax, Me.bookCheckInDate, Me.bookCheckInTime, Me.bookCheckOutdate, Me.bookCheckOutTime})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -302,15 +280,17 @@ Partial Class bookingTable
         Me.bookDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
         Me.bookDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
         '
-        'bookingId
+        'bookId
         '
-        Me.bookingId.HeaderText = "ID"
-        Me.bookingId.Name = "bookingId"
-        Me.bookingId.ReadOnly = True
-        Me.bookingId.Width = 50
+        Me.bookId.DataPropertyName = "bId"
+        Me.bookId.HeaderText = "ID"
+        Me.bookId.Name = "bookId"
+        Me.bookId.ReadOnly = True
+        Me.bookId.Width = 50
         '
         'bookFname
         '
+        Me.bookFname.DataPropertyName = "bFname"
         Me.bookFname.HeaderText = "FIRST NAME"
         Me.bookFname.Name = "bookFname"
         Me.bookFname.ReadOnly = True
@@ -318,6 +298,7 @@ Partial Class bookingTable
         '
         'bookLname
         '
+        Me.bookLname.DataPropertyName = "bLname"
         Me.bookLname.HeaderText = "LAST NAME"
         Me.bookLname.Name = "bookLname"
         Me.bookLname.ReadOnly = True
@@ -325,19 +306,22 @@ Partial Class bookingTable
         '
         'bookEmail
         '
+        Me.bookEmail.DataPropertyName = "bEmail"
         Me.bookEmail.HeaderText = "EMAIL"
         Me.bookEmail.Name = "bookEmail"
         Me.bookEmail.ReadOnly = True
-        Me.bookEmail.Width = 75
         '
         'bookPhoneNo
         '
+        Me.bookPhoneNo.DataPropertyName = "bPhoneNo"
         Me.bookPhoneNo.HeaderText = "PHONE NO"
         Me.bookPhoneNo.Name = "bookPhoneNo"
         Me.bookPhoneNo.ReadOnly = True
+        Me.bookPhoneNo.Width = 125
         '
         'bookRoomName
         '
+        Me.bookRoomName.DataPropertyName = "bRName"
         Me.bookRoomName.HeaderText = "ROOM NAME"
         Me.bookRoomName.Name = "bookRoomName"
         Me.bookRoomName.ReadOnly = True
@@ -345,12 +329,14 @@ Partial Class bookingTable
         '
         'bookRoomNo
         '
+        Me.bookRoomNo.DataPropertyName = "bRoomNo"
         Me.bookRoomNo.HeaderText = "ROOM NO"
         Me.bookRoomNo.Name = "bookRoomNo"
         Me.bookRoomNo.ReadOnly = True
         '
         'bookPax
         '
+        Me.bookPax.DataPropertyName = "bPax"
         Me.bookPax.HeaderText = "PAX"
         Me.bookPax.Name = "bookPax"
         Me.bookPax.ReadOnly = True
@@ -358,6 +344,7 @@ Partial Class bookingTable
         '
         'bookCheckInDate
         '
+        Me.bookCheckInDate.DataPropertyName = "bCheckInDate"
         Me.bookCheckInDate.HeaderText = "CHECK IN DATE"
         Me.bookCheckInDate.Name = "bookCheckInDate"
         Me.bookCheckInDate.ReadOnly = True
@@ -365,6 +352,7 @@ Partial Class bookingTable
         '
         'bookCheckInTime
         '
+        Me.bookCheckInTime.DataPropertyName = "bCheckInTime"
         Me.bookCheckInTime.HeaderText = "CHECK IN TIME"
         Me.bookCheckInTime.Name = "bookCheckInTime"
         Me.bookCheckInTime.ReadOnly = True
@@ -372,6 +360,7 @@ Partial Class bookingTable
         '
         'bookCheckOutdate
         '
+        Me.bookCheckOutdate.DataPropertyName = "bCheckOutDate"
         Me.bookCheckOutdate.HeaderText = "CHECK OUT DATE"
         Me.bookCheckOutdate.Name = "bookCheckOutdate"
         Me.bookCheckOutdate.ReadOnly = True
@@ -379,6 +368,7 @@ Partial Class bookingTable
         '
         'bookCheckOutTime
         '
+        Me.bookCheckOutTime.DataPropertyName = "bCheckOutTime"
         Me.bookCheckOutTime.HeaderText = "CHECK OUT TIME"
         Me.bookCheckOutTime.Name = "bookCheckOutTime"
         Me.bookCheckOutTime.ReadOnly = True
@@ -399,7 +389,6 @@ Partial Class bookingTable
         Me.Controls.Add(Me.searchBookTextBox)
         Me.Controls.Add(Me.deleteBookButton)
         Me.Controls.Add(Me.editBookButton)
-        Me.Controls.Add(Me.addBookButton)
         Me.Controls.Add(Me.menuButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -425,7 +414,6 @@ Partial Class bookingTable
     Friend WithEvents refreshBookButton As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents menuTimer As Timer
-    Friend WithEvents addBookButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents editBookButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents deleteBookButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox1 As PictureBox
@@ -433,7 +421,8 @@ Partial Class bookingTable
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer
     Friend WithEvents bookDGV As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents bookingId As DataGridViewTextBoxColumn
+    Friend WithEvents toolTipAdd As ToolTip
+    Friend WithEvents bookId As DataGridViewTextBoxColumn
     Friend WithEvents bookFname As DataGridViewTextBoxColumn
     Friend WithEvents bookLname As DataGridViewTextBoxColumn
     Friend WithEvents bookEmail As DataGridViewTextBoxColumn
@@ -445,5 +434,4 @@ Partial Class bookingTable
     Friend WithEvents bookCheckInTime As DataGridViewTextBoxColumn
     Friend WithEvents bookCheckOutdate As DataGridViewTextBoxColumn
     Friend WithEvents bookCheckOutTime As DataGridViewTextBoxColumn
-    Friend WithEvents toolTipAdd As ToolTip
 End Class

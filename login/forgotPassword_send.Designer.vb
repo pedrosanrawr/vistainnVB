@@ -28,7 +28,7 @@ Partial Class forgotPassword_send
         Me.Label2 = New System.Windows.Forms.Label()
         Me.emailLabel = New System.Windows.Forms.Label()
         Me.sendButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.cancelButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.cancelBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
         'Timer1
@@ -88,27 +88,27 @@ Partial Class forgotPassword_send
         Me.sendButton.TabIndex = 16
         Me.sendButton.Text = "SEND"
         '
-        'cancelButton
+        'cancelBtn
         '
-        Me.cancelButton.BackColor = System.Drawing.Color.Transparent
-        Me.cancelButton.BorderColor = System.Drawing.Color.Transparent
-        Me.cancelButton.BorderRadius = 5
-        Me.cancelButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.cancelButton.FillColor = System.Drawing.Color.Transparent
-        Me.cancelButton.Font = New System.Drawing.Font("Raleway", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.cancelButton.ForeColor = System.Drawing.Color.Black
-        Me.cancelButton.Location = New System.Drawing.Point(237, 401)
-        Me.cancelButton.Name = "cancelButton"
-        Me.cancelButton.PressedColor = System.Drawing.Color.Transparent
-        Me.cancelButton.ShadowDecoration.BorderRadius = 5
-        Me.cancelButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.cancelButton.Size = New System.Drawing.Size(130, 50)
-        Me.cancelButton.TabIndex = 17
-        Me.cancelButton.Text = "CANCEL"
+        Me.cancelBtn.BackColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.BorderColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.BorderRadius = 5
+        Me.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.cancelBtn.FillColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.Font = New System.Drawing.Font("Raleway", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.cancelBtn.ForeColor = System.Drawing.Color.Black
+        Me.cancelBtn.Location = New System.Drawing.Point(237, 401)
+        Me.cancelBtn.Name = "cancelBtn"
+        Me.cancelBtn.PressedColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.ShadowDecoration.BorderRadius = 5
+        Me.cancelBtn.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.cancelBtn.Size = New System.Drawing.Size(130, 50)
+        Me.cancelBtn.TabIndex = 17
+        Me.cancelBtn.Text = "CANCEL"
         '
         'forgotPassword_send
         '
@@ -116,7 +116,7 @@ Partial Class forgotPassword_send
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(604, 483)
-        Me.Controls.Add(Me.cancelButton)
+        Me.Controls.Add(Me.cancelBtn)
         Me.Controls.Add(Me.sendButton)
         Me.Controls.Add(Me.emailLabel)
         Me.Controls.Add(Me.Label2)
@@ -158,5 +158,5 @@ Partial Class forgotPassword_send
     Friend WithEvents Label2 As Label
     Friend WithEvents emailLabel As Label
     Friend WithEvents sendButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents cancelButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cancelBtn As Guna.UI2.WinForms.Guna2Button
 End Class

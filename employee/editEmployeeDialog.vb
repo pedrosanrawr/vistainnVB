@@ -62,7 +62,7 @@ Public Class editEmployeeDialog
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
                 If rowsAffected > 0 Then
-                    MessageBox.Show("Room edited successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Employee edited successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     RaiseEvent EmployeeEdited(Me, EventArgs.Empty)
                 Else
                     MessageBox.Show("An error occurred while editing the room.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -29,11 +29,8 @@ Partial Class editBookDialog
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.roomNoTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.paxTerxtBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.roomNameTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.phoneNoTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -48,8 +45,11 @@ Partial Class editBookDialog
         Me.Label3 = New System.Windows.Forms.Label()
         Me.outTimeComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.inTimeComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.outDateTimeButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.outDatePickerButton = New Guna.UI2.WinForms.Guna2Button()
         Me.inDatePickerButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.paxComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.roomNoComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.roomNameComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
         'logInButton
@@ -127,29 +127,6 @@ Partial Class editBookDialog
         Me.Label10.TabIndex = 72
         Me.Label10.Text = "CHECK-IN"
         '
-        'roomNoTextBox
-        '
-        Me.roomNoTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.roomNoTextBox.BorderRadius = 5
-        Me.roomNoTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.roomNoTextBox.DefaultText = ""
-        Me.roomNoTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.roomNoTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.roomNoTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.roomNoTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.roomNoTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.roomNoTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.roomNoTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.roomNoTextBox.Location = New System.Drawing.Point(395, 280)
-        Me.roomNoTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.roomNoTextBox.Name = "roomNoTextBox"
-        Me.roomNoTextBox.PlaceholderText = ""
-        Me.roomNoTextBox.SelectedText = ""
-        Me.roomNoTextBox.ShadowDecoration.Enabled = True
-        Me.roomNoTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.roomNoTextBox.Size = New System.Drawing.Size(130, 50)
-        Me.roomNoTextBox.TabIndex = 71
-        '
         'Label9
         '
         Me.Label9.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
@@ -159,29 +136,6 @@ Partial Class editBookDialog
         Me.Label9.TabIndex = 70
         Me.Label9.Text = "ROOM NO."
         '
-        'paxTerxtBox
-        '
-        Me.paxTerxtBox.BackColor = System.Drawing.Color.Transparent
-        Me.paxTerxtBox.BorderRadius = 5
-        Me.paxTerxtBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.paxTerxtBox.DefaultText = ""
-        Me.paxTerxtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.paxTerxtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.paxTerxtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.paxTerxtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.paxTerxtBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.paxTerxtBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.paxTerxtBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.paxTerxtBox.Location = New System.Drawing.Point(245, 280)
-        Me.paxTerxtBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.paxTerxtBox.Name = "paxTerxtBox"
-        Me.paxTerxtBox.PlaceholderText = ""
-        Me.paxTerxtBox.SelectedText = ""
-        Me.paxTerxtBox.ShadowDecoration.Enabled = True
-        Me.paxTerxtBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.paxTerxtBox.Size = New System.Drawing.Size(130, 50)
-        Me.paxTerxtBox.TabIndex = 69
-        '
         'Label8
         '
         Me.Label8.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
@@ -190,29 +144,6 @@ Partial Class editBookDialog
         Me.Label8.Size = New System.Drawing.Size(134, 26)
         Me.Label8.TabIndex = 68
         Me.Label8.Text = "PAX"
-        '
-        'roomNameTextBox
-        '
-        Me.roomNameTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.roomNameTextBox.BorderRadius = 5
-        Me.roomNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.roomNameTextBox.DefaultText = ""
-        Me.roomNameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.roomNameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.roomNameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.roomNameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.roomNameTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.roomNameTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.roomNameTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.roomNameTextBox.Location = New System.Drawing.Point(245, 180)
-        Me.roomNameTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.roomNameTextBox.Name = "roomNameTextBox"
-        Me.roomNameTextBox.PlaceholderText = ""
-        Me.roomNameTextBox.SelectedText = ""
-        Me.roomNameTextBox.ShadowDecoration.Enabled = True
-        Me.roomNameTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.roomNameTextBox.Size = New System.Drawing.Size(280, 50)
-        Me.roomNameTextBox.TabIndex = 67
         '
         'Label7
         '
@@ -253,7 +184,7 @@ Partial Class editBookDialog
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(167, 26)
         Me.Label6.TabIndex = 64
-        Me.Label6.Text = "PHONE NO."
+        Me.Label6.Text = "PHONE NO. (PH)"
         '
         'emailTextBox
         '
@@ -379,6 +310,7 @@ Partial Class editBookDialog
         Me.bookingIdTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.bookingIdTextBox.Name = "bookingIdTextBox"
         Me.bookingIdTextBox.PlaceholderText = ""
+        Me.bookingIdTextBox.ReadOnly = True
         Me.bookingIdTextBox.SelectedText = ""
         Me.bookingIdTextBox.ShadowDecoration.Enabled = True
         Me.bookingIdTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -407,6 +339,7 @@ Partial Class editBookDialog
         Me.outTimeComboBox.ForeColor = System.Drawing.Color.Black
         Me.outTimeComboBox.IntegralHeight = False
         Me.outTimeComboBox.ItemHeight = 44
+        Me.outTimeComboBox.Items.AddRange(New Object() {"12:00 AM  ", "01:00 AM  ", "02:00 AM  ", "03:00 AM  ", "04:00 AM  ", "05:00 AM  ", "06:00 AM  ", "07:00 AM  ", "08:00 AM  ", "09:00 AM  ", "10:00 AM  ", "11:00 AM  ", "12:00 PM  ", "01:00 PM  ", "02:00 PM  ", "03:00 PM  ", "04:00 PM  ", "05:00 PM  ", "06:00 PM  ", "07:00 PM  ", "08:00 PM  ", "09:00 PM  ", "10:00 PM  ", "11:00 PM"})
         Me.outTimeComboBox.Location = New System.Drawing.Point(395, 580)
         Me.outTimeComboBox.Name = "outTimeComboBox"
         Me.outTimeComboBox.ShadowDecoration.Enabled = True
@@ -427,6 +360,7 @@ Partial Class editBookDialog
         Me.inTimeComboBox.ForeColor = System.Drawing.Color.Black
         Me.inTimeComboBox.IntegralHeight = False
         Me.inTimeComboBox.ItemHeight = 44
+        Me.inTimeComboBox.Items.AddRange(New Object() {"12:00 AM  ", "01:00 AM  ", "02:00 AM  ", "03:00 AM  ", "04:00 AM  ", "05:00 AM  ", "06:00 AM  ", "07:00 AM  ", "08:00 AM  ", "09:00 AM  ", "10:00 AM  ", "11:00 AM  ", "12:00 PM  ", "01:00 PM  ", "02:00 PM  ", "03:00 PM  ", "04:00 PM  ", "05:00 PM  ", "06:00 PM  ", "07:00 PM  ", "08:00 PM  ", "09:00 PM  ", "10:00 PM  ", "11:00 PM"})
         Me.inTimeComboBox.Location = New System.Drawing.Point(395, 430)
         Me.inTimeComboBox.Name = "inTimeComboBox"
         Me.inTimeComboBox.ShadowDecoration.Enabled = True
@@ -434,29 +368,29 @@ Partial Class editBookDialog
         Me.inTimeComboBox.Size = New System.Drawing.Size(130, 50)
         Me.inTimeComboBox.TabIndex = 85
         '
-        'outDateTimeButton
+        'outDatePickerButton
         '
-        Me.outDateTimeButton.BackColor = System.Drawing.Color.Transparent
-        Me.outDateTimeButton.BorderRadius = 5
-        Me.outDateTimeButton.CheckedState.BorderColor = System.Drawing.Color.Black
-        Me.outDateTimeButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.outDateTimeButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.outDateTimeButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.outDateTimeButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.outDateTimeButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.outDateTimeButton.FillColor = System.Drawing.Color.White
-        Me.outDateTimeButton.FocusedColor = System.Drawing.Color.Black
-        Me.outDateTimeButton.Font = New System.Drawing.Font("Lato", 13.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.outDateTimeButton.ForeColor = System.Drawing.Color.Black
-        Me.outDateTimeButton.HoverState.BorderColor = System.Drawing.Color.Transparent
-        Me.outDateTimeButton.HoverState.CustomBorderColor = System.Drawing.Color.Black
-        Me.outDateTimeButton.Location = New System.Drawing.Point(246, 580)
-        Me.outDateTimeButton.Name = "outDateTimeButton"
-        Me.outDateTimeButton.ShadowDecoration.Enabled = True
-        Me.outDateTimeButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.outDateTimeButton.Size = New System.Drawing.Size(129, 50)
-        Me.outDateTimeButton.TabIndex = 84
-        Me.outDateTimeButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.outDatePickerButton.BackColor = System.Drawing.Color.Transparent
+        Me.outDatePickerButton.BorderRadius = 5
+        Me.outDatePickerButton.CheckedState.BorderColor = System.Drawing.Color.Black
+        Me.outDatePickerButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.outDatePickerButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.outDatePickerButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.outDatePickerButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.outDatePickerButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.outDatePickerButton.FillColor = System.Drawing.Color.White
+        Me.outDatePickerButton.FocusedColor = System.Drawing.Color.Black
+        Me.outDatePickerButton.Font = New System.Drawing.Font("Lato", 13.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.outDatePickerButton.ForeColor = System.Drawing.Color.Black
+        Me.outDatePickerButton.HoverState.BorderColor = System.Drawing.Color.Transparent
+        Me.outDatePickerButton.HoverState.CustomBorderColor = System.Drawing.Color.Black
+        Me.outDatePickerButton.Location = New System.Drawing.Point(246, 580)
+        Me.outDatePickerButton.Name = "outDatePickerButton"
+        Me.outDatePickerButton.ShadowDecoration.Enabled = True
+        Me.outDatePickerButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.outDatePickerButton.Size = New System.Drawing.Size(129, 50)
+        Me.outDatePickerButton.TabIndex = 84
+        Me.outDatePickerButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'inDatePickerButton
         '
@@ -482,15 +416,80 @@ Partial Class editBookDialog
         Me.inDatePickerButton.TabIndex = 83
         Me.inDatePickerButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
+        'paxComboBox
+        '
+        Me.paxComboBox.BackColor = System.Drawing.Color.Transparent
+        Me.paxComboBox.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.paxComboBox.BorderRadius = 5
+        Me.paxComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.paxComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.paxComboBox.FocusedColor = System.Drawing.Color.Black
+        Me.paxComboBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.paxComboBox.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.paxComboBox.ForeColor = System.Drawing.Color.Black
+        Me.paxComboBox.IntegralHeight = False
+        Me.paxComboBox.ItemHeight = 44
+        Me.paxComboBox.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.paxComboBox.Location = New System.Drawing.Point(246, 280)
+        Me.paxComboBox.Name = "paxComboBox"
+        Me.paxComboBox.ShadowDecoration.Enabled = True
+        Me.paxComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.paxComboBox.Size = New System.Drawing.Size(130, 50)
+        Me.paxComboBox.TabIndex = 87
+        '
+        'roomNoComboBox
+        '
+        Me.roomNoComboBox.BackColor = System.Drawing.Color.Transparent
+        Me.roomNoComboBox.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.roomNoComboBox.BorderRadius = 5
+        Me.roomNoComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.roomNoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.roomNoComboBox.FocusedColor = System.Drawing.Color.Black
+        Me.roomNoComboBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.roomNoComboBox.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.roomNoComboBox.ForeColor = System.Drawing.Color.Black
+        Me.roomNoComboBox.IntegralHeight = False
+        Me.roomNoComboBox.ItemHeight = 44
+        Me.roomNoComboBox.Location = New System.Drawing.Point(395, 280)
+        Me.roomNoComboBox.Name = "roomNoComboBox"
+        Me.roomNoComboBox.ShadowDecoration.Enabled = True
+        Me.roomNoComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.roomNoComboBox.Size = New System.Drawing.Size(130, 50)
+        Me.roomNoComboBox.TabIndex = 88
+        '
+        'roomNameComboBox
+        '
+        Me.roomNameComboBox.BackColor = System.Drawing.Color.Transparent
+        Me.roomNameComboBox.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.roomNameComboBox.BorderRadius = 5
+        Me.roomNameComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.roomNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.roomNameComboBox.FocusedColor = System.Drawing.Color.Black
+        Me.roomNameComboBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.roomNameComboBox.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.roomNameComboBox.ForeColor = System.Drawing.Color.Black
+        Me.roomNameComboBox.IntegralHeight = False
+        Me.roomNameComboBox.ItemHeight = 44
+        Me.roomNameComboBox.Items.AddRange(New Object() {"Single", "Double", "Suite", "Family", "Deluxe", "King", "Queen", "Studio", "Penthouse", "Presedential Suite"})
+        Me.roomNameComboBox.Location = New System.Drawing.Point(246, 180)
+        Me.roomNameComboBox.Name = "roomNameComboBox"
+        Me.roomNameComboBox.ShadowDecoration.Enabled = True
+        Me.roomNameComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.roomNameComboBox.Size = New System.Drawing.Size(279, 50)
+        Me.roomNameComboBox.TabIndex = 89
+        '
         'editBookDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(571, 790)
+        Me.Controls.Add(Me.roomNameComboBox)
+        Me.Controls.Add(Me.roomNoComboBox)
+        Me.Controls.Add(Me.paxComboBox)
         Me.Controls.Add(Me.outTimeComboBox)
         Me.Controls.Add(Me.inTimeComboBox)
-        Me.Controls.Add(Me.outDateTimeButton)
+        Me.Controls.Add(Me.outDatePickerButton)
         Me.Controls.Add(Me.inDatePickerButton)
         Me.Controls.Add(Me.logInButton)
         Me.Controls.Add(Me.Label14)
@@ -499,11 +498,8 @@ Partial Class editBookDialog
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.roomNoTextBox)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.paxTerxtBox)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.roomNameTextBox)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.phoneNoTextBox)
         Me.Controls.Add(Me.Label6)
@@ -531,11 +527,8 @@ Partial Class editBookDialog
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents roomNoTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents paxTerxtBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents roomNameTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents phoneNoTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
@@ -550,6 +543,9 @@ Partial Class editBookDialog
     Friend WithEvents Label3 As Label
     Friend WithEvents outTimeComboBox As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents inTimeComboBox As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents outDateTimeButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents outDatePickerButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents inDatePickerButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents paxComboBox As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents roomNoComboBox As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents roomNameComboBox As Guna.UI2.WinForms.Guna2ComboBox
 End Class

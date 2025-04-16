@@ -1,5 +1,7 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Data.SqlTypes
 Imports System.Security.Cryptography
+Imports System.Text
 
 Public Class addEmployeeDialog
     Dim database As New database()
@@ -27,14 +29,12 @@ Public Class addEmployeeDialog
             Return
         End If
 
-        Dim salt As Byte() = GenerateSalt()
         Dim defaultPassword As String = "vistainn123"
-        Dim hashedPassword As String = HashPasswordWithSalt(defaultPassword, salt)
-
-        Dim saltBase64 As String = Convert.ToBase64String(salt)
+        Dim salt As String = GenerateSalt()
+        Dim hashedPassword As String = HashPassword(defaultPassword, salt)
 
         Dim query As String = "INSERT INTO employee (eFname, eLname, eRole, eEmail, ePhoneNo, eGender, eNationality, eAddress, ePassword, eSalt) " &
-                              "VALUES (@eFname, @eLname, @eRole, @eEmail, @ePhoneNo, @eGender, @eNationality, @eAddress, @ePassword, @eSalt)"
+                          "VALUES (@eFname, @eLname, @eRole, @eEmail, @ePhoneNo, @eGender, @eNationality, @eAddress, @ePassword, @eSalt)"
 
         Using conn As New SqlConnection(database.connectionString)
             Dim cmd As New SqlCommand(query, conn)
@@ -47,7 +47,7 @@ Public Class addEmployeeDialog
             cmd.Parameters.AddWithValue("@eNationality", eNationality)
             cmd.Parameters.AddWithValue("@eAddress", eAddress)
             cmd.Parameters.AddWithValue("@ePassword", hashedPassword)
-            cmd.Parameters.AddWithValue("@eSalt", saltBase64)
+            cmd.Parameters.AddWithValue("@eSalt", salt)
 
             Try
                 conn.Open()
@@ -56,6 +56,7 @@ Public Class addEmployeeDialog
                 If rowsAffected > 0 Then
                     MessageBox.Show("Employee added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     RaiseEvent EmployeeAdded(Me, EventArgs.Empty)
+                    Me.clear()
                 Else
                     MessageBox.Show("An error occurred while adding the employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -65,20 +66,30 @@ Public Class addEmployeeDialog
         End Using
     End Sub
 
-    Private Function GenerateSalt(Optional length As Integer = 16) As Byte()
-        Dim salt(length - 1) As Byte
+    Private Function GenerateSalt() As String
         Using rng As New RNGCryptoServiceProvider()
-            rng.GetBytes(salt)
+            Dim saltBytes(15) As Byte
+            rng.GetBytes(saltBytes)
+            Return Convert.ToBase64String(saltBytes)
         End Using
-        Return salt
     End Function
 
-    Public Function HashPasswordWithSalt(password As String, salt As Byte()) As String
+    Private Function HashPassword(password As String, salt As String) As String
         Using sha256 As SHA256 = SHA256.Create()
-            Dim passwordBytes As Byte() = System.Text.Encoding.UTF8.GetBytes(password)
-            Dim passwordWithSalt As Byte() = passwordBytes.Concat(salt).ToArray()
-            Dim hashBytes As Byte() = sha256.ComputeHash(passwordWithSalt)
+            Dim saltedPassword As String = password & salt
+            Dim hashBytes As Byte() = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPassword))
             Return Convert.ToBase64String(hashBytes)
         End Using
     End Function
+
+    Public Sub clear()
+        firstNameTextBox.Text = ""
+        lastNameTextBox.Text = ""
+        emailTextBox.Text = ""
+        phoneNoTextBox.Text = ""
+        addressTextBox.Text = ""
+        roleComboBox.SelectedIndex = -1
+        genderComboBox.SelectedIndex = -1
+        nationalityComboBox.SelectedIndex = -1
+    End Sub
 End Class

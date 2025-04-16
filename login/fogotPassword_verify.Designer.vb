@@ -25,11 +25,12 @@ Partial Class fogotPassword_verify
         Me.components = New System.ComponentModel.Container()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.searchPaymentTextBox = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.sendButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.cancelButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.emailLabel = New System.Windows.Forms.Label()
+        Me.otpTextBox = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.verifyButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.cancelBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.resendLabel = New System.Windows.Forms.Label()
+        Me.labelLink = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Timer1
@@ -47,94 +48,98 @@ Partial Class fogotPassword_verify
         Me.Label1.Text = "FORGOT PASSWORD"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label2
+        'emailLabel
         '
-        Me.Label2.Font = New System.Drawing.Font("Lato", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(126, 101)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(353, 80)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "One-Time Password has been sent to your email. Check your email and type the OTP " &
+        Me.emailLabel.Font = New System.Drawing.Font("Lato", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.emailLabel.Location = New System.Drawing.Point(69, 101)
+        Me.emailLabel.Name = "emailLabel"
+        Me.emailLabel.Size = New System.Drawing.Size(466, 80)
+        Me.emailLabel.TabIndex = 6
+        Me.emailLabel.Text = "One-Time Password has been sent to your email. Check your email and type the OTP " &
     "on the text box below:"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.emailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'searchPaymentTextBox
+        'otpTextBox
         '
-        Me.searchPaymentTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.searchPaymentTextBox.BorderRadius = 5
-        Me.searchPaymentTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.searchPaymentTextBox.DefaultText = ""
-        Me.searchPaymentTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.searchPaymentTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.searchPaymentTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.searchPaymentTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.searchPaymentTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.searchPaymentTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.searchPaymentTextBox.ForeColor = System.Drawing.Color.Black
-        Me.searchPaymentTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.searchPaymentTextBox.Location = New System.Drawing.Point(180, 201)
-        Me.searchPaymentTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.searchPaymentTextBox.Name = "searchPaymentTextBox"
-        Me.searchPaymentTextBox.PlaceholderText = ""
-        Me.searchPaymentTextBox.SelectedText = ""
-        Me.searchPaymentTextBox.ShadowDecoration.BorderRadius = 5
-        Me.searchPaymentTextBox.ShadowDecoration.Enabled = True
-        Me.searchPaymentTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.searchPaymentTextBox.Size = New System.Drawing.Size(244, 50)
-        Me.searchPaymentTextBox.TabIndex = 19
+        Me.otpTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.otpTextBox.BorderRadius = 5
+        Me.otpTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.otpTextBox.DefaultText = ""
+        Me.otpTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.otpTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.otpTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.otpTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.otpTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.otpTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.otpTextBox.ForeColor = System.Drawing.Color.Black
+        Me.otpTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.otpTextBox.Location = New System.Drawing.Point(180, 201)
+        Me.otpTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.otpTextBox.Name = "otpTextBox"
+        Me.otpTextBox.PlaceholderText = ""
+        Me.otpTextBox.SelectedText = ""
+        Me.otpTextBox.ShadowDecoration.BorderRadius = 5
+        Me.otpTextBox.ShadowDecoration.Enabled = True
+        Me.otpTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.otpTextBox.Size = New System.Drawing.Size(244, 50)
+        Me.otpTextBox.TabIndex = 19
         '
-        'sendButton
+        'verifyButton
         '
-        Me.sendButton.BackColor = System.Drawing.Color.Transparent
-        Me.sendButton.BorderRadius = 5
-        Me.sendButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.sendButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.sendButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.sendButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.sendButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.sendButton.FillColor = System.Drawing.Color.Black
-        Me.sendButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.sendButton.ForeColor = System.Drawing.Color.White
-        Me.sendButton.Location = New System.Drawing.Point(237, 281)
-        Me.sendButton.Name = "sendButton"
-        Me.sendButton.ShadowDecoration.BorderRadius = 5
-        Me.sendButton.ShadowDecoration.Enabled = True
-        Me.sendButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.sendButton.Size = New System.Drawing.Size(130, 50)
-        Me.sendButton.TabIndex = 20
-        Me.sendButton.Text = "VERIFY"
+        Me.verifyButton.BackColor = System.Drawing.Color.Transparent
+        Me.verifyButton.BorderRadius = 5
+        Me.verifyButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.verifyButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.verifyButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.verifyButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.verifyButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.verifyButton.FillColor = System.Drawing.Color.Black
+        Me.verifyButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.verifyButton.ForeColor = System.Drawing.Color.White
+        Me.verifyButton.Location = New System.Drawing.Point(237, 281)
+        Me.verifyButton.Name = "verifyButton"
+        Me.verifyButton.ShadowDecoration.BorderRadius = 5
+        Me.verifyButton.ShadowDecoration.Enabled = True
+        Me.verifyButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.verifyButton.Size = New System.Drawing.Size(130, 50)
+        Me.verifyButton.TabIndex = 20
+        Me.verifyButton.Text = "VERIFY"
         '
-        'cancelButton
+        'cancelBtn
         '
-        Me.cancelButton.BackColor = System.Drawing.Color.Transparent
-        Me.cancelButton.BorderColor = System.Drawing.Color.Transparent
-        Me.cancelButton.BorderRadius = 5
-        Me.cancelButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.cancelButton.FillColor = System.Drawing.Color.Transparent
-        Me.cancelButton.Font = New System.Drawing.Font("Raleway", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.cancelButton.ForeColor = System.Drawing.Color.Black
-        Me.cancelButton.Location = New System.Drawing.Point(237, 351)
-        Me.cancelButton.Name = "cancelButton"
-        Me.cancelButton.PressedColor = System.Drawing.Color.Transparent
-        Me.cancelButton.ShadowDecoration.BorderRadius = 5
-        Me.cancelButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.cancelButton.Size = New System.Drawing.Size(130, 50)
-        Me.cancelButton.TabIndex = 21
-        Me.cancelButton.Text = "CANCEL"
+        Me.cancelBtn.BackColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.BorderColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.BorderRadius = 5
+        Me.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.cancelBtn.FillColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.Font = New System.Drawing.Font("Raleway", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.cancelBtn.ForeColor = System.Drawing.Color.Black
+        Me.cancelBtn.Location = New System.Drawing.Point(237, 351)
+        Me.cancelBtn.Name = "cancelBtn"
+        Me.cancelBtn.PressedColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.ShadowDecoration.BorderRadius = 5
+        Me.cancelBtn.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.cancelBtn.Size = New System.Drawing.Size(130, 50)
+        Me.cancelBtn.TabIndex = 21
+        Me.cancelBtn.Text = "CANCEL"
         '
-        'Label3
+        'resendLabel
         '
-        Me.Label3.Font = New System.Drawing.Font("Lato", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(88, 401)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(427, 30)
-        Me.Label3.TabIndex = 22
-        Me.Label3.Text = "Didn't receive a code? You can resend a code in (59s)"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.resendLabel.Font = New System.Drawing.Font("Lato", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.resendLabel.Location = New System.Drawing.Point(88, 401)
+        Me.resendLabel.Name = "resendLabel"
+        Me.resendLabel.Size = New System.Drawing.Size(427, 30)
+        Me.resendLabel.TabIndex = 22
+        Me.resendLabel.Text = "Didn't receive a code? You can resend a code in (59s)"
+        Me.resendLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'labelLink
+        '
+        Me.labelLink.Interval = 1000
         '
         'fogotPassword_verify
         '
@@ -142,11 +147,11 @@ Partial Class fogotPassword_verify
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(604, 483)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.cancelButton)
-        Me.Controls.Add(Me.sendButton)
-        Me.Controls.Add(Me.searchPaymentTextBox)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.resendLabel)
+        Me.Controls.Add(Me.cancelBtn)
+        Me.Controls.Add(Me.verifyButton)
+        Me.Controls.Add(Me.otpTextBox)
+        Me.Controls.Add(Me.emailLabel)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "fogotPassword_verify"
@@ -157,13 +162,7 @@ Partial Class fogotPassword_verify
 
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If Me.Opacity < 1 Then
-            Me.Opacity += 0.05
-        Else
-            Timer1.Stop()
-        End If
-    End Sub
+
 
     Private Sub roundCorners(obj As Form)
         Dim DGP As New Drawing2D.GraphicsPath
@@ -182,9 +181,10 @@ Partial Class fogotPassword_verify
 
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents searchPaymentTextBox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents sendButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents cancelButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label3 As Label
+    Friend WithEvents emailLabel As Label
+    Friend WithEvents otpTextBox As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents verifyButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cancelBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents resendLabel As Label
+    Friend WithEvents labelLink As Timer
 End Class

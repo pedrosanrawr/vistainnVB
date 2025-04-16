@@ -295,7 +295,7 @@ Partial Class addEmployeeDialog
         Me.roleComboBox.ForeColor = System.Drawing.Color.Black
         Me.roleComboBox.IntegralHeight = False
         Me.roleComboBox.ItemHeight = 44
-        Me.roleComboBox.Items.AddRange(New Object() {"Admin", "Manager", "Staff"})
+        Me.roleComboBox.Items.AddRange(New Object() {"Manager", "Staff"})
         Me.roleComboBox.Location = New System.Drawing.Point(45, 380)
         Me.roleComboBox.Name = "roleComboBox"
         Me.roleComboBox.ShadowDecoration.Enabled = True

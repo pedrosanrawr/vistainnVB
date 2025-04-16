@@ -269,6 +269,7 @@ Partial Class editEmployeeDialog
         Me.employeeIdTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.employeeIdTextBox.Name = "employeeIdTextBox"
         Me.employeeIdTextBox.PlaceholderText = ""
+        Me.employeeIdTextBox.ReadOnly = True
         Me.employeeIdTextBox.SelectedText = ""
         Me.employeeIdTextBox.ShadowDecoration.Enabled = True
         Me.employeeIdTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -329,7 +330,7 @@ Partial Class editEmployeeDialog
         Me.roleComboBox.ForeColor = System.Drawing.Color.Black
         Me.roleComboBox.IntegralHeight = False
         Me.roleComboBox.ItemHeight = 44
-        Me.roleComboBox.Items.AddRange(New Object() {"Admin", "Manager", "Staff"})
+        Me.roleComboBox.Items.AddRange(New Object() {"Manager", "Staff"})
         Me.roleComboBox.Location = New System.Drawing.Point(45, 480)
         Me.roleComboBox.Name = "roleComboBox"
         Me.roleComboBox.ShadowDecoration.Enabled = True

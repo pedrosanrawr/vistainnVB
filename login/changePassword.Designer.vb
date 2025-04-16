@@ -24,13 +24,14 @@ Partial Class changePassword
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.searchPaymentTextBox = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.newPasswordTextBox = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.reEnterNewPasswordTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.sendButton = New Guna.UI2.WinForms.Guna2Button()
-        Me.cancelButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.changeButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.cancelBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.emailLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -44,61 +45,61 @@ Partial Class changePassword
         Me.Label1.Text = "CHANGE PASSWORD"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'searchPaymentTextBox
+        'newPasswordTextBox
         '
-        Me.searchPaymentTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.searchPaymentTextBox.BorderRadius = 5
-        Me.searchPaymentTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.searchPaymentTextBox.DefaultText = ""
-        Me.searchPaymentTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.searchPaymentTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.searchPaymentTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.searchPaymentTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.searchPaymentTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.searchPaymentTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.searchPaymentTextBox.ForeColor = System.Drawing.Color.Black
-        Me.searchPaymentTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.searchPaymentTextBox.Location = New System.Drawing.Point(180, 151)
-        Me.searchPaymentTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.searchPaymentTextBox.Name = "searchPaymentTextBox"
-        Me.searchPaymentTextBox.PlaceholderText = ""
-        Me.searchPaymentTextBox.SelectedText = ""
-        Me.searchPaymentTextBox.ShadowDecoration.BorderRadius = 5
-        Me.searchPaymentTextBox.ShadowDecoration.Enabled = True
-        Me.searchPaymentTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.searchPaymentTextBox.Size = New System.Drawing.Size(244, 50)
-        Me.searchPaymentTextBox.TabIndex = 20
+        Me.newPasswordTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.newPasswordTextBox.BorderRadius = 5
+        Me.newPasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.newPasswordTextBox.DefaultText = ""
+        Me.newPasswordTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.newPasswordTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.newPasswordTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.newPasswordTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.newPasswordTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.newPasswordTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.newPasswordTextBox.ForeColor = System.Drawing.Color.Black
+        Me.newPasswordTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.newPasswordTextBox.Location = New System.Drawing.Point(180, 175)
+        Me.newPasswordTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.newPasswordTextBox.Name = "newPasswordTextBox"
+        Me.newPasswordTextBox.PlaceholderText = ""
+        Me.newPasswordTextBox.SelectedText = ""
+        Me.newPasswordTextBox.ShadowDecoration.BorderRadius = 5
+        Me.newPasswordTextBox.ShadowDecoration.Enabled = True
+        Me.newPasswordTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.newPasswordTextBox.Size = New System.Drawing.Size(244, 50)
+        Me.newPasswordTextBox.TabIndex = 20
         '
-        'Guna2TextBox1
+        'reEnterNewPasswordTextBox
         '
-        Me.Guna2TextBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox1.BorderRadius = 5
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(180, 251)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(6)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PlaceholderText = ""
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.ShadowDecoration.BorderRadius = 5
-        Me.Guna2TextBox1.ShadowDecoration.Enabled = True
-        Me.Guna2TextBox1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(244, 50)
-        Me.Guna2TextBox1.TabIndex = 21
+        Me.reEnterNewPasswordTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.reEnterNewPasswordTextBox.BorderRadius = 5
+        Me.reEnterNewPasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.reEnterNewPasswordTextBox.DefaultText = ""
+        Me.reEnterNewPasswordTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.reEnterNewPasswordTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.reEnterNewPasswordTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.reEnterNewPasswordTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.reEnterNewPasswordTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.reEnterNewPasswordTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.reEnterNewPasswordTextBox.ForeColor = System.Drawing.Color.Black
+        Me.reEnterNewPasswordTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.reEnterNewPasswordTextBox.Location = New System.Drawing.Point(180, 275)
+        Me.reEnterNewPasswordTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.reEnterNewPasswordTextBox.Name = "reEnterNewPasswordTextBox"
+        Me.reEnterNewPasswordTextBox.PlaceholderText = ""
+        Me.reEnterNewPasswordTextBox.SelectedText = ""
+        Me.reEnterNewPasswordTextBox.ShadowDecoration.BorderRadius = 5
+        Me.reEnterNewPasswordTextBox.ShadowDecoration.Enabled = True
+        Me.reEnterNewPasswordTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.reEnterNewPasswordTextBox.Size = New System.Drawing.Size(244, 50)
+        Me.reEnterNewPasswordTextBox.TabIndex = 21
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Raleway", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(180, 131)
+        Me.Label2.Location = New System.Drawing.Point(180, 155)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(185, 21)
         Me.Label2.TabIndex = 22
@@ -109,59 +110,69 @@ Partial Class changePassword
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Raleway", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(180, 231)
+        Me.Label3.Location = New System.Drawing.Point(180, 255)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(210, 21)
         Me.Label3.TabIndex = 23
         Me.Label3.Text = "RE-ENTER NEW PASSWORD"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'sendButton
+        'changeButton
         '
-        Me.sendButton.BackColor = System.Drawing.Color.Transparent
-        Me.sendButton.BorderRadius = 5
-        Me.sendButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.sendButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.sendButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.sendButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.sendButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.sendButton.FillColor = System.Drawing.Color.Black
-        Me.sendButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.sendButton.ForeColor = System.Drawing.Color.White
-        Me.sendButton.Location = New System.Drawing.Point(339, 381)
-        Me.sendButton.Name = "sendButton"
-        Me.sendButton.ShadowDecoration.BorderRadius = 5
-        Me.sendButton.ShadowDecoration.Enabled = True
-        Me.sendButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.sendButton.Size = New System.Drawing.Size(150, 50)
-        Me.sendButton.TabIndex = 24
-        Me.sendButton.Text = "CHANGE"
+        Me.changeButton.BackColor = System.Drawing.Color.Transparent
+        Me.changeButton.BorderRadius = 5
+        Me.changeButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.changeButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.changeButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.changeButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.changeButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.changeButton.FillColor = System.Drawing.Color.Black
+        Me.changeButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.changeButton.ForeColor = System.Drawing.Color.White
+        Me.changeButton.Location = New System.Drawing.Point(339, 381)
+        Me.changeButton.Name = "changeButton"
+        Me.changeButton.ShadowDecoration.BorderRadius = 5
+        Me.changeButton.ShadowDecoration.Enabled = True
+        Me.changeButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.changeButton.Size = New System.Drawing.Size(150, 50)
+        Me.changeButton.TabIndex = 24
+        Me.changeButton.Text = "CHANGE"
         '
-        'cancelButton
+        'cancelBtn
         '
-        Me.cancelButton.BackColor = System.Drawing.Color.Transparent
-        Me.cancelButton.BorderColor = System.Drawing.Color.Transparent
-        Me.cancelButton.BorderRadius = 5
-        Me.cancelButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.cancelButton.FillColor = System.Drawing.Color.Transparent
-        Me.cancelButton.Font = New System.Drawing.Font("Raleway", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.cancelButton.ForeColor = System.Drawing.Color.Black
-        Me.cancelButton.Location = New System.Drawing.Point(115, 381)
-        Me.cancelButton.Name = "cancelButton"
-        Me.cancelButton.PressedColor = System.Drawing.Color.Transparent
-        Me.cancelButton.ShadowDecoration.BorderRadius = 5
-        Me.cancelButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.cancelButton.Size = New System.Drawing.Size(130, 50)
-        Me.cancelButton.TabIndex = 25
-        Me.cancelButton.Text = "CANCEL"
+        Me.cancelBtn.BackColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.BorderColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.BorderRadius = 5
+        Me.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.cancelBtn.FillColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.Font = New System.Drawing.Font("Raleway", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.cancelBtn.ForeColor = System.Drawing.Color.Black
+        Me.cancelBtn.Location = New System.Drawing.Point(115, 381)
+        Me.cancelBtn.Name = "cancelBtn"
+        Me.cancelBtn.PressedColor = System.Drawing.Color.Transparent
+        Me.cancelBtn.ShadowDecoration.BorderRadius = 5
+        Me.cancelBtn.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.cancelBtn.Size = New System.Drawing.Size(130, 50)
+        Me.cancelBtn.TabIndex = 25
+        Me.cancelBtn.Text = "CANCEL"
         '
         'Timer1
         '
         Me.Timer1.Interval = 10
+        '
+        'emailLabel
+        '
+        Me.emailLabel.Font = New System.Drawing.Font("Lato", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.emailLabel.Location = New System.Drawing.Point(69, 95)
+        Me.emailLabel.Name = "emailLabel"
+        Me.emailLabel.Size = New System.Drawing.Size(466, 42)
+        Me.emailLabel.TabIndex = 26
+        Me.emailLabel.Text = "Email"
+        Me.emailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'changePassword
         '
@@ -169,10 +180,11 @@ Partial Class changePassword
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(604, 483)
-        Me.Controls.Add(Me.cancelButton)
-        Me.Controls.Add(Me.sendButton)
-        Me.Controls.Add(Me.Guna2TextBox1)
-        Me.Controls.Add(Me.searchPaymentTextBox)
+        Me.Controls.Add(Me.emailLabel)
+        Me.Controls.Add(Me.cancelBtn)
+        Me.Controls.Add(Me.changeButton)
+        Me.Controls.Add(Me.reEnterNewPasswordTextBox)
+        Me.Controls.Add(Me.newPasswordTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -208,11 +220,12 @@ Partial Class changePassword
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents searchPaymentTextBox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents newPasswordTextBox As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents reEnterNewPasswordTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents sendButton As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents cancelButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents changeButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cancelBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents emailLabel As Label
 End Class

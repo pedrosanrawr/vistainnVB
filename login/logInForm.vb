@@ -1,7 +1,10 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Security.Cryptography
+Imports System.Text
 
 Public Class logInForm
     Dim database As New database()
+
     Private Sub logInForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         passwordTextBox.PasswordChar = "•"c
     End Sub
@@ -45,9 +48,13 @@ Public Class logInForm
             If reader.Read() Then
                 Dim storedHash As String = reader("ePassword").ToString()
                 Dim storedSaltBase64 As String = reader("eSalt").ToString()
-                Dim storedSalt As Byte() = Convert.FromBase64String(storedSaltBase64)
 
-                Dim inputHash As String = addEmployeeDialog.HashPasswordWithSalt(password, storedSalt)
+                Dim saltedPassword As String = password & storedSaltBase64
+                Dim inputHash As String
+                Using sha256 As SHA256 = SHA256.Create()
+                    Dim hashBytes As Byte() = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPassword))
+                    inputHash = Convert.ToBase64String(hashBytes)
+                End Using
 
                 If storedHash = inputHash Then
                     Employee.Email = email
@@ -62,7 +69,7 @@ Public Class logInForm
                         Case "Staff"
                             basePage.loadForm(New bookingTable())
                         Case "Manager"
-                            basePage.loadForm(New roomTable())
+                            basePage.loadForm(New bookingTable())
                     End Select
                 Else
                     MessageBox.Show("The password you entered is incorrect.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -81,13 +88,23 @@ Public Class logInForm
     End Sub
 
     Private Sub forgotPasswordLabelLink_Click(sender As Object, e As EventArgs) Handles forgotPasswordLabelLink.Click
-        Dim forgotPassword_send As New forgotPassword_send()
-        forgotPassword_send.ShowDialog()
+        If String.IsNullOrEmpty(emailTextBox.Text) Then
+            MessageBox.Show("Please enter an email first.", "Email Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim forgotPasswordForm As New forgotPassword_send(emailTextBox.Text)
+            forgotPasswordForm.ShowDialog()
+        End If
     End Sub
 End Class
 
 Class Employee
     Public Shared Property Email As String
     Public Shared Property Role As String
-
+    Public Shared Property ProfilePic As Byte()
+    Public Shared Property FirstName As String
+    Public Shared Property LastName As String
+    Public Shared Property PhoneNo As String
+    Public Shared Property Gender As String
+    Public Shared Property Nationality As String
+    Public Shared Property Address As String
 End Class

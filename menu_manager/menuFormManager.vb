@@ -82,7 +82,14 @@ Public Class menuFormManager
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles logOutButton.Click
-        SelectButton(sender)
-        basePage.loadForm(New logInForm(basePage))
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?",
+                                                 "Confirm Logout",
+                                                 MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            SelectButton(sender)
+            basePage.loadForm(New logInForm(basePage))
+        End If
     End Sub
 End Class
