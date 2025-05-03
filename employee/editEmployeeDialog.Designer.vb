@@ -262,6 +262,7 @@ Partial Class editEmployeeDialog
         Me.employeeIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.employeeIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.employeeIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.employeeIdTextBox.Enabled = False
         Me.employeeIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.employeeIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.employeeIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
@@ -330,7 +331,7 @@ Partial Class editEmployeeDialog
         Me.roleComboBox.ForeColor = System.Drawing.Color.Black
         Me.roleComboBox.IntegralHeight = False
         Me.roleComboBox.ItemHeight = 44
-        Me.roleComboBox.Items.AddRange(New Object() {"Manager", "Staff"})
+        Me.roleComboBox.Items.AddRange(New Object() {"Admin", "Manager", "Staff"})
         Me.roleComboBox.Location = New System.Drawing.Point(45, 480)
         Me.roleComboBox.Name = "roleComboBox"
         Me.roleComboBox.ShadowDecoration.Enabled = True
@@ -351,7 +352,7 @@ Partial Class editEmployeeDialog
         Me.nationalityComboBox.ForeColor = System.Drawing.Color.Black
         Me.nationalityComboBox.IntegralHeight = False
         Me.nationalityComboBox.ItemHeight = 44
-        Me.nationalityComboBox.Items.AddRange(New Object() {"Filipino"})
+        Me.nationalityComboBox.Items.AddRange(New Object() {"Afghan", "Albanian", "Algerian", "Andorran", "Angolan", "Antiguan or Barbudan", "Argentine", "Armenian", "Australian", "Austrian", "Azerbaijani", "Bahamian", "Bahraini", "Bangladeshi", "Barbadian", "Belarusian", "Belgian", "Belizean", "Beninese", "Bhutanese", "Bolivian", "Bosnian or Herzegovinian", "Motswana", "Brazilian", "Bruneian", "Bulgarian", "Burkinabé", "Burmese", "Burundian", "Cabo Verdean", "Cambodian", "Cameroonian", "Canadian", "Central African", "Chadian", "Chilean", "Chinese", "Colombian", "Comoran", "Congolese", "Costa Rican", "Ivorian", "Croatian", "Cuban", "Cypriot", "Czech", "Danish", "Djiboutian", "Dominican", "Ecuadorian", "Egyptian", "Salvadoran", "Equatorial Guinean", "Eritrean", "Estonian", "Swazi", "Ethiopian", "Fijian", "Filipino", "Finn", "French", "Gabonese", "Gambian", "Georgian", "German", "Ghanaian", "Gibraltarian", "Greek", "Grenadian", "Guatemalan", "Guinean", "Bissau-Guinean", "Guyanese", "Haitian", "Honduran", "Hungarian", "Icelander", "Indian", "Indonesian", "Iranian", "Iraqi", "Irish", "Israeli", "Italian", "Jamaican", "Japanese", "Jordanian", "Kazakhstani", "Kenyan", "I-Kiribati", "North Korean", "South Korean", "Kuwaiti", "Kyrgyzstani", "Lao", "Latvian", "Lebanese", "Mosotho", "Liberian", "Libyan", "Liechtensteiner", "Lithuanian", "Luxembourger", "Malagasy", "Malawian", "Malaysian", "Maldivian", "Malian", "Maltese", "Marshallese", "Martiniquais", "Mauritanian", "Mauritian", "Mexican", "Micronesian", "Moldovan", "Monegasque", "Mongolian", "Montenegrin", "Moroccan", "Mozambican", "Namibian", "Nauruan", "Nepali", "Dutch", "New Zealander", "Nicaraguan", "Nigerien", "Nigerian", "Macedonian", "Norwegian", "Omani", "Pakistani", "Palauan", "Panamanian", "Papua New Guinean", "Paraguayan", "Peruvian", "Pole", "Portuguese", "Puerto Rican", "Qatari", "Romanian", "Russian", "Rwandan", "Kittitian or Nevisian", "Saint Lucian", "Saint Vincentian", "Samoan", "Sammarinese", "São Toméan", "Saudi", "Senegalese", "Serbian", "Seychellois", "Sierra Leonean", "Singaporean", "Slovak", "Slovenian", "Solomon Islander", "Somali", "South African", "South Sudanese", "Spanish", "Sri Lankan", "Sudanese", "Surinamese", "Swedish", "Swiss", "Syrian", "Taiwanese", "Tajikistani", "Tanzanian", "Thai", "Timorese", "Togolese", "Tongan", "Trinidadian or Tobagonian", "Tunisian", "Turkish", "Turkmen", "Tuvaluan", "Ugandan", "Ukrainian", "Emirati", "British", "American", "Uruguayan", "Uzbekistani", "Vanuatuan", "Venezuelan", "Vietnamese", "Yemeni", "Zambian", "Zimbabwean"})
         Me.nationalityComboBox.Location = New System.Drawing.Point(295, 480)
         Me.nationalityComboBox.Name = "nationalityComboBox"
         Me.nationalityComboBox.ShadowDecoration.Enabled = True

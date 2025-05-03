@@ -23,6 +23,7 @@ Partial Class changePassword
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(changePassword))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.newPasswordTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.reEnterNewPasswordTextBox = New Guna.UI2.WinForms.Guna2TextBox()
@@ -32,6 +33,10 @@ Partial Class changePassword
         Me.cancelBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.emailLabel = New System.Windows.Forms.Label()
+        Me.hidePassEnter = New System.Windows.Forms.PictureBox()
+        Me.hidePassReEnter = New System.Windows.Forms.PictureBox()
+        CType(Me.hidePassEnter, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.hidePassReEnter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -59,7 +64,7 @@ Partial Class changePassword
         Me.newPasswordTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.newPasswordTextBox.ForeColor = System.Drawing.Color.Black
         Me.newPasswordTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.newPasswordTextBox.Location = New System.Drawing.Point(180, 175)
+        Me.newPasswordTextBox.Location = New System.Drawing.Point(161, 175)
         Me.newPasswordTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.newPasswordTextBox.Name = "newPasswordTextBox"
         Me.newPasswordTextBox.PlaceholderText = ""
@@ -84,7 +89,7 @@ Partial Class changePassword
         Me.reEnterNewPasswordTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.reEnterNewPasswordTextBox.ForeColor = System.Drawing.Color.Black
         Me.reEnterNewPasswordTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.reEnterNewPasswordTextBox.Location = New System.Drawing.Point(180, 275)
+        Me.reEnterNewPasswordTextBox.Location = New System.Drawing.Point(161, 275)
         Me.reEnterNewPasswordTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.reEnterNewPasswordTextBox.Name = "reEnterNewPasswordTextBox"
         Me.reEnterNewPasswordTextBox.PlaceholderText = ""
@@ -99,7 +104,7 @@ Partial Class changePassword
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Raleway", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(180, 155)
+        Me.Label2.Location = New System.Drawing.Point(161, 155)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(185, 21)
         Me.Label2.TabIndex = 22
@@ -110,7 +115,7 @@ Partial Class changePassword
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Raleway", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(180, 255)
+        Me.Label3.Location = New System.Drawing.Point(161, 255)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(210, 21)
         Me.Label3.TabIndex = 23
@@ -174,12 +179,34 @@ Partial Class changePassword
         Me.emailLabel.Text = "Email"
         Me.emailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'hidePassEnter
+        '
+        Me.hidePassEnter.Image = CType(resources.GetObject("hidePassEnter.Image"), System.Drawing.Image)
+        Me.hidePassEnter.Location = New System.Drawing.Point(414, 184)
+        Me.hidePassEnter.Name = "hidePassEnter"
+        Me.hidePassEnter.Size = New System.Drawing.Size(30, 30)
+        Me.hidePassEnter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.hidePassEnter.TabIndex = 27
+        Me.hidePassEnter.TabStop = False
+        '
+        'hidePassReEnter
+        '
+        Me.hidePassReEnter.Image = CType(resources.GetObject("hidePassReEnter.Image"), System.Drawing.Image)
+        Me.hidePassReEnter.Location = New System.Drawing.Point(414, 285)
+        Me.hidePassReEnter.Name = "hidePassReEnter"
+        Me.hidePassReEnter.Size = New System.Drawing.Size(30, 30)
+        Me.hidePassReEnter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.hidePassReEnter.TabIndex = 28
+        Me.hidePassReEnter.TabStop = False
+        '
         'changePassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(604, 483)
+        Me.Controls.Add(Me.hidePassReEnter)
+        Me.Controls.Add(Me.hidePassEnter)
         Me.Controls.Add(Me.emailLabel)
         Me.Controls.Add(Me.cancelBtn)
         Me.Controls.Add(Me.changeButton)
@@ -192,6 +219,8 @@ Partial Class changePassword
         Me.Name = "changePassword"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "changePassword"
+        CType(Me.hidePassEnter, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.hidePassReEnter, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -228,4 +257,6 @@ Partial Class changePassword
     Friend WithEvents cancelBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents emailLabel As Label
+    Friend WithEvents hidePassEnter As PictureBox
+    Friend WithEvents hidePassReEnter As PictureBox
 End Class

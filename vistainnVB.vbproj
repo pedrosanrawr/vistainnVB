@@ -69,6 +69,7 @@
       <HintPath>packages\Siticone.Desktop.UI.2.1.1\lib\net40\Siticone.Desktop.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
@@ -158,6 +159,7 @@
     <Compile Include="extras\editExtraDialog.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="extras\extrasValidation.vb" />
     <Compile Include="HideButtons.vb" />
     <Compile Include="login\changePassword.Designer.vb">
       <DependentUpon>changePassword.vb</DependentUpon>
@@ -206,6 +208,12 @@
     </Compile>
     <Compile Include="menu_staff\nestedTabTablesStaff.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="orderExtras\orderExtras.Designer.vb">
+      <DependentUpon>orderExtras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="orderExtras\orderExtras.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="payment\editPaymentDialog.Designer.vb">
       <DependentUpon>editPaymentDialog.vb</DependentUpon>
@@ -327,6 +335,9 @@
     <EmbeddedResource Include="menu_staff\nestedTabTablesStaff.resx">
       <DependentUpon>nestedTabTablesStaff.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="orderExtras\orderExtras.resx">
+      <DependentUpon>orderExtras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="payment\editPaymentDialog.resx">
       <DependentUpon>editPaymentDialog.vb</DependentUpon>
     </EmbeddedResource>
@@ -398,5 +409,6 @@
   <ItemGroup>
     <None Include="Resources\Ellipse 1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

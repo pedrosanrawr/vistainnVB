@@ -14,7 +14,7 @@ Public Class bookingTable
 
     Private Sub bookingTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
-        Timer1.Start()
+        fadeIn.Start()
 
         Select Case Employee.Role
             Case "Staff"
@@ -64,8 +64,8 @@ Public Class bookingTable
         dialog.Show()
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If Me.Opacity < 1 Then Me.Opacity += 0.05 Else Timer1.Stop()
+    Private Sub fadeIn_Tick(sender As Object, e As EventArgs) Handles fadeIn.Tick
+        If Me.Opacity < 1 Then Me.Opacity += 0.05 Else fadeIn.Stop()
     End Sub
 
     Private Sub btnToggleMenu_Click(sender As Object, e As EventArgs) Handles menuButton.Click
@@ -180,13 +180,13 @@ Public Class bookingTable
         If String.IsNullOrWhiteSpace(filter) Then
             bookBindingSource.Filter = Nothing
         Else
-            bookBindingSource.Filter = String.Format("bFname LIKE '%{0}%'", filter)
+            bookBindingSource.Filter = String.Format("bFname LIKE '%{0}%' OR bLname LIKE '%{0}%' OR bEmail LIKE '%{0}%' OR bPhoneNo LIKE '%{0}%' OR bRoomNo LIKE '%{0}%' OR bRName LIKE '%{0}%' OR bReferenceNo LIKE '%{0}%'", filter)
         End If
     End Sub
 
     Private Sub deleteAccButton_Click(sender As Object, e As EventArgs) Handles deleteBookButton.Click
         If bookDGV.CurrentRow Is Nothing Then
-            MessageBox.Show("Please select an booking to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please select a booking to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
@@ -202,22 +202,38 @@ Public Class bookingTable
             Dim selectedBook As String = selectedRow.Cells("bookId").Value.ToString()
 
             Dim conn As New SqlConnection(database.connectionString)
-            Dim query As String = "DELETE FROM bookings WHERE bId = @bId"
-            Dim cmd As New SqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@bId", selectedBook)
+            Dim cmd As New SqlCommand()
+            cmd.Connection = conn
+            Dim transaction As SqlTransaction
 
             Try
                 conn.Open()
-                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
-                If rowsAffected > 0 Then
-                    RaiseEvent BookDeleted(Me, EventArgs.Empty)
-                    LoadBookingData()
-                    MessageBox.Show("Booking successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("No bookings was deleted. It may not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
+                transaction = conn.BeginTransaction()
+                cmd.Transaction = transaction
+
+                cmd.CommandText = "DELETE FROM orderExtras WHERE bId = @bId"
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@bId", selectedBook)
+                cmd.ExecuteNonQuery()
+
+                cmd.CommandText = "DELETE FROM payments WHERE bId = @bId"
+                cmd.ExecuteNonQuery()
+
+                cmd.CommandText = "DELETE FROM bookings WHERE bId = @bId"
+                cmd.ExecuteNonQuery()
+
+                transaction.Commit()
+
+                RaiseEvent BookDeleted(Me, EventArgs.Empty)
+                LoadBookingData()
+                MessageBox.Show("Booking and all related records successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Catch ex As Exception
+                If conn.State = ConnectionState.Open Then
+                    transaction?.Rollback()
+                End If
                 MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
             Finally
                 conn.Close()
             End Try

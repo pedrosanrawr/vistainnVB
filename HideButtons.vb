@@ -1,6 +1,6 @@
 ﻿Public Class HideButtons
     Public Sub hideButtonsBookings(bookingForm As bookingTable)
-        If Employee.Role = "Admin" Then
+        If Employee.Role = "Admin" Or Employee.Role = "Manager" Then
             bookingForm.editBookButton.Visible = False
             bookingForm.deleteBookButton.Visible = False
         End If
@@ -15,14 +15,14 @@
     End Sub
 
     Public Sub hideButtonsPayment(paymentForm As paymentTable)
-        If Employee.Role = "Admin" Then
+        If Employee.Role = "Admin" Or Employee.Role = "Manager" Then
             paymentForm.editPaymentButton.Visible = False
             paymentForm.deletePaymentButton.Visible = False
         End If
     End Sub
 
     Public Sub hideButtonsExtras(extrasForm As extrasTable)
-        If Employee.Role = "Admin" Then
+        If Employee.Role = "Admin" Or Employee.Role = "Manager" Then
             extrasForm.addExtrasButton.Visible = False
             extrasForm.editExtrasButton.Visible = False
             extrasForm.deleteExtrasButton.Visible = False

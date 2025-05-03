@@ -4,6 +4,18 @@ Imports System.Data.SqlClient
 Public Class bookValidation
     Private database As New database()
 
+    Public Function AreRequiredFieldsFilled(bFname As String, bLname As String, bEmail As String, bPhoneNo As String, bRoomName As String, bRoomNo As String, bPax As String, bCheckInTime As String, bCheckOutTime As String) As Boolean
+        Return Not String.IsNullOrWhiteSpace(bFname) AndAlso
+           Not String.IsNullOrWhiteSpace(bLname) AndAlso
+           Not String.IsNullOrWhiteSpace(bEmail) AndAlso
+           Not String.IsNullOrWhiteSpace(bPhoneNo) AndAlso
+           Not String.IsNullOrWhiteSpace(bRoomName) AndAlso
+           Not String.IsNullOrWhiteSpace(bRoomNo) AndAlso
+           Not String.IsNullOrWhiteSpace(bPax) AndAlso
+           Not String.IsNullOrWhiteSpace(bCheckInTime) AndAlso
+           Not String.IsNullOrWhiteSpace(bCheckOutTime)
+    End Function
+
     Public Function IsNameValid(name As String) As Boolean
         Return Regex.IsMatch(name.Trim(), "^[A-Za-z\s]+$")
     End Function
@@ -24,7 +36,8 @@ Public Class bookValidation
         Dim query As String = "
             SELECT COUNT(*) FROM bookings b
             INNER JOIN payments p ON b.bId = p.bId
-            WHERE b.bRName = @rName AND b.bRoomNo = @roomNo AND p.pStatus = 'Paid'
+            WHERE b.bRName = @rName AND b.bRoomNo = @roomNo 
+            AND p.pStatus IN ('Paid', 'Pending', 'Partially Paid')
             AND (
                 (@inDate BETWEEN b.bCheckInDate AND b.bCheckOutDate)
                 OR

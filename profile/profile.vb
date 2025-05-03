@@ -5,12 +5,11 @@ Public Class profile
     Dim menuVisible As Boolean = False
     Dim menuSpeed As Integer = 20
     Dim database As New database()
+    Dim employeeData As Employee = GetEmployeeData(Employee.Email)
 
     Private Sub profile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
-        Timer1.Start()
-
-        Dim employeeData As Employee = GetEmployeeData(Employee.Email)
+        fadeIn.Start()
 
         DisplayEmployeeProfile(employeeData)
 
@@ -34,11 +33,11 @@ Public Class profile
         menuForm.Show()
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub fadeIn_Tick(sender As Object, e As EventArgs) Handles fadeIn.Tick
         If Me.Opacity < 1 Then
             Me.Opacity += 0.05
         Else
-            Timer1.Stop()
+            fadeIn.Stop()
         End If
     End Sub
 
@@ -125,22 +124,25 @@ Public Class profile
     End Sub
 
     Private Sub changeProfilePicButton_Click(sender As Object, e As EventArgs) Handles changeProfilePicButton.Click
-        Dim ofd As New OpenFileDialog()
-        ofd.Title = "Select a Profile Picture"
-        ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to change your profile picture?", "Confirm Profile Picture Change", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        If ofd.ShowDialog() = DialogResult.OK Then
-            Dim imageBytes() As Byte = IO.File.ReadAllBytes(ofd.FileName)
+        If result = DialogResult.Yes Then
+            Dim ofd As New OpenFileDialog()
+            ofd.Title = "Select a Profile Picture"
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
 
-            UpdateProfilePicture(Employee.Email, imageBytes)
+            If ofd.ShowDialog() = DialogResult.OK Then
+                Dim imageBytes() As Byte = IO.File.ReadAllBytes(ofd.FileName)
+                UpdateProfilePicture(Employee.Email, imageBytes)
 
-            Using ms As New IO.MemoryStream(imageBytes)
-                profilePicture.Image = Image.FromStream(ms)
-            End Using
+                Using ms As New IO.MemoryStream(imageBytes)
+                    profilePicture.Image = Image.FromStream(ms)
+                End Using
 
-            Employee.ProfilePic = imageBytes
+                Employee.ProfilePic = imageBytes
 
-            MessageBox.Show("Profile picture updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Profile picture updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         End If
     End Sub
 
@@ -156,5 +158,9 @@ Public Class profile
                 cmd.ExecuteNonQuery()
             End Using
         End Using
+    End Sub
+
+    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
+        DisplayEmployeeProfile(employeeData)
     End Sub
 End Class

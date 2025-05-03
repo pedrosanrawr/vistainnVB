@@ -32,7 +32,7 @@ Partial Class bookingTable
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.refreshBookButton = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.fadeIn = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
         Me.editBookButton = New Guna.UI2.WinForms.Guna2Button()
         Me.deleteBookButton = New Guna.UI2.WinForms.Guna2Button()
@@ -52,6 +52,7 @@ Partial Class bookingTable
         Me.bookCheckInTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookCheckOutdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bookCheckOutTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookReferenceNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,9 +113,9 @@ Partial Class bookingTable
         Me.refreshBookButton.TabIndex = 6
         Me.refreshBookButton.TabStop = False
         '
-        'Timer1
+        'fadeIn
         '
-        Me.Timer1.Interval = 5
+        Me.fadeIn.Interval = 5
         '
         'menuTimer
         '
@@ -228,7 +229,7 @@ Partial Class bookingTable
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.bookDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.bookDGV.ColumnHeadersHeight = 40
-        Me.bookDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookId, Me.bookFname, Me.bookLname, Me.bookEmail, Me.bookPhoneNo, Me.bookRoomName, Me.bookRoomNo, Me.bookPax, Me.bookCheckInDate, Me.bookCheckInTime, Me.bookCheckOutdate, Me.bookCheckOutTime})
+        Me.bookDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookId, Me.bookFname, Me.bookLname, Me.bookEmail, Me.bookPhoneNo, Me.bookRoomName, Me.bookRoomNo, Me.bookPax, Me.bookCheckInDate, Me.bookCheckInTime, Me.bookCheckOutdate, Me.bookCheckOutTime, Me.bookReferenceNo})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -374,6 +375,14 @@ Partial Class bookingTable
         Me.bookCheckOutTime.ReadOnly = True
         Me.bookCheckOutTime.Width = 150
         '
+        'bookReferenceNo
+        '
+        Me.bookReferenceNo.DataPropertyName = "bReferenceNo"
+        Me.bookReferenceNo.HeaderText = "REFERENCE NO"
+        Me.bookReferenceNo.Name = "bookReferenceNo"
+        Me.bookReferenceNo.ReadOnly = True
+        Me.bookReferenceNo.Width = 150
+        '
         'dialogTimer
         '
         Me.dialogTimer.Interval = 5
@@ -412,7 +421,7 @@ Partial Class bookingTable
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents refreshBookButton As PictureBox
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents fadeIn As Timer
     Friend WithEvents menuTimer As Timer
     Friend WithEvents editBookButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents deleteBookButton As Guna.UI2.WinForms.Guna2Button
@@ -434,4 +443,5 @@ Partial Class bookingTable
     Friend WithEvents bookCheckInTime As DataGridViewTextBoxColumn
     Friend WithEvents bookCheckOutdate As DataGridViewTextBoxColumn
     Friend WithEvents bookCheckOutTime As DataGridViewTextBoxColumn
+    Friend WithEvents bookReferenceNo As DataGridViewTextBoxColumn
 End Class

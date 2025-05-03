@@ -251,7 +251,7 @@ Partial Class addRoomDialog
         Me.statusComboBox.ForeColor = System.Drawing.Color.Black
         Me.statusComboBox.IntegralHeight = False
         Me.statusComboBox.ItemHeight = 44
-        Me.statusComboBox.Items.AddRange(New Object() {"Available", "Occupied", "Maintenance"})
+        Me.statusComboBox.Items.AddRange(New Object() {"Available", "Maintenance", "Out of Service"})
         Me.statusComboBox.Location = New System.Drawing.Point(45, 580)
         Me.statusComboBox.Name = "statusComboBox"
         Me.statusComboBox.ShadowDecoration.Enabled = True
@@ -384,7 +384,7 @@ Partial Class addRoomDialog
         Me.roomTypeComboBox.ForeColor = System.Drawing.Color.Black
         Me.roomTypeComboBox.IntegralHeight = False
         Me.roomTypeComboBox.ItemHeight = 44
-        Me.roomTypeComboBox.Items.AddRange(New Object() {"Single", "Double", "Suite", "Family", "Deluxe", "King", "Queen", "Studio", "Penthouse", "Presedential Suite"})
+        Me.roomTypeComboBox.Items.AddRange(New Object() {"Single", "Studio", "Economy", "Capsule", "Compact", "Twin", "Queen", "King", "Duo", "Zen", "Nest", "Flex", "Pad", "Haven", "Family", "Crew", "Pod", "Loft", "Presidential", "Max"})
         Me.roomTypeComboBox.Location = New System.Drawing.Point(45, 286)
         Me.roomTypeComboBox.Name = "roomTypeComboBox"
         Me.roomTypeComboBox.ShadowDecoration.Enabled = True
@@ -420,6 +420,7 @@ Partial Class addRoomDialog
         Me.Controls.Add(Me.bedroomTextBox)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "addRoomDialog"
         Me.Text = "Form1"

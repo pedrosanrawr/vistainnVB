@@ -32,7 +32,7 @@ Partial Class extrasTable
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.refreshButton = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.fadeIn = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
         Me.addExtrasButton = New Guna.UI2.WinForms.Guna2Button()
         Me.editExtrasButton = New Guna.UI2.WinForms.Guna2Button()
@@ -40,18 +40,18 @@ Partial Class extrasTable
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.searchTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.bookDGV = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.extrasDGV = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.extrasId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.extrasItems = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.extrasPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.extrasQuantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
-        CType(Me.bookDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.extrasDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menuButton
@@ -77,11 +77,11 @@ Partial Class extrasTable
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Raleway", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(888, 18)
+        Me.Label1.Location = New System.Drawing.Point(852, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(167, 34)
+        Me.Label1.Size = New System.Drawing.Size(203, 34)
         Me.Label1.TabIndex = 18
-        Me.Label1.Text = "EXTRAS"
+        Me.Label1.Text = "ITEM EXTRAS"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PictureBox3
@@ -105,9 +105,9 @@ Partial Class extrasTable
         Me.refreshButton.TabIndex = 16
         Me.refreshButton.TabStop = False
         '
-        'Timer1
+        'fadeIn
         '
-        Me.Timer1.Interval = 5
+        Me.fadeIn.Interval = 5
         '
         'menuTimer
         '
@@ -215,7 +215,7 @@ Partial Class extrasTable
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel1.BorderRadius = 5
-        Me.Guna2Panel1.Controls.Add(Me.bookDGV)
+        Me.Guna2Panel1.Controls.Add(Me.extrasDGV)
         Me.Guna2Panel1.FillColor = System.Drawing.Color.White
         Me.Guna2Panel1.Location = New System.Drawing.Point(31, 185)
         Me.Guna2Panel1.Name = "Guna2Panel1"
@@ -225,24 +225,24 @@ Partial Class extrasTable
         Me.Guna2Panel1.Size = New System.Drawing.Size(1080, 570)
         Me.Guna2Panel1.TabIndex = 25
         '
-        'bookDGV
+        'extrasDGV
         '
-        Me.bookDGV.AllowUserToAddRows = False
-        Me.bookDGV.AllowUserToDeleteRows = False
-        Me.bookDGV.AllowUserToResizeColumns = False
-        Me.bookDGV.AllowUserToResizeRows = False
-        Me.bookDGV.AlternatingRowsDefaultCellStyle = Me.bookDGV.DefaultCellStyle
-        Me.bookDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
-        Me.bookDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        Me.extrasDGV.AllowUserToAddRows = False
+        Me.extrasDGV.AllowUserToDeleteRows = False
+        Me.extrasDGV.AllowUserToResizeColumns = False
+        Me.extrasDGV.AllowUserToResizeRows = False
+        Me.extrasDGV.AlternatingRowsDefaultCellStyle = Me.extrasDGV.DefaultCellStyle
+        Me.extrasDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
+        Me.extrasDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Raleway", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bookDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.bookDGV.ColumnHeadersHeight = 40
-        Me.bookDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.extrasId, Me.extrasItems, Me.extrasPrice, Me.extrasQuantity})
+        Me.extrasDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.extrasDGV.ColumnHeadersHeight = 40
+        Me.extrasDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.extrasId, Me.extrasItems, Me.extrasPrice, Me.extrasQuantity})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -250,13 +250,13 @@ Partial Class extrasTable
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.bookDGV.DefaultCellStyle = DataGridViewCellStyle2
-        Me.bookDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bookDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.bookDGV.Location = New System.Drawing.Point(0, 0)
-        Me.bookDGV.Name = "bookDGV"
-        Me.bookDGV.ReadOnly = True
-        Me.bookDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.extrasDGV.DefaultCellStyle = DataGridViewCellStyle2
+        Me.extrasDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.extrasDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.extrasDGV.Location = New System.Drawing.Point(0, 0)
+        Me.extrasDGV.Name = "extrasDGV"
+        Me.extrasDGV.ReadOnly = True
+        Me.extrasDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -264,42 +264,39 @@ Partial Class extrasTable
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bookDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.bookDGV.RowHeadersVisible = False
-        Me.bookDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.bookDGV.RowTemplate.Height = 40
-        Me.bookDGV.RowTemplate.ReadOnly = True
-        Me.bookDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.bookDGV.Size = New System.Drawing.Size(1080, 570)
-        Me.bookDGV.TabIndex = 3
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray
-        Me.bookDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.bookDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Black
-        Me.bookDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.bookDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bookDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.bookDGV.ThemeStyle.HeaderStyle.Height = 40
-        Me.bookDGV.ThemeStyle.ReadOnly = True
-        Me.bookDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.bookDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.bookDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bookDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.bookDGV.ThemeStyle.RowsStyle.Height = 40
-        Me.bookDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
-        Me.bookDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
-        '
-        'dialogTimer
-        '
-        Me.dialogTimer.Interval = 5
+        Me.extrasDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.extrasDGV.RowHeadersVisible = False
+        Me.extrasDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.extrasDGV.RowTemplate.Height = 40
+        Me.extrasDGV.RowTemplate.ReadOnly = True
+        Me.extrasDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.extrasDGV.Size = New System.Drawing.Size(1080, 570)
+        Me.extrasDGV.TabIndex = 3
+        Me.extrasDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.extrasDGV.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.extrasDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.extrasDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.extrasDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.extrasDGV.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.extrasDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.extrasDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Black
+        Me.extrasDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.extrasDGV.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Raleway", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.extrasDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.extrasDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.extrasDGV.ThemeStyle.HeaderStyle.Height = 40
+        Me.extrasDGV.ThemeStyle.ReadOnly = True
+        Me.extrasDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.extrasDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.extrasDGV.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.extrasDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.extrasDGV.ThemeStyle.RowsStyle.Height = 40
+        Me.extrasDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
+        Me.extrasDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
         '
         'extrasId
         '
+        Me.extrasId.DataPropertyName = "ixId"
         Me.extrasId.HeaderText = "ID"
         Me.extrasId.Name = "extrasId"
         Me.extrasId.ReadOnly = True
@@ -307,6 +304,7 @@ Partial Class extrasTable
         '
         'extrasItems
         '
+        Me.extrasItems.DataPropertyName = "ixExtras"
         Me.extrasItems.HeaderText = "ITEMS"
         Me.extrasItems.Name = "extrasItems"
         Me.extrasItems.ReadOnly = True
@@ -314,6 +312,7 @@ Partial Class extrasTable
         '
         'extrasPrice
         '
+        Me.extrasPrice.DataPropertyName = "ixPrice"
         Me.extrasPrice.HeaderText = "PRICE"
         Me.extrasPrice.Name = "extrasPrice"
         Me.extrasPrice.ReadOnly = True
@@ -321,10 +320,15 @@ Partial Class extrasTable
         '
         'extrasQuantity
         '
+        Me.extrasQuantity.DataPropertyName = "ixQuantity"
         Me.extrasQuantity.HeaderText = "QUANTITY"
         Me.extrasQuantity.Name = "extrasQuantity"
         Me.extrasQuantity.ReadOnly = True
         Me.extrasQuantity.Width = 300
+        '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 5
         '
         'extrasTable
         '
@@ -351,7 +355,7 @@ Partial Class extrasTable
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
-        CType(Me.bookDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.extrasDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -361,7 +365,7 @@ Partial Class extrasTable
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents refreshButton As PictureBox
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents fadeIn As Timer
     Friend WithEvents menuTimer As Timer
     Friend WithEvents addExtrasButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents editExtrasButton As Guna.UI2.WinForms.Guna2Button
@@ -370,7 +374,7 @@ Partial Class extrasTable
     Friend WithEvents searchTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dialogTimer As Timer
-    Friend WithEvents bookDGV As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents extrasDGV As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents extrasId As DataGridViewTextBoxColumn
     Friend WithEvents extrasItems As DataGridViewTextBoxColumn
     Friend WithEvents extrasPrice As DataGridViewTextBoxColumn

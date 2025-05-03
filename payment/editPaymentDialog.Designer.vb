@@ -23,19 +23,21 @@ Partial Class editPaymentDialog
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.paymentIdTextBox = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.bookingIdTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.paymentMethodTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.oxPriceButton = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.oxPriceTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.totalPriceTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.statusTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.editButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.statusComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.downPaymentTextBox = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.amountDueTextBox = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -49,38 +51,6 @@ Partial Class editPaymentDialog
         Me.Label1.Text = "EDIT PAYMENT"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'paymentIdTextBox
-        '
-        Me.paymentIdTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.paymentIdTextBox.BorderRadius = 5
-        Me.paymentIdTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.paymentIdTextBox.DefaultText = ""
-        Me.paymentIdTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.paymentIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.paymentIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.paymentIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.paymentIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.paymentIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.paymentIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.paymentIdTextBox.Location = New System.Drawing.Point(45, 180)
-        Me.paymentIdTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.paymentIdTextBox.Name = "paymentIdTextBox"
-        Me.paymentIdTextBox.PlaceholderText = ""
-        Me.paymentIdTextBox.SelectedText = ""
-        Me.paymentIdTextBox.ShadowDecoration.Enabled = True
-        Me.paymentIdTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.paymentIdTextBox.Size = New System.Drawing.Size(230, 50)
-        Me.paymentIdTextBox.TabIndex = 32
-        '
-        'Label3
-        '
-        Me.Label3.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(41, 156)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(167, 26)
-        Me.Label3.TabIndex = 31
-        Me.Label3.Text = "PAYMENT ID"
-        '
         'bookingIdTextBox
         '
         Me.bookingIdTextBox.BackColor = System.Drawing.Color.Transparent
@@ -91,13 +61,15 @@ Partial Class editPaymentDialog
         Me.bookingIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.bookingIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.bookingIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.bookingIdTextBox.Enabled = False
         Me.bookingIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.bookingIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.bookingIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.bookingIdTextBox.Location = New System.Drawing.Point(45, 280)
+        Me.bookingIdTextBox.Location = New System.Drawing.Point(45, 180)
         Me.bookingIdTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.bookingIdTextBox.Name = "bookingIdTextBox"
         Me.bookingIdTextBox.PlaceholderText = ""
+        Me.bookingIdTextBox.ReadOnly = True
         Me.bookingIdTextBox.SelectedText = ""
         Me.bookingIdTextBox.ShadowDecoration.Enabled = True
         Me.bookingIdTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -107,7 +79,7 @@ Partial Class editPaymentDialog
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(41, 256)
+        Me.Label2.Location = New System.Drawing.Point(41, 156)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(167, 26)
         Me.Label2.TabIndex = 33
@@ -123,13 +95,15 @@ Partial Class editPaymentDialog
         Me.paymentMethodTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.paymentMethodTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.paymentMethodTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.paymentMethodTextBox.Enabled = False
         Me.paymentMethodTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.paymentMethodTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.paymentMethodTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.paymentMethodTextBox.Location = New System.Drawing.Point(45, 380)
+        Me.paymentMethodTextBox.Location = New System.Drawing.Point(295, 180)
         Me.paymentMethodTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.paymentMethodTextBox.Name = "paymentMethodTextBox"
         Me.paymentMethodTextBox.PlaceholderText = ""
+        Me.paymentMethodTextBox.ReadOnly = True
         Me.paymentMethodTextBox.SelectedText = ""
         Me.paymentMethodTextBox.ShadowDecoration.Enabled = True
         Me.paymentMethodTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -139,39 +113,41 @@ Partial Class editPaymentDialog
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(41, 356)
+        Me.Label4.Location = New System.Drawing.Point(291, 156)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(234, 26)
         Me.Label4.TabIndex = 35
         Me.Label4.Text = "PAYMENT METHOD"
         '
-        'oxPriceButton
+        'oxPriceTextBox
         '
-        Me.oxPriceButton.BackColor = System.Drawing.Color.Transparent
-        Me.oxPriceButton.BorderRadius = 5
-        Me.oxPriceButton.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.oxPriceButton.DefaultText = ""
-        Me.oxPriceButton.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.oxPriceButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.oxPriceButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.oxPriceButton.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.oxPriceButton.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.oxPriceButton.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.oxPriceButton.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.oxPriceButton.Location = New System.Drawing.Point(295, 180)
-        Me.oxPriceButton.Margin = New System.Windows.Forms.Padding(6)
-        Me.oxPriceButton.Name = "oxPriceButton"
-        Me.oxPriceButton.PlaceholderText = ""
-        Me.oxPriceButton.SelectedText = ""
-        Me.oxPriceButton.ShadowDecoration.Enabled = True
-        Me.oxPriceButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.oxPriceButton.Size = New System.Drawing.Size(230, 50)
-        Me.oxPriceButton.TabIndex = 38
+        Me.oxPriceTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.oxPriceTextBox.BorderRadius = 5
+        Me.oxPriceTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.oxPriceTextBox.DefaultText = ""
+        Me.oxPriceTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.oxPriceTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.oxPriceTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.oxPriceTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.oxPriceTextBox.Enabled = False
+        Me.oxPriceTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.oxPriceTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.oxPriceTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.oxPriceTextBox.Location = New System.Drawing.Point(45, 280)
+        Me.oxPriceTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.oxPriceTextBox.Name = "oxPriceTextBox"
+        Me.oxPriceTextBox.PlaceholderText = ""
+        Me.oxPriceTextBox.ReadOnly = True
+        Me.oxPriceTextBox.SelectedText = ""
+        Me.oxPriceTextBox.ShadowDecoration.Enabled = True
+        Me.oxPriceTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.oxPriceTextBox.Size = New System.Drawing.Size(230, 50)
+        Me.oxPriceTextBox.TabIndex = 38
         '
         'Label5
         '
         Me.Label5.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(291, 156)
+        Me.Label5.Location = New System.Drawing.Point(41, 256)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(167, 26)
         Me.Label5.TabIndex = 37
@@ -187,13 +163,15 @@ Partial Class editPaymentDialog
         Me.totalPriceTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.totalPriceTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.totalPriceTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.totalPriceTextBox.Enabled = False
         Me.totalPriceTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.totalPriceTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.totalPriceTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.totalPriceTextBox.Location = New System.Drawing.Point(295, 280)
+        Me.totalPriceTextBox.Location = New System.Drawing.Point(45, 380)
         Me.totalPriceTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.totalPriceTextBox.Name = "totalPriceTextBox"
         Me.totalPriceTextBox.PlaceholderText = ""
+        Me.totalPriceTextBox.ReadOnly = True
         Me.totalPriceTextBox.SelectedText = ""
         Me.totalPriceTextBox.ShadowDecoration.Enabled = True
         Me.totalPriceTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
@@ -203,39 +181,16 @@ Partial Class editPaymentDialog
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(291, 256)
+        Me.Label6.Location = New System.Drawing.Point(41, 356)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(167, 26)
         Me.Label6.TabIndex = 39
         Me.Label6.Text = "TOTAL PRICE"
         '
-        'statusTextBox
-        '
-        Me.statusTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.statusTextBox.BorderRadius = 5
-        Me.statusTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.statusTextBox.DefaultText = ""
-        Me.statusTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.statusTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.statusTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.statusTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.statusTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.statusTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.statusTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.statusTextBox.Location = New System.Drawing.Point(295, 380)
-        Me.statusTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.statusTextBox.Name = "statusTextBox"
-        Me.statusTextBox.PlaceholderText = ""
-        Me.statusTextBox.SelectedText = ""
-        Me.statusTextBox.ShadowDecoration.Enabled = True
-        Me.statusTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.statusTextBox.Size = New System.Drawing.Size(230, 50)
-        Me.statusTextBox.TabIndex = 42
-        '
         'Label7
         '
         Me.Label7.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(291, 356)
+        Me.Label7.Location = New System.Drawing.Point(41, 458)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(167, 26)
         Me.Label7.TabIndex = 41
@@ -262,25 +217,117 @@ Partial Class editPaymentDialog
         Me.editButton.TabIndex = 55
         Me.editButton.Text = "EDIT"
         '
+        'statusComboBox
+        '
+        Me.statusComboBox.BackColor = System.Drawing.Color.Transparent
+        Me.statusComboBox.BorderColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(221, Byte), Integer))
+        Me.statusComboBox.BorderRadius = 5
+        Me.statusComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.statusComboBox.FocusedColor = System.Drawing.Color.Black
+        Me.statusComboBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.statusComboBox.Font = New System.Drawing.Font("Lato", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.statusComboBox.ForeColor = System.Drawing.Color.Black
+        Me.statusComboBox.IntegralHeight = False
+        Me.statusComboBox.ItemHeight = 44
+        Me.statusComboBox.Items.AddRange(New Object() {"Paid", "Pending", "Partially Paid", "Refunded", "Cancelled"})
+        Me.statusComboBox.Location = New System.Drawing.Point(45, 482)
+        Me.statusComboBox.Name = "statusComboBox"
+        Me.statusComboBox.ShadowDecoration.Enabled = True
+        Me.statusComboBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.statusComboBox.Size = New System.Drawing.Size(230, 50)
+        Me.statusComboBox.TabIndex = 88
+        '
+        'downPaymentTextBox
+        '
+        Me.downPaymentTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.downPaymentTextBox.BorderRadius = 5
+        Me.downPaymentTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.downPaymentTextBox.DefaultText = ""
+        Me.downPaymentTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.downPaymentTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.downPaymentTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.downPaymentTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.downPaymentTextBox.Enabled = False
+        Me.downPaymentTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.downPaymentTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.downPaymentTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.downPaymentTextBox.Location = New System.Drawing.Point(295, 280)
+        Me.downPaymentTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.downPaymentTextBox.Name = "downPaymentTextBox"
+        Me.downPaymentTextBox.PlaceholderText = ""
+        Me.downPaymentTextBox.ReadOnly = True
+        Me.downPaymentTextBox.SelectedText = ""
+        Me.downPaymentTextBox.ShadowDecoration.Enabled = True
+        Me.downPaymentTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.downPaymentTextBox.Size = New System.Drawing.Size(230, 50)
+        Me.downPaymentTextBox.TabIndex = 90
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(291, 256)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(167, 26)
+        Me.Label3.TabIndex = 89
+        Me.Label3.Text = "DOWN PAYMENT"
+        '
+        'amountDueTextBox
+        '
+        Me.amountDueTextBox.BackColor = System.Drawing.Color.Transparent
+        Me.amountDueTextBox.BorderRadius = 5
+        Me.amountDueTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.amountDueTextBox.DefaultText = ""
+        Me.amountDueTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.amountDueTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.amountDueTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.amountDueTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.amountDueTextBox.Enabled = False
+        Me.amountDueTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
+        Me.amountDueTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.amountDueTextBox.HoverState.BorderColor = System.Drawing.Color.Black
+        Me.amountDueTextBox.Location = New System.Drawing.Point(295, 380)
+        Me.amountDueTextBox.Margin = New System.Windows.Forms.Padding(6)
+        Me.amountDueTextBox.Name = "amountDueTextBox"
+        Me.amountDueTextBox.PlaceholderText = ""
+        Me.amountDueTextBox.ReadOnly = True
+        Me.amountDueTextBox.SelectedText = ""
+        Me.amountDueTextBox.ShadowDecoration.Enabled = True
+        Me.amountDueTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.amountDueTextBox.Size = New System.Drawing.Size(230, 50)
+        Me.amountDueTextBox.TabIndex = 92
+        '
+        'Label8
+        '
+        Me.Label8.CausesValidation = False
+        Me.Label8.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(291, 356)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(167, 26)
+        Me.Label8.TabIndex = 91
+        Me.Label8.Text = "AMOUNT DUE"
+        '
         'editPaymentDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(571, 790)
+        Me.Controls.Add(Me.amountDueTextBox)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.downPaymentTextBox)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.statusComboBox)
         Me.Controls.Add(Me.editButton)
-        Me.Controls.Add(Me.statusTextBox)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.totalPriceTextBox)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.oxPriceButton)
+        Me.Controls.Add(Me.oxPriceTextBox)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.paymentMethodTextBox)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.bookingIdTextBox)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.paymentIdTextBox)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "editPaymentDialog"
@@ -291,17 +338,19 @@ Partial Class editPaymentDialog
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents paymentIdTextBox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents bookingIdTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents paymentMethodTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents oxPriceButton As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents oxPriceTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents totalPriceTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents statusTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents editButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents statusComboBox As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents downPaymentTextBox As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents amountDueTextBox As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label8 As Label
 End Class

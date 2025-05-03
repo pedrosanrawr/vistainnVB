@@ -7,7 +7,7 @@ Public Class addEmployeeDialog
     Dim database As New database()
     Public Event EmployeeAdded As EventHandler
 
-    Private Sub logInButton_Click(sender As Object, e As EventArgs) Handles logInButton.Click
+    Private Sub addButton_Click(sender As Object, e As EventArgs) Handles addButton.Click
         Dim eFname As String = employeeValidation.Capitalize(firstNameTextBox.Text)
         Dim eLname As String = employeeValidation.Capitalize(lastNameTextBox.Text)
         Dim eRole As String = roleComboBox.Text
@@ -23,7 +23,7 @@ Public Class addEmployeeDialog
             Return
         End If
 
-        Dim existsMessage As String = employeeValidation.EmailOrPhoneExists(eEmail, ePhoneNo, database.connectionString)
+        Dim existsMessage As String = employeeValidation.EmailOrPhoneExists(eEmail, ePhoneNo, database.ConnectionString)
         If Not String.IsNullOrEmpty(existsMessage) Then
             MessageBox.Show(existsMessage, "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
@@ -36,7 +36,7 @@ Public Class addEmployeeDialog
         Dim query As String = "INSERT INTO employee (eFname, eLname, eRole, eEmail, ePhoneNo, eGender, eNationality, eAddress, ePassword, eSalt) " &
                           "VALUES (@eFname, @eLname, @eRole, @eEmail, @ePhoneNo, @eGender, @eNationality, @eAddress, @ePassword, @eSalt)"
 
-        Using conn As New SqlConnection(database.connectionString)
+        Using conn As New SqlConnection(database.ConnectionString)
             Dim cmd As New SqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@eFname", eFname)
             cmd.Parameters.AddWithValue("@eLname", eLname)
@@ -91,5 +91,18 @@ Public Class addEmployeeDialog
         roleComboBox.SelectedIndex = -1
         genderComboBox.SelectedIndex = -1
         nationalityComboBox.SelectedIndex = -1
+    End Sub
+
+    Private Sub addEmployeeDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        roleComboBox.Items.Clear()
+
+        If Employee.Role = "Manager" Then
+            roleComboBox.Items.Add("Manager")
+            roleComboBox.Items.Add("Staff")
+        ElseIf Employee.Role = "Admin" Then
+            roleComboBox.Items.Add("Admin")
+            roleComboBox.Items.Add("Manager")
+            roleComboBox.Items.Add("Staff")
+        End If
     End Sub
 End Class

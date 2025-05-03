@@ -321,6 +321,7 @@ Partial Class editRoomDialog
         Me.roomIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.roomIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.roomIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.roomIdTextBox.Enabled = False
         Me.roomIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.roomIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.roomIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
@@ -377,7 +378,7 @@ Partial Class editRoomDialog
         Me.statusComboBox.ForeColor = System.Drawing.Color.Black
         Me.statusComboBox.IntegralHeight = False
         Me.statusComboBox.ItemHeight = 44
-        Me.statusComboBox.Items.AddRange(New Object() {"Available", "Occupied", "Maintenance"})
+        Me.statusComboBox.Items.AddRange(New Object() {"Available", "Maintenance", "Out of Service"})
         Me.statusComboBox.Location = New System.Drawing.Point(45, 580)
         Me.statusComboBox.Name = "statusComboBox"
         Me.statusComboBox.ShadowDecoration.Enabled = True
@@ -419,7 +420,7 @@ Partial Class editRoomDialog
         Me.roomTypeComboBox.ForeColor = System.Drawing.Color.Black
         Me.roomTypeComboBox.IntegralHeight = False
         Me.roomTypeComboBox.ItemHeight = 44
-        Me.roomTypeComboBox.Items.AddRange(New Object() {"Single", "Double", "Suite", "Family", "Deluxe", "King", "Queen", "Studio", "Penthouse", "Presedential Suite"})
+        Me.roomTypeComboBox.Items.AddRange(New Object() {"Single", "Studio", "Economy", "Capsule", "Compact", "Twin", "Queen", "King", "Duo", "Zen", "Nest", "Flex", "Pad", "Haven", "Family", "Crew", "Pod", "Loft", "Presidential", "Max"})
         Me.roomTypeComboBox.Location = New System.Drawing.Point(45, 340)
         Me.roomTypeComboBox.Name = "roomTypeComboBox"
         Me.roomTypeComboBox.ShadowDecoration.Enabled = True
@@ -457,6 +458,7 @@ Partial Class editRoomDialog
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "editRoomDialog"
         Me.Text = "editBookDialog"

@@ -27,6 +27,7 @@ Partial Class nestedTabTables
         Me.extrasButton = New Guna.UI2.WinForms.Guna2Button()
         Me.bookingButton = New Guna.UI2.WinForms.Guna2Button()
         Me.paymentButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.orderExtrasButton = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
         'accButton
@@ -42,7 +43,7 @@ Partial Class nestedTabTables
         Me.accButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.accButton.ImageOffset = New System.Drawing.Point(32, 0)
         Me.accButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.accButton.Location = New System.Drawing.Point(0, 205)
+        Me.accButton.Location = New System.Drawing.Point(0, 255)
         Me.accButton.Name = "accButton"
         Me.accButton.Size = New System.Drawing.Size(385, 40)
         Me.accButton.TabIndex = 26
@@ -86,11 +87,11 @@ Partial Class nestedTabTables
         Me.extrasButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.extrasButton.ImageOffset = New System.Drawing.Point(32, 0)
         Me.extrasButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.extrasButton.Location = New System.Drawing.Point(0, 155)
+        Me.extrasButton.Location = New System.Drawing.Point(0, 205)
         Me.extrasButton.Name = "extrasButton"
         Me.extrasButton.Size = New System.Drawing.Size(385, 40)
         Me.extrasButton.TabIndex = 25
-        Me.extrasButton.Text = "EXTRAS"
+        Me.extrasButton.Text = "ITEM EXTRAS"
         Me.extrasButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.extrasButton.TextOffset = New System.Drawing.Point(94, 0)
         Me.extrasButton.UseTransparentBackground = True
@@ -139,6 +140,28 @@ Partial Class nestedTabTables
         Me.paymentButton.TextOffset = New System.Drawing.Point(94, 0)
         Me.paymentButton.UseTransparentBackground = True
         '
+        'orderExtrasButton
+        '
+        Me.orderExtrasButton.BackColor = System.Drawing.Color.Transparent
+        Me.orderExtrasButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.orderExtrasButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.orderExtrasButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.orderExtrasButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.orderExtrasButton.FillColor = System.Drawing.Color.Transparent
+        Me.orderExtrasButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.orderExtrasButton.ForeColor = System.Drawing.Color.White
+        Me.orderExtrasButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.orderExtrasButton.ImageOffset = New System.Drawing.Point(32, 0)
+        Me.orderExtrasButton.ImageSize = New System.Drawing.Size(50, 50)
+        Me.orderExtrasButton.Location = New System.Drawing.Point(0, 155)
+        Me.orderExtrasButton.Name = "orderExtrasButton"
+        Me.orderExtrasButton.Size = New System.Drawing.Size(385, 40)
+        Me.orderExtrasButton.TabIndex = 27
+        Me.orderExtrasButton.Text = "ORDER EXTRAS"
+        Me.orderExtrasButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.orderExtrasButton.TextOffset = New System.Drawing.Point(94, 0)
+        Me.orderExtrasButton.UseTransparentBackground = True
+        '
         'nestedTabTables
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -146,11 +169,12 @@ Partial Class nestedTabTables
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.Controls.Add(Me.accButton)
         Me.Controls.Add(Me.roomButton)
-        Me.Controls.Add(Me.extrasButton)
         Me.Controls.Add(Me.bookingButton)
         Me.Controls.Add(Me.paymentButton)
+        Me.Controls.Add(Me.extrasButton)
+        Me.Controls.Add(Me.orderExtrasButton)
         Me.Name = "nestedTabTables"
-        Me.Size = New System.Drawing.Size(385, 250)
+        Me.Size = New System.Drawing.Size(385, 300)
         Me.ResumeLayout(False)
 
     End Sub
@@ -160,4 +184,5 @@ Partial Class nestedTabTables
     Friend WithEvents extrasButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents bookingButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents paymentButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents orderExtrasButton As Guna.UI2.WinForms.Guna2Button
 End Class

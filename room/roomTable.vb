@@ -147,8 +147,6 @@ Public Class roomTable
         End If
     End Sub
 
-    '/////////////////////////////////'
-
     Public Sub LoadRoomData()
         Dim query As String = "SELECT * FROM rooms"
 

@@ -32,7 +32,7 @@ Partial Class employeeTable
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.refreshAccButton = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.fadeIn = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
         Me.addAccButton = New Guna.UI2.WinForms.Guna2Button()
         Me.editAccButton = New Guna.UI2.WinForms.Guna2Button()
@@ -110,9 +110,9 @@ Partial Class employeeTable
         Me.refreshAccButton.TabIndex = 21
         Me.refreshAccButton.TabStop = False
         '
-        'Timer1
+        'fadeIn
         '
-        Me.Timer1.Interval = 5
+        Me.fadeIn.Interval = 5
         '
         'menuTimer
         '
@@ -407,7 +407,7 @@ Partial Class employeeTable
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents refreshAccButton As PictureBox
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents fadeIn As Timer
     Friend WithEvents menuTimer As Timer
     Friend WithEvents addAccButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents editAccButton As Guna.UI2.WinForms.Guna2Button

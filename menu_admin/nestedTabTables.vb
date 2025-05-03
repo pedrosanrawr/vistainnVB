@@ -51,4 +51,9 @@
         AddHandler extrasButton.Click, AddressOf extrasButton_Click
         AddHandler accButton.Click, AddressOf accButton_Click
     End Sub
+
+    Private Sub orderExtrasButton_Click(sender As Object, e As EventArgs) Handles orderExtrasButton.Click
+        SelectButton(sender)
+        basePage.loadForm(New orderExtras())
+    End Sub
 End Class

@@ -23,7 +23,7 @@ Partial Class fogotPassword_verify
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.fadeIn = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.emailLabel = New System.Windows.Forms.Label()
         Me.otpTextBox = New Guna.UI2.WinForms.Guna2TextBox()
@@ -33,9 +33,9 @@ Partial Class fogotPassword_verify
         Me.labelLink = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
-        'Timer1
+        'fadeIn
         '
-        Me.Timer1.Interval = 10
+        Me.fadeIn.Interval = 10
         '
         'Label1
         '
@@ -179,7 +179,7 @@ Partial Class fogotPassword_verify
         obj.Region = New Region(DGP)
     End Sub
 
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents fadeIn As Timer
     Friend WithEvents Label1 As Label
     Friend WithEvents emailLabel As Label
     Friend WithEvents otpTextBox As Guna.UI2.WinForms.Guna2TextBox

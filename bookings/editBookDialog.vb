@@ -69,7 +69,7 @@ Public Class editBookDialog
         outCalendar.Visible = False
     End Sub
 
-    Private Sub logInButton_Click(sender As Object, e As EventArgs) Handles logInButton.Click
+    Private Sub editButton_Click(sender As Object, e As EventArgs) Handles editButton.Click
         Dim bId As Integer = bookingIdTextBox.Text
         Dim bFname As String = firstNameTextBox.Text.Trim()
         Dim bLname As String = lastNameTextBox.Text.Trim()
@@ -84,6 +84,11 @@ Public Class editBookDialog
         Dim bCheckOutTime As String = outTimeComboBox.Text
 
         Dim validator As New bookValidation()
+
+        If Not validator.AreRequiredFieldsFilled(bFname, bLname, bEmail, bPhoneNo, bRName, bRoomNo, bPax, bCheckInTime, bCheckOutTime) Then
+            MessageBox.Show("All fields must be filled in.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
 
         If Not validator.IsNameValid(bFname) Then
             MessageBox.Show("First name must contain only letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -128,7 +133,7 @@ Public Class editBookDialog
         Dim query As String = "UPDATE bookings SET bFname=@bFname, bLname=@bLname, bEmail=@bEmail, bPhoneNo=@bPhoneNo, bRoomNo=@bRoomNo, bRName=@bRName, bPax=@bPax, 
         bCheckInDate=@bCheckInDate, bCheckInTime=@bCheckInTime, bCheckOutDate=@bCheckOutDate, bCheckOutTime=@bCheckOutTime WHERE bId=@bId"
 
-        Using conn As New SqlConnection(database.connectionString)
+        Using conn As New SqlConnection(database.ConnectionString)
             Dim cmd As New SqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@bId", bId)
             cmd.Parameters.AddWithValue("@bFname", bFname)

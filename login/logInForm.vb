@@ -91,8 +91,8 @@ Public Class logInForm
         If String.IsNullOrEmpty(emailTextBox.Text) Then
             MessageBox.Show("Please enter an email first.", "Email Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
-            Dim forgotPasswordForm As New forgotPassword_send(emailTextBox.Text)
-            forgotPasswordForm.ShowDialog()
+            Dim forgotPassword_send As New forgotPassword_send(emailTextBox.Text)
+            forgotPassword_send.ShowDialog()
         End If
     End Sub
 End Class

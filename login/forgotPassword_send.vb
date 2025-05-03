@@ -66,7 +66,7 @@ Public Class forgotPassword_send
             Me.otp = generatedOtp
 
             Dim mailMessage As New MailMessage()
-            mailMessage.From = New MailAddress("vistainnmanager0@gmail.com")
+            mailMessage.From = New MailAddress("vistainnmanager0@gmail.com", "VistaInn Team")
             mailMessage.To.Add(toEmail)
             mailMessage.Subject = "OTP for Password Reset"
             mailMessage.Body = "Your OTP for password reset is: " & generatedOtp

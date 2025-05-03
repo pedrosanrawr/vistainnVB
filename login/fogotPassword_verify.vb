@@ -15,7 +15,7 @@ Public Class fogotPassword_verify
 
     Private Sub forgotPassword_verify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
-        Timer1.Start()
+        fadeIn.Start()
         roundCorners(Me)
         resendLabel.Text = "Didn't receive a code? You can resend a code in (59s)"
         labelLink.Start()
@@ -34,7 +34,7 @@ Public Class fogotPassword_verify
         End If
     End Sub
 
-    Private Sub sendButton_Click(sender As Object, e As EventArgs) Handles verifyButton.Click
+    Private Sub verifyButton_Click(sender As Object, e As EventArgs) Handles verifyButton.Click
         Dim enteredOtp As String = otpTextBox.Text.Trim()
 
         If enteredOtp = otp Then
@@ -48,7 +48,7 @@ Public Class fogotPassword_verify
     End Sub
 
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub fadeIn_Tick(sender As Object, e As EventArgs) Handles fadeIn.Tick
         If Me.Opacity < 1 Then
             Me.Opacity += 0.05
         End If
@@ -100,7 +100,7 @@ Public Class fogotPassword_verify
             countdown -= 1
             resendLabel.Text = "Didn't receive a code? You can resend a code in (" & countdown.ToString() & "s)"
         Else
-            Timer1.Stop()
+            fadeIn.Stop()
             resendLabel.Text = "Didn't receive a code? Click here to resend a code."
         End If
     End Sub

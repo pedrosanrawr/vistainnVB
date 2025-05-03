@@ -22,7 +22,7 @@ Partial Class editBookDialog
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.editButton = New Guna.UI2.WinForms.Guna2Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -52,26 +52,26 @@ Partial Class editBookDialog
         Me.roomNameComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
-        'logInButton
+        'editButton
         '
-        Me.logInButton.BackColor = System.Drawing.Color.Transparent
-        Me.logInButton.BorderRadius = 5
-        Me.logInButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.logInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.logInButton.FillColor = System.Drawing.Color.Black
-        Me.logInButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.logInButton.ForeColor = System.Drawing.Color.White
-        Me.logInButton.Location = New System.Drawing.Point(225, 704)
-        Me.logInButton.Name = "logInButton"
-        Me.logInButton.ShadowDecoration.BorderRadius = 5
-        Me.logInButton.ShadowDecoration.Enabled = True
-        Me.logInButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.logInButton.Size = New System.Drawing.Size(120, 50)
-        Me.logInButton.TabIndex = 82
-        Me.logInButton.Text = "EDIT"
+        Me.editButton.BackColor = System.Drawing.Color.Transparent
+        Me.editButton.BorderRadius = 5
+        Me.editButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.editButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.editButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.editButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.editButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.editButton.FillColor = System.Drawing.Color.Black
+        Me.editButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.editButton.ForeColor = System.Drawing.Color.White
+        Me.editButton.Location = New System.Drawing.Point(225, 704)
+        Me.editButton.Name = "editButton"
+        Me.editButton.ShadowDecoration.BorderRadius = 5
+        Me.editButton.ShadowDecoration.Enabled = True
+        Me.editButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.editButton.Size = New System.Drawing.Size(120, 50)
+        Me.editButton.TabIndex = 82
+        Me.editButton.Text = "EDIT"
         '
         'Label14
         '
@@ -141,7 +141,7 @@ Partial Class editBookDialog
         Me.Label8.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(241, 256)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(134, 26)
+        Me.Label8.Size = New System.Drawing.Size(148, 26)
         Me.Label8.TabIndex = 68
         Me.Label8.Text = "PAX"
         '
@@ -303,6 +303,7 @@ Partial Class editBookDialog
         Me.bookingIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.bookingIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.bookingIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.bookingIdTextBox.Enabled = False
         Me.bookingIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.bookingIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.bookingIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
@@ -470,7 +471,7 @@ Partial Class editBookDialog
         Me.roomNameComboBox.ForeColor = System.Drawing.Color.Black
         Me.roomNameComboBox.IntegralHeight = False
         Me.roomNameComboBox.ItemHeight = 44
-        Me.roomNameComboBox.Items.AddRange(New Object() {"Single", "Double", "Suite", "Family", "Deluxe", "King", "Queen", "Studio", "Penthouse", "Presedential Suite"})
+        Me.roomNameComboBox.Items.AddRange(New Object() {"Single", "Studio", "Economy", "Capsule", "Compact", "Twin", "Queen", "King", "Duo", "Zen", "Nest", "Flex", "Pad", "Haven", "Family", "Crew", "Pod", "Loft", "Presidential", "Max"})
         Me.roomNameComboBox.Location = New System.Drawing.Point(246, 180)
         Me.roomNameComboBox.Name = "roomNameComboBox"
         Me.roomNameComboBox.ShadowDecoration.Enabled = True
@@ -491,7 +492,7 @@ Partial Class editBookDialog
         Me.Controls.Add(Me.inTimeComboBox)
         Me.Controls.Add(Me.outDatePickerButton)
         Me.Controls.Add(Me.inDatePickerButton)
-        Me.Controls.Add(Me.logInButton)
+        Me.Controls.Add(Me.editButton)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label13)
@@ -520,7 +521,7 @@ Partial Class editBookDialog
 
     End Sub
 
-    Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents editButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label13 As Label

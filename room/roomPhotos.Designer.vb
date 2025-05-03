@@ -113,6 +113,7 @@ Partial Class roomPhotos
         Me.ClientSize = New System.Drawing.Size(571, 790)
         Me.Controls.Add(Me.roomPhotosFlowLayoutPanel)
         Me.Controls.Add(Me.Label1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "roomPhotos"
         Me.Text = "roomPhotos"

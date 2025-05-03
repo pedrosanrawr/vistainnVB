@@ -46,7 +46,7 @@ Partial Class menuForm
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(52, 32)
+        Me.PictureBox1.Location = New System.Drawing.Point(52, 56)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(280, 81)
         Me.PictureBox1.TabIndex = 0
@@ -69,7 +69,7 @@ Partial Class menuForm
         Me.btnAnalytics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnAnalytics.ImageOffset = New System.Drawing.Point(32, 0)
         Me.btnAnalytics.ImageSize = New System.Drawing.Size(50, 50)
-        Me.btnAnalytics.Location = New System.Drawing.Point(0, 151)
+        Me.btnAnalytics.Location = New System.Drawing.Point(0, 207)
         Me.btnAnalytics.Name = "btnAnalytics"
         Me.btnAnalytics.Size = New System.Drawing.Size(385, 70)
         Me.btnAnalytics.TabIndex = 1
@@ -83,7 +83,7 @@ Partial Class menuForm
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(52, 169)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(52, 225)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(36, 36)
         Me.Guna2PictureBox1.TabIndex = 2
@@ -94,7 +94,7 @@ Partial Class menuForm
         Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
         Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(52, 269)
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(52, 325)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
         Me.Guna2PictureBox2.Size = New System.Drawing.Size(36, 36)
         Me.Guna2PictureBox2.TabIndex = 4
@@ -113,7 +113,7 @@ Partial Class menuForm
         Me.btnTables.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnTables.ImageOffset = New System.Drawing.Point(32, 0)
         Me.btnTables.ImageSize = New System.Drawing.Size(50, 50)
-        Me.btnTables.Location = New System.Drawing.Point(0, 251)
+        Me.btnTables.Location = New System.Drawing.Point(0, 307)
         Me.btnTables.Name = "btnTables"
         Me.btnTables.Size = New System.Drawing.Size(385, 70)
         Me.btnTables.TabIndex = 3
@@ -126,7 +126,7 @@ Partial Class menuForm
         '
         Me.dropDownIcon.BackColor = System.Drawing.Color.Transparent
         Me.dropDownIcon.Image = CType(resources.GetObject("dropDownIcon.Image"), System.Drawing.Image)
-        Me.dropDownIcon.Location = New System.Drawing.Point(324, 269)
+        Me.dropDownIcon.Location = New System.Drawing.Point(324, 325)
         Me.dropDownIcon.Name = "dropDownIcon"
         Me.dropDownIcon.Size = New System.Drawing.Size(36, 36)
         Me.dropDownIcon.TabIndex = 16
@@ -145,7 +145,7 @@ Partial Class menuForm
         Me.profileButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.profileButton.ImageOffset = New System.Drawing.Point(32, 0)
         Me.profileButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.profileButton.Location = New System.Drawing.Point(0, 351)
+        Me.profileButton.Location = New System.Drawing.Point(0, 407)
         Me.profileButton.Name = "profileButton"
         Me.profileButton.Size = New System.Drawing.Size(385, 70)
         Me.profileButton.TabIndex = 12
@@ -159,7 +159,7 @@ Partial Class menuForm
         Me.profileIcon.BackColor = System.Drawing.Color.Transparent
         Me.profileIcon.Image = CType(resources.GetObject("profileIcon.Image"), System.Drawing.Image)
         Me.profileIcon.ImageRotate = 0!
-        Me.profileIcon.Location = New System.Drawing.Point(52, 369)
+        Me.profileIcon.Location = New System.Drawing.Point(52, 425)
         Me.profileIcon.Name = "profileIcon"
         Me.profileIcon.Size = New System.Drawing.Size(36, 36)
         Me.profileIcon.TabIndex = 14
@@ -178,7 +178,7 @@ Partial Class menuForm
         Me.logOutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.logOutButton.ImageOffset = New System.Drawing.Point(32, 0)
         Me.logOutButton.ImageSize = New System.Drawing.Size(50, 50)
-        Me.logOutButton.Location = New System.Drawing.Point(0, 451)
+        Me.logOutButton.Location = New System.Drawing.Point(0, 507)
         Me.logOutButton.Name = "logOutButton"
         Me.logOutButton.Size = New System.Drawing.Size(385, 70)
         Me.logOutButton.TabIndex = 13
@@ -192,7 +192,7 @@ Partial Class menuForm
         Me.logOutIcon.BackColor = System.Drawing.Color.Transparent
         Me.logOutIcon.Image = CType(resources.GetObject("logOutIcon.Image"), System.Drawing.Image)
         Me.logOutIcon.ImageRotate = 0!
-        Me.logOutIcon.Location = New System.Drawing.Point(52, 469)
+        Me.logOutIcon.Location = New System.Drawing.Point(52, 525)
         Me.logOutIcon.Name = "logOutIcon"
         Me.logOutIcon.Size = New System.Drawing.Size(36, 36)
         Me.logOutIcon.TabIndex = 15
@@ -200,11 +200,10 @@ Partial Class menuForm
         '
         'menuForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(24, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(385, 790)
+        Me.ClientSize = New System.Drawing.Size(404, 790)
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.logOutIcon)
@@ -215,6 +214,7 @@ Partial Class menuForm
         Me.Controls.Add(Me.profileButton)
         Me.Controls.Add(Me.logOutButton)
         Me.Controls.Add(Me.btnTables)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "menuForm"
         Me.Text = "menuForm"

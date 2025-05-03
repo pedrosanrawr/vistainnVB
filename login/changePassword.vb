@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 Public Class changePassword
     Dim database As New database()
     Public userEmail As String
+    Dim isPasswordVisible As Boolean = False
 
     Public Sub New(email As String)
         InitializeComponent()
@@ -87,5 +88,34 @@ Public Class changePassword
         If result = DialogResult.Yes Then
             Me.Close()
         End If
+    End Sub
+
+    Private Sub hidePassEnter_Click(sender As Object, e As EventArgs) Handles hidePassEnter.Click
+        If isPasswordVisible Then
+            newPasswordTextBox.PasswordChar = "•"c
+            isPasswordVisible = False
+            hidePassEnter.Image = Image.FromFile("C:\Users\Chris\source\repos\vistainnVB\Resources\iconHide.png")
+        Else
+            newPasswordTextBox.PasswordChar = ControlChars.NullChar
+            isPasswordVisible = True
+            hidePassEnter.Image = Image.FromFile("C:\Users\Chris\source\repos\vistainnVB\Resources\iconShow.png")
+        End If
+    End Sub
+
+    Private Sub hidePassReEnter_Click(sender As Object, e As EventArgs) Handles hidePassReEnter.Click
+        If isPasswordVisible Then
+            reEnterNewPasswordTextBox.PasswordChar = "•"c
+            isPasswordVisible = False
+            hidePassReEnter.Image = Image.FromFile("C:\Users\Chris\source\repos\vistainnVB\Resources\iconHide.png")
+        Else
+            reEnterNewPasswordTextBox.PasswordChar = ControlChars.NullChar
+            isPasswordVisible = True
+            hidePassReEnter.Image = Image.FromFile("C:\Users\Chris\source\repos\vistainnVB\Resources\iconShow.png")
+        End If
+    End Sub
+
+    Private Sub changePassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        newPasswordTextBox.PasswordChar = "•"c
+        reEnterNewPasswordTextBox.PasswordChar = "•"c
     End Sub
 End Class

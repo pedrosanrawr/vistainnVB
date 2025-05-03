@@ -22,7 +22,7 @@ Partial Class addEmployeeDialog
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.logInButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.addButton = New Guna.UI2.WinForms.Guna2Button()
         Me.emailTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.phoneNoTextBox = New Guna.UI2.WinForms.Guna2TextBox()
@@ -42,26 +42,26 @@ Partial Class addEmployeeDialog
         Me.nationalityComboBox = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
-        'logInButton
+        'addButton
         '
-        Me.logInButton.BackColor = System.Drawing.Color.Transparent
-        Me.logInButton.BorderRadius = 5
-        Me.logInButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.logInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.logInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.logInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.logInButton.FillColor = System.Drawing.Color.Black
-        Me.logInButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.logInButton.ForeColor = System.Drawing.Color.White
-        Me.logInButton.Location = New System.Drawing.Point(225, 704)
-        Me.logInButton.Name = "logInButton"
-        Me.logInButton.ShadowDecoration.BorderRadius = 5
-        Me.logInButton.ShadowDecoration.Enabled = True
-        Me.logInButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.logInButton.Size = New System.Drawing.Size(120, 50)
-        Me.logInButton.TabIndex = 89
-        Me.logInButton.Text = "ADD"
+        Me.addButton.BackColor = System.Drawing.Color.Transparent
+        Me.addButton.BorderRadius = 5
+        Me.addButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.addButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.addButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.addButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.addButton.FillColor = System.Drawing.Color.Black
+        Me.addButton.Font = New System.Drawing.Font("Raleway", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
+        Me.addButton.ForeColor = System.Drawing.Color.White
+        Me.addButton.Location = New System.Drawing.Point(225, 704)
+        Me.addButton.Name = "addButton"
+        Me.addButton.ShadowDecoration.BorderRadius = 5
+        Me.addButton.ShadowDecoration.Enabled = True
+        Me.addButton.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
+        Me.addButton.Size = New System.Drawing.Size(120, 50)
+        Me.addButton.TabIndex = 89
+        Me.addButton.Text = "ADD"
         '
         'emailTextBox
         '
@@ -316,7 +316,7 @@ Partial Class addEmployeeDialog
         Me.nationalityComboBox.ForeColor = System.Drawing.Color.Black
         Me.nationalityComboBox.IntegralHeight = False
         Me.nationalityComboBox.ItemHeight = 44
-        Me.nationalityComboBox.Items.AddRange(New Object() {"Filipino"})
+        Me.nationalityComboBox.Items.AddRange(New Object() {"Afghan", "Albanian", "Algerian", "Andorran", "Angolan", "Antiguan or Barbudan", "Argentine", "Armenian", "Australian", "Austrian", "Azerbaijani", "Bahamian", "Bahraini", "Bangladeshi", "Barbadian", "Belarusian", "Belgian", "Belizean", "Beninese", "Bhutanese", "Bolivian", "Bosnian or Herzegovinian", "Motswana", "Brazilian", "Bruneian", "Bulgarian", "Burkinabé", "Burmese", "Burundian", "Cabo Verdean", "Cambodian", "Cameroonian", "Canadian", "Central African", "Chadian", "Chilean", "Chinese", "Colombian", "Comoran", "Congolese", "Costa Rican", "Ivorian", "Croatian", "Cuban", "Cypriot", "Czech", "Danish", "Djiboutian", "Dominican", "Ecuadorian", "Egyptian", "Salvadoran", "Equatorial Guinean", "Eritrean", "Estonian", "Swazi", "Ethiopian", "Fijian", "Filipino", "Finn", "French", "Gabonese", "Gambian", "Georgian", "German", "Ghanaian", "Gibraltarian", "Greek", "Grenadian", "Guatemalan", "Guinean", "Bissau-Guinean", "Guyanese", "Haitian", "Honduran", "Hungarian", "Icelander", "Indian", "Indonesian", "Iranian", "Iraqi", "Irish", "Israeli", "Italian", "Jamaican", "Japanese", "Jordanian", "Kazakhstani", "Kenyan", "I-Kiribati", "North Korean", "South Korean", "Kuwaiti", "Kyrgyzstani", "Lao", "Latvian", "Lebanese", "Mosotho", "Liberian", "Libyan", "Liechtensteiner", "Lithuanian", "Luxembourger", "Malagasy", "Malawian", "Malaysian", "Maldivian", "Malian", "Maltese", "Marshallese", "Martiniquais", "Mauritanian", "Mauritian", "Mexican", "Micronesian", "Moldovan", "Monegasque", "Mongolian", "Montenegrin", "Moroccan", "Mozambican", "Namibian", "Nauruan", "Nepali", "Dutch", "New Zealander", "Nicaraguan", "Nigerien", "Nigerian", "Macedonian", "Norwegian", "Omani", "Pakistani", "Palauan", "Panamanian", "Papua New Guinean", "Paraguayan", "Peruvian", "Pole", "Portuguese", "Puerto Rican", "Qatari", "Romanian", "Russian", "Rwandan", "Kittitian or Nevisian", "Saint Lucian", "Saint Vincentian", "Samoan", "Sammarinese", "São Toméan", "Saudi", "Senegalese", "Serbian", "Seychellois", "Sierra Leonean", "Singaporean", "Slovak", "Slovenian", "Solomon Islander", "Somali", "South African", "South Sudanese", "Spanish", "Sri Lankan", "Sudanese", "Surinamese", "Swedish", "Swiss", "Syrian", "Taiwanese", "Tajikistani", "Tanzanian", "Thai", "Timorese", "Togolese", "Tongan", "Trinidadian or Tobagonian", "Tunisian", "Turkish", "Turkmen", "Tuvaluan", "Ugandan", "Ukrainian", "Emirati", "British", "American", "Uruguayan", "Uzbekistani", "Vanuatuan", "Venezuelan", "Vietnamese", "Yemeni", "Zambian", "Zimbabwean"})
         Me.nationalityComboBox.Location = New System.Drawing.Point(295, 380)
         Me.nationalityComboBox.Name = "nationalityComboBox"
         Me.nationalityComboBox.ShadowDecoration.Enabled = True
@@ -340,7 +340,7 @@ Partial Class addEmployeeDialog
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lastNameTextBox)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.logInButton)
+        Me.Controls.Add(Me.addButton)
         Me.Controls.Add(Me.emailTextBox)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.phoneNoTextBox)
@@ -356,7 +356,7 @@ Partial Class addEmployeeDialog
 
     End Sub
 
-    Friend WithEvents logInButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents addButton As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents emailTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents phoneNoTextBox As Guna.UI2.WinForms.Guna2TextBox

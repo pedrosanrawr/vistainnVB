@@ -1,4 +1,6 @@
-﻿Public Class paymentTable
+﻿Imports System.Data.SqlClient
+
+Public Class paymentTable
     Dim menuForm As Form
     Dim editPaymentDialog As New editPaymentDialog()
     Dim overlayPanel As New Panel()
@@ -6,10 +8,13 @@
     Dim slidingIn As Boolean = False
     Dim editingIn As Boolean = False
     Dim HideButtons As New HideButtons()
+    Dim database As New database()
+    Dim paymentBindingSource As New BindingSource()
+    Public Event PaymentDeleted As EventHandler
 
-    Private Sub bookingTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub paymentTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
-        Timer1.Start()
+        fadeIn.Start()
 
         Select Case Employee.Role
             Case "Staff"
@@ -39,6 +44,9 @@
         InitializeDialog(editPaymentDialog)
         SDialog(editPaymentDialog)
         HideButtons.hideButtonsPayment(Me)
+        AddHandler editPaymentDialog.PaymentEdited, AddressOf EditPaymentDialog_PaymentEdited
+
+        LoadPaymentData()
     End Sub
 
     Private Sub InitializeDialog(dialog As Form)
@@ -56,8 +64,8 @@
         dialog.Show()
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If Me.Opacity < 1 Then Me.Opacity += 0.05 Else Timer1.Stop()
+    Private Sub fadeIn_Tick(sender As Object, e As EventArgs) Handles fadeIn.Tick
+        If Me.Opacity < 1 Then Me.Opacity += 0.05 Else fadeIn.Stop()
     End Sub
 
     Private Sub btnToggleMenu_Click(sender As Object, e As EventArgs) Handles menuButton.Click
@@ -109,5 +117,118 @@
     Private Sub SlideDialogsOut()
         If editPaymentDialog.Left < Me.Width Then editPaymentDialog.Left += 20
         If editPaymentDialog.Left >= Me.Width Then dialogTimer.Stop() : overlayPanel.Visible = False
+    End Sub
+
+    Public Sub LoadPaymentData()
+        Dim query As String = "SELECT * FROM payments"
+
+        Using conn As New SqlConnection(database.connectionString)
+            Dim adapter As New SqlDataAdapter(query, conn)
+            Dim dt As New DataTable()
+
+            Try
+                conn.Open()
+                adapter.Fill(dt)
+
+                paymentBindingSource.DataSource = dt
+
+                paymentDGV.DataSource = paymentBindingSource
+                paymentDGV.Columns("pId").Visible = False
+                paymentDGV.Columns("oxPrice").DefaultCellStyle.Format = "N2"
+                paymentDGV.Columns("totalPrice").DefaultCellStyle.Format = "N2"
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Using
+    End Sub
+
+    Private Sub paymentDGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles paymentDGV.CellClick
+        If e.RowIndex >= 0 Then
+            Dim selectedRow As DataGridViewRow = paymentDGV.Rows(e.RowIndex)
+
+            Dim bookId As Integer = selectedRow.Cells("bookId").Value.ToString()
+            Dim paymentMethod As String = selectedRow.Cells("paymentMethod").Value.ToString()
+            Dim oxPrice As Decimal = selectedRow.Cells("oxPrice").Value.ToString()
+            Dim totalPrice As Decimal = selectedRow.Cells("totalPrice").Value.ToString()
+            Dim downPayment As Decimal = selectedRow.Cells("downPayment").Value.ToString()
+            Dim amountDue As Decimal = selectedRow.Cells("amountDue").Value.ToString()
+            Dim status As String = selectedRow.Cells("status").Value.ToString()
+
+            editPaymentDialog.PopulateFields(bookId, paymentMethod, oxPrice, totalPrice, downPayment, amountDue, status)
+        End If
+    End Sub
+
+    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
+        LoadPaymentData()
+    End Sub
+
+    Private Sub EditPaymentDialog_PaymentEdited(sender As Object, e As EventArgs)
+        LoadPaymentData()
+    End Sub
+
+    Private Sub searchPaymentTextBox_TextChanged(sender As Object, e As EventArgs) Handles searchPaymentTextBox.TextChanged
+        Dim filter As String = searchPaymentTextBox.Text
+
+        If String.IsNullOrWhiteSpace(filter) Then
+            paymentBindingSource.Filter = Nothing
+        Else
+            paymentBindingSource.Filter = String.Format("Convert(bId, 'System.String') LIKE '%{0}%' OR pStatus LIKE '%{0}%'", filter)
+        End If
+    End Sub
+
+    Private Sub deletePaymentButton_Click(sender As Object, e As EventArgs) Handles deletePaymentButton.Click
+        If paymentDGV.CurrentRow Is Nothing Then
+            MessageBox.Show("Please select a payment to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        Dim confirmResult As DialogResult = MessageBox.Show(
+            "Are you sure you want to delete this payment? This action cannot be undone.",
+            "Confirm Delete",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning
+        )
+
+        If confirmResult = DialogResult.Yes Then
+            Dim selectedRow As DataGridViewRow = paymentDGV.CurrentRow
+            Dim selectedBook As String = selectedRow.Cells("bookId").Value.ToString()
+
+            Dim conn As New SqlConnection(database.connectionString)
+            Dim cmd As New SqlCommand()
+            cmd.Connection = conn
+            Dim transaction As SqlTransaction
+
+            Try
+                conn.Open()
+                transaction = conn.BeginTransaction()
+                cmd.Transaction = transaction
+
+                cmd.CommandText = "DELETE FROM orderExtras WHERE bId = @bId"
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@bId", selectedBook)
+                cmd.ExecuteNonQuery()
+
+                cmd.CommandText = "DELETE FROM payments WHERE bId = @bId"
+                cmd.ExecuteNonQuery()
+
+                cmd.CommandText = "DELETE FROM bookings WHERE bId = @bId"
+                cmd.ExecuteNonQuery()
+
+                transaction.Commit()
+
+                RaiseEvent PaymentDeleted(Me, EventArgs.Empty)
+                LoadPaymentData()
+                MessageBox.Show("Payment, related booking, and extras successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Catch ex As Exception
+                If conn.State = ConnectionState.Open Then
+                    transaction?.Rollback()
+                End If
+                MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            Finally
+                conn.Close()
+            End Try
+        End If
     End Sub
 End Class

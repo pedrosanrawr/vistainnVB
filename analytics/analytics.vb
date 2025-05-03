@@ -12,7 +12,7 @@ Public Class analytics
 
     Private Sub dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
-        Timer1.Start()
+        fadeIn.Start()
 
         Select Case Employee.Role
             Case "Staff"
@@ -40,11 +40,11 @@ Public Class analytics
         reportsDateDropdown.SelectedIndex = 0
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub fadeIn_Tick(sender As Object, e As EventArgs) Handles fadeIn.Tick
         If Me.Opacity < 1 Then
             Me.Opacity += 0.05
         Else
-            Timer1.Stop()
+            fadeIn.Stop()
         End If
     End Sub
 
@@ -83,18 +83,25 @@ Public Class analytics
     Private Sub LoadAnalyticsData()
         Dim conn As New SqlConnection(database.connectionString)
 
-        Dim revenueQuery As String = "SELECT ISNULL(SUM(pTotalPrice), 0) FROM payments"
+        Dim revenueQuery As String = "SELECT ISNULL(SUM(pTotalPrice), 0) FROM payments WHERE pStatus = 'Paid'"
         Dim bookingsQuery As String = "SELECT COUNT(*) FROM bookings"
         Dim availableRoomsQuery As String = "SELECT COUNT(*) FROM rooms WHERE rStatus = 'Available'"
-        Dim occupiedRoomsQuery As String = "SELECT COUNT(*) FROM rooms WHERE rStatus = 'Occupied'"
         Dim totalRoomsQuery As String = "SELECT COUNT(*) FROM rooms"
+        Dim occupiedRoomsQuery As String = "
+        SELECT COUNT(DISTINCT b.bRoomNo)
+        FROM bookings b
+        JOIN payments p ON b.bId = p.bId
+        WHERE p.pStatus = 'Paid'
+        AND @today BETWEEN b.bCheckInDate AND b.bCheckOutDate
+        "
 
         Try
             conn.Open()
 
             Dim revenueCmd As New SqlCommand(revenueQuery, conn)
             Dim totalRevenue As Decimal = Convert.ToDecimal(revenueCmd.ExecuteScalar())
-            totalRevenueLabel.Text = "₱" & totalRevenue.ToString("N1") & "k"
+            Dim revenueInThousands As Decimal = totalRevenue / 1000
+            totalRevenueLabel.Text = "₱" & revenueInThousands.ToString("N2") & "k"
 
             Dim bookingsCmd As New SqlCommand(bookingsQuery, conn)
             totalBookingsLabel.Text = bookingsCmd.ExecuteScalar().ToString()
@@ -103,9 +110,10 @@ Public Class analytics
             availableRoomsLabel.Text = availableCmd.ExecuteScalar().ToString()
 
             Dim totalRoomsCmd As New SqlCommand(totalRoomsQuery, conn)
-            Dim occupiedCmd As New SqlCommand(occupiedRoomsQuery, conn)
-
             Dim totalRooms As Integer = Convert.ToInt32(totalRoomsCmd.ExecuteScalar())
+
+            Dim occupiedCmd As New SqlCommand(occupiedRoomsQuery, conn)
+            occupiedCmd.Parameters.AddWithValue("@today", Date.Today)
             Dim occupiedRooms As Integer = Convert.ToInt32(occupiedCmd.ExecuteScalar())
 
             Dim occupancyRate As Double = If(totalRooms = 0, 0, (occupiedRooms / totalRooms) * 100)
@@ -206,7 +214,7 @@ Public Class analytics
                 groupSize = 4
         End Select
 
-        Dim endDate As Date = Date.Today
+        Dim endDate As Date = Date.Today.AddMonths(1)
         Dim startDate As Date = endDate.AddMonths(-range)
 
         Dim query As String = "
@@ -241,20 +249,21 @@ Public Class analytics
 
                 Dim groupRecords = records.Where(Function(r) r.Item1 >= fromDate AndAlso r.Item1 < toDate).ToList()
                 If groupRecords.Any() Then
-                    revenues(i) = groupRecords.Sum(Function(r) r.Item2)
+                    revenues(i) = Math.Round(groupRecords.Sum(Function(r) r.Item2) / 1000, 2)
                     occupancies(i) = groupRecords.Count
                 End If
-                months(i) = fromDate.ToString("MMM yy") & " - " & toDate.AddDays(-1).ToString("MMM yy")
+
+                months(i) = fromDate.ToString("MMM yy") & " - " & toDate.AddMonths(-1).ToString("MMM yy")
             Next
 
             reportsLiveChart.Series = New SeriesCollection From {
             New ColumnSeries With {
-                .Title = "Revenue",
+                .Title = "Revenue (K): ",
                 .Values = New ChartValues(Of Decimal)(revenues),
                 .Fill = New SolidColorBrush(Color.FromArgb(255, &HC6, &HAC, &H8F))
             },
             New ColumnSeries With {
-                .Title = "Occupancy",
+                .Title = "Occupancy: ",
                 .Values = New ChartValues(Of Integer)(occupancies),
                 .Fill = New SolidColorBrush(Color.FromArgb(255, &H5E, &H50, &H3F))
             }

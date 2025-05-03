@@ -3,6 +3,7 @@
 Public Class editRoomDialog
     Dim database As New database()
     Public Event RoomEdited As EventHandler
+    Private originalRoomNo As String
 
     Public Sub PopulateFields(roomId As String, roomNo As String, roomName As String, roomPrice As Decimal, roomCapacity As String, roomBedroom As String, roomBathroom As String, roomKitchen As String, roomTechnology As String, roomGeneral As String, roomStatus As String)
         roomIdTextBox.Text = roomId
@@ -16,6 +17,7 @@ Public Class editRoomDialog
         technologyTextBox.Text = roomTechnology
         generalTextBox.Text = roomGeneral
         statusComboBox.Text = roomStatus
+        originalRoomNo = roomNo
     End Sub
 
     Private Sub editRoomButton_Click(sender As Object, e As EventArgs) Handles editRoomButton.Click
@@ -40,7 +42,7 @@ Public Class editRoomDialog
             Return
         End If
 
-        If rRoomNo <> roomNoTextBox.Text Then
+        If rRoomNo <> originalRoomNo Then
             If roomValidations.RoomNumberExists(rRoomNo, database.connectionString) Then
                 MessageBox.Show("The room number already exists. Please choose a different room number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Return

@@ -4,7 +4,7 @@ Imports System.Runtime.InteropServices
 Public Class menuFormStaff
     Dim nestedTabTables As New nestedTabTablesStaff()
     Private isExpanded As Boolean = False
-    Private expandedHeight As Integer = 145
+    Private expandedHeight As Integer = 200
     Private selectedButton As Guna.UI2.WinForms.Guna2Button = Nothing
     Private radioButtons As New List(Of Guna.UI2.WinForms.Guna2Button)
 
@@ -82,7 +82,14 @@ Public Class menuFormStaff
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles logOutButton.Click
-        SelectButton(sender)
-        basePage.loadForm(New logInForm(basePage))
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?",
+                                                 "Confirm Logout",
+                                                 MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            SelectButton(sender)
+            basePage.loadForm(New logInForm(basePage))
+        End If
     End Sub
 End Class

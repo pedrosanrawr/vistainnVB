@@ -6,12 +6,12 @@ Imports Guna.UI2.WinForms
 Public Class roomPhotos
     Dim database As New database()
 
-    Public Sub LoadRoomPhotos()
+    Public Async Sub LoadRoomPhotos()
         roomPhotosFlowLayoutPanel.Controls.Clear()
 
-        Dim query As String = "SELECT rName, MAX(rImage) as rImage FROM rooms GROUP BY rName"
+        Dim query As String = "SELECT rName FROM rooms GROUP BY rName"
 
-        Using conn As New SqlConnection(database.connectionString)
+        Using conn As New SqlConnection(database.ConnectionString)
             Dim cmd As New SqlCommand(query, conn)
             Dim dt As New DataTable()
 
@@ -21,40 +21,42 @@ Public Class roomPhotos
                 adapter.Fill(dt)
 
                 For Each row As DataRow In dt.Rows
-                    Dim roomPanel As New Panel()
-                    roomPanel.Size = New Size(530, 150)
-                    roomPanel.Margin = New Padding(10)
+                    Dim roomName As String = row("rName").ToString()
 
-                    Dim pictureBox As New Guna2PictureBox()
-                    pictureBox.Size = New Size(150, 150)
-                    pictureBox.Location = New Point(15, 0)
-                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage
-                    pictureBox.BorderRadius = 5
+                    Dim roomPanel As New Panel() With {
+                    .Size = New Size(530, 150),
+                    .Margin = New Padding(10)
+                }
 
-                    If Not IsDBNull(row("rImage")) Then
-                        Dim photo As Byte() = CType(row("rImage"), Byte())
-                        Using ms As New MemoryStream(photo)
-                            pictureBox.Image = Image.FromStream(ms)
-                        End Using
-                    End If
+                    Dim pictureBox As New Guna2PictureBox() With {
+                    .Size = New Size(150, 150),
+                    .Location = New Point(15, 0),
+                    .SizeMode = PictureBoxSizeMode.StretchImage,
+                    .BorderRadius = 5,
+                    .FillColor = Color.LightGray,
+                    .BackColor = Color.LightGray,
+                    .UseTransparentBackground = False
+                }
 
-                    Dim nameLabel As New Label()
-                    nameLabel.Text = row("rName").ToString()
-                    nameLabel.Location = New Point(167, -8)
-                    nameLabel.Font = New Font("Raleway", 24, FontStyle.Bold, GraphicsUnit.Pixel)
-                    nameLabel.ForeColor = Color.Black
-                    nameLabel.AutoSize = True
 
-                    Dim editButton As New Guna2Button()
-                    editButton.Text = "EDIT"
-                    editButton.Size = New Size(130, 50)
-                    editButton.Location = New Point(395, 100)
-                    editButton.FillColor = Color.Black
-                    editButton.ForeColor = Color.White
-                    editButton.BorderRadius = 6
-                    editButton.Font = New Font("Raleway", 20, FontStyle.Bold, GraphicsUnit.Pixel)
+                    Dim nameLabel As New Label() With {
+                    .Text = roomName,
+                    .Location = New Point(167, -8),
+                    .Font = New Font("Raleway", 24, FontStyle.Bold, GraphicsUnit.Pixel),
+                    .ForeColor = Color.Black,
+                    .AutoSize = True
+                }
 
-                    editButton.Tag = row("rName").ToString()
+                    Dim editButton As New Guna2Button() With {
+                    .Text = "EDIT",
+                    .Size = New Size(130, 50),
+                    .Location = New Point(395, 100),
+                    .FillColor = Color.Black,
+                    .ForeColor = Color.White,
+                    .BorderRadius = 6,
+                    .Font = New Font("Raleway", 20, FontStyle.Bold, GraphicsUnit.Pixel),
+                    .Tag = roomName
+                }
                     AddHandler editButton.Click, AddressOf editRoomPhotosButton_Click
 
                     roomPanel.Controls.Add(pictureBox)
@@ -62,12 +64,38 @@ Public Class roomPhotos
                     roomPanel.Controls.Add(editButton)
 
                     roomPhotosFlowLayoutPanel.Controls.Add(roomPanel)
+
+                    Await Task.Run(Sub()
+                                       Dim imageBytes As Byte() = Nothing
+                                       Using imgConn As New SqlConnection(database.ConnectionString)
+                                           Dim imgCmd As New SqlCommand("SELECT TOP 1 rImage FROM rooms WHERE rName = @rName ORDER BY rID DESC", imgConn)
+                                           imgCmd.Parameters.AddWithValue("@rName", roomName)
+                                           imgConn.Open()
+                                           Dim result = imgCmd.ExecuteScalar()
+                                           If result IsNot DBNull.Value Then
+                                               imageBytes = CType(result, Byte())
+                                           End If
+                                       End Using
+
+                                       If imageBytes IsNot Nothing Then
+                                           Try
+                                               Using ms As New MemoryStream(imageBytes)
+                                                   Dim img = Image.FromStream(ms)
+                                                   pictureBox.Invoke(Sub()
+                                                                         pictureBox.Image = img
+                                                                     End Sub)
+                                               End Using
+                                           Catch ex As Exception
+                                           End Try
+                                       End If
+                                   End Sub)
                 Next
             Catch ex As Exception
                 MessageBox.Show("Error loading room photos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End Using
     End Sub
+
 
     Private Sub roomPhotos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadRoomPhotos()
@@ -76,24 +104,28 @@ Public Class roomPhotos
     Private Sub editRoomPhotosButton_Click(sender As Object, e As EventArgs)
         Dim roomName As String = CType(sender, Guna2Button).Tag.ToString()
 
-        Dim openFileDialog As New OpenFileDialog() With {
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to change the room photo?", "Confirm Photo Change", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            Dim openFileDialog As New OpenFileDialog() With {
             .Filter = "Image Files|*.jpg;*.jpeg;*.png",
             .Title = "Select a Room Image"
         }
 
-        If openFileDialog.ShowDialog() = DialogResult.OK Then
-            Dim selectedImagePath As String = openFileDialog.FileName
-            Dim selectedImage As Image = Image.FromFile(selectedImagePath)
+            If openFileDialog.ShowDialog() = DialogResult.OK Then
+                Dim selectedImagePath As String = openFileDialog.FileName
+                Dim selectedImage As Image = Image.FromFile(selectedImagePath)
 
-            Dim imageBytes As Byte()
-            Using ms As New MemoryStream()
-                selectedImage.Save(ms, ImageFormat.Png)
-                imageBytes = ms.ToArray()
-            End Using
+                Dim imageBytes As Byte()
+                Using ms As New MemoryStream()
+                    selectedImage.Save(ms, ImageFormat.Png)
+                    imageBytes = ms.ToArray()
+                End Using
 
-            UpdateRoomImageInDatabase(roomName, imageBytes)
-            UpdateRoomPictureBox(roomName, selectedImage)
-            MessageBox.Show("Room photo updated successfully!")
+                UpdateRoomImageInDatabase(roomName, imageBytes)
+                UpdateRoomPictureBox(roomName, selectedImage)
+                MessageBox.Show("Room photo updated successfully!")
+            End If
         End If
     End Sub
 

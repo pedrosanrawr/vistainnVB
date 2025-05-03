@@ -1,4 +1,11 @@
 ﻿Imports System.Data.SqlClient
-Public Class database
-    Public connectionString As String = "Server=WIN-R94M2MOLPIE\SQLEXPRESS;Database=vistainnMSDB;User Id=vistainn;Password=20231916-N"
+Imports System.Configuration
+
+Public Class Database
+
+    Public ReadOnly Property ConnectionString As String
+        Get
+            Return ConfigurationManager.ConnectionStrings("vistainnVB.My.MySettings.vistainnMSDBConnectionString").ConnectionString
+        End Get
+    End Property
 End Class

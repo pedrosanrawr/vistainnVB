@@ -4,7 +4,7 @@ Imports System.Runtime.InteropServices
 Public Class menuFormManager
     Dim nestedTabTables As New nestedTabTablesManager()
     Private isExpanded As Boolean = False
-    Private expandedHeight As Integer = 250
+    Private expandedHeight As Integer = 300
     Private selectedButton As Guna.UI2.WinForms.Guna2Button = Nothing
     Private radioButtons As New List(Of Guna.UI2.WinForms.Guna2Button)
 

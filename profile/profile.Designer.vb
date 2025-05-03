@@ -29,7 +29,7 @@ Partial Class profile
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.refreshButton = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.fadeIn = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
         Me.profilePicture = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.nameLabel = New System.Windows.Forms.Label()
@@ -102,9 +102,9 @@ Partial Class profile
         Me.refreshButton.TabIndex = 26
         Me.refreshButton.TabStop = False
         '
-        'Timer1
+        'fadeIn
         '
-        Me.Timer1.Interval = 5
+        Me.fadeIn.Interval = 5
         '
         'menuTimer
         '
@@ -195,9 +195,9 @@ Partial Class profile
         'emailLabel
         '
         Me.emailLabel.Font = New System.Drawing.Font("Lato", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.emailLabel.Location = New System.Drawing.Point(510, 305)
+        Me.emailLabel.Location = New System.Drawing.Point(517, 300)
         Me.emailLabel.Name = "emailLabel"
-        Me.emailLabel.Size = New System.Drawing.Size(230, 30)
+        Me.emailLabel.Size = New System.Drawing.Size(310, 42)
         Me.emailLabel.TabIndex = 52
         Me.emailLabel.Text = "Email@gmail.com"
         Me.emailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -205,9 +205,9 @@ Partial Class profile
         'phoneNoLabel
         '
         Me.phoneNoLabel.Font = New System.Drawing.Font("Lato", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.phoneNoLabel.Location = New System.Drawing.Point(559, 354)
+        Me.phoneNoLabel.Location = New System.Drawing.Point(566, 350)
         Me.phoneNoLabel.Name = "phoneNoLabel"
-        Me.phoneNoLabel.Size = New System.Drawing.Size(181, 30)
+        Me.phoneNoLabel.Size = New System.Drawing.Size(181, 41)
         Me.phoneNoLabel.TabIndex = 53
         Me.phoneNoLabel.Text = "09081303441"
         Me.phoneNoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -215,9 +215,9 @@ Partial Class profile
         'genderLabel
         '
         Me.genderLabel.Font = New System.Drawing.Font("Lato", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.genderLabel.Location = New System.Drawing.Point(532, 406)
+        Me.genderLabel.Location = New System.Drawing.Point(536, 403)
         Me.genderLabel.Name = "genderLabel"
-        Me.genderLabel.Size = New System.Drawing.Size(208, 30)
+        Me.genderLabel.Size = New System.Drawing.Size(208, 37)
         Me.genderLabel.TabIndex = 54
         Me.genderLabel.Text = "Male"
         Me.genderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -225,9 +225,9 @@ Partial Class profile
         'nationalityLabel
         '
         Me.nationalityLabel.Font = New System.Drawing.Font("Lato", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.nationalityLabel.Location = New System.Drawing.Point(581, 455)
+        Me.nationalityLabel.Location = New System.Drawing.Point(588, 450)
         Me.nationalityLabel.Name = "nationalityLabel"
-        Me.nationalityLabel.Size = New System.Drawing.Size(159, 30)
+        Me.nationalityLabel.Size = New System.Drawing.Size(169, 40)
         Me.nationalityLabel.TabIndex = 55
         Me.nationalityLabel.Text = "Filipino"
         Me.nationalityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -237,7 +237,7 @@ Partial Class profile
         Me.addressLabel.Font = New System.Drawing.Font("Lato", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.addressLabel.Location = New System.Drawing.Point(543, 515)
         Me.addressLabel.Name = "addressLabel"
-        Me.addressLabel.Size = New System.Drawing.Size(197, 70)
+        Me.addressLabel.Size = New System.Drawing.Size(309, 94)
         Me.addressLabel.TabIndex = 56
         Me.addressLabel.Text = "Camarin, Calooocan City Philippines"
         '
@@ -303,7 +303,7 @@ Partial Class profile
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents refreshButton As PictureBox
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents fadeIn As Timer
     Friend WithEvents menuTimer As Timer
     Friend WithEvents profilePicture As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents nameLabel As Label

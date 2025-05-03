@@ -16,6 +16,8 @@ Public Class editEmployeeDialog
         genderComboBox.Text = employeeGender
         nationalityComboBox.Text = employeeNationality
         addressTextBox.Text = employeeAddress
+        originalEmail = employeeEmail
+        originalPhoneNo = employeePhoneNo
     End Sub
 
     Private Sub editButton_Click(sender As Object, e As EventArgs) Handles editButton.Click
@@ -28,8 +30,6 @@ Public Class editEmployeeDialog
         Dim eGender As String = genderComboBox.Text
         Dim eNationality As String = nationalityComboBox.Text
         Dim eAddress As String = addressTextBox.Text
-        originalEmail = emailTextBox.Text
-        originalPhoneNo = phoneNoTextBox.Text
 
         Dim validationMessage As String = employeeValidation.ValidateEmployeeFields(eFname, eLname, eRole, eEmail, ePhoneNo, eGender, eNationality, eAddress)
         If Not String.IsNullOrEmpty(validationMessage) Then
@@ -39,7 +39,7 @@ Public Class editEmployeeDialog
 
         Dim existsMsg As String = employeeValidation.EmailOrPhoneExists(eEmail, ePhoneNo, database.connectionString, originalEmail, originalPhoneNo)
         If Not String.IsNullOrEmpty(existsMsg) Then
-            MessageBox.Show(existsMsg)
+            MessageBox.Show(existsMsg, "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
@@ -65,11 +65,24 @@ Public Class editEmployeeDialog
                     MessageBox.Show("Employee edited successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     RaiseEvent EmployeeEdited(Me, EventArgs.Empty)
                 Else
-                    MessageBox.Show("An error occurred while editing the room.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("An error occurred while editing the employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Catch ex As Exception
                 MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End Using
+    End Sub
+
+    Private Sub editEmployeeDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        roleComboBox.Items.Clear()
+
+        If Employee.Role = "Manager" Then
+            roleComboBox.Items.Add("Manager")
+            roleComboBox.Items.Add("Staff")
+        ElseIf Employee.Role = "Admin" Then
+            roleComboBox.Items.Add("Admin")
+            roleComboBox.Items.Add("Manager")
+            roleComboBox.Items.Add("Staff")
+        End If
     End Sub
 End Class

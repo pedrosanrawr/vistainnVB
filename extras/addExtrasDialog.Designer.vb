@@ -29,8 +29,6 @@ Partial Class addExtrasDialog
         Me.Label5 = New System.Windows.Forms.Label()
         Me.priceTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.extrasIdTextBox = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -68,7 +66,7 @@ Partial Class addExtrasDialog
         Me.quantityTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.quantityTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.quantityTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.quantityTextBox.Location = New System.Drawing.Point(295, 280)
+        Me.quantityTextBox.Location = New System.Drawing.Point(45, 280)
         Me.quantityTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.quantityTextBox.Name = "quantityTextBox"
         Me.quantityTextBox.PlaceholderText = ""
@@ -81,7 +79,7 @@ Partial Class addExtrasDialog
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(291, 256)
+        Me.Label6.Location = New System.Drawing.Point(42, 257)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(167, 26)
         Me.Label6.TabIndex = 65
@@ -100,7 +98,7 @@ Partial Class addExtrasDialog
         Me.itemTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.itemTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.itemTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.itemTextBox.Location = New System.Drawing.Point(295, 180)
+        Me.itemTextBox.Location = New System.Drawing.Point(45, 180)
         Me.itemTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.itemTextBox.Name = "itemTextBox"
         Me.itemTextBox.PlaceholderText = ""
@@ -113,7 +111,7 @@ Partial Class addExtrasDialog
         'Label5
         '
         Me.Label5.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(291, 156)
+        Me.Label5.Location = New System.Drawing.Point(41, 157)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(167, 26)
         Me.Label5.TabIndex = 63
@@ -132,7 +130,7 @@ Partial Class addExtrasDialog
         Me.priceTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
         Me.priceTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
         Me.priceTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.priceTextBox.Location = New System.Drawing.Point(45, 280)
+        Me.priceTextBox.Location = New System.Drawing.Point(295, 180)
         Me.priceTextBox.Margin = New System.Windows.Forms.Padding(6)
         Me.priceTextBox.Name = "priceTextBox"
         Me.priceTextBox.PlaceholderText = ""
@@ -145,43 +143,11 @@ Partial Class addExtrasDialog
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(41, 256)
+        Me.Label2.Location = New System.Drawing.Point(291, 156)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(167, 26)
         Me.Label2.TabIndex = 59
         Me.Label2.Text = "PRICE"
-        '
-        'extrasIdTextBox
-        '
-        Me.extrasIdTextBox.BackColor = System.Drawing.Color.Transparent
-        Me.extrasIdTextBox.BorderRadius = 5
-        Me.extrasIdTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.extrasIdTextBox.DefaultText = ""
-        Me.extrasIdTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.extrasIdTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.extrasIdTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.extrasIdTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.extrasIdTextBox.FocusedState.BorderColor = System.Drawing.Color.Black
-        Me.extrasIdTextBox.Font = New System.Drawing.Font("Lato", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.extrasIdTextBox.HoverState.BorderColor = System.Drawing.Color.Black
-        Me.extrasIdTextBox.Location = New System.Drawing.Point(45, 180)
-        Me.extrasIdTextBox.Margin = New System.Windows.Forms.Padding(6)
-        Me.extrasIdTextBox.Name = "extrasIdTextBox"
-        Me.extrasIdTextBox.PlaceholderText = ""
-        Me.extrasIdTextBox.SelectedText = ""
-        Me.extrasIdTextBox.ShadowDecoration.Enabled = True
-        Me.extrasIdTextBox.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 0, 4)
-        Me.extrasIdTextBox.Size = New System.Drawing.Size(230, 50)
-        Me.extrasIdTextBox.TabIndex = 58
-        '
-        'Label3
-        '
-        Me.Label3.Font = New System.Drawing.Font("Raleway", 16.48!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(41, 156)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(167, 26)
-        Me.Label3.TabIndex = 57
-        Me.Label3.Text = "EXTRAS ID"
         '
         'Label1
         '
@@ -207,8 +173,6 @@ Partial Class addExtrasDialog
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.priceTextBox)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.extrasIdTextBox)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "addExtrasDialog"
@@ -225,7 +189,5 @@ Partial Class addExtrasDialog
     Friend WithEvents Label5 As Label
     Friend WithEvents priceTextBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents extrasIdTextBox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
 End Class

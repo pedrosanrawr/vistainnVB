@@ -14,7 +14,7 @@ Public Class employeeTable
 
     Private Sub accTable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Opacity = 0
-        Timer1.Start()
+        fadeIn.Start()
 
         Select Case Employee.Role
             Case "Staff"
@@ -66,8 +66,8 @@ Public Class employeeTable
         dialog.Show()
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If Me.Opacity < 1 Then Me.Opacity += 0.05 Else Timer1.Stop()
+    Private Sub fadeIn_Tick(sender As Object, e As EventArgs) Handles fadeIn.Tick
+        If Me.Opacity < 1 Then Me.Opacity += 0.05 Else fadeIn.Stop()
     End Sub
 
     Private Sub btnToggleMenu_Click(sender As Object, e As EventArgs) Handles menuButton.Click

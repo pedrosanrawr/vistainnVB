@@ -31,7 +31,7 @@ Partial Class analytics
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.fadeIn = New System.Windows.Forms.Timer(Me.components)
         Me.menuTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.totalRevenueLabel = New System.Windows.Forms.Label()
@@ -120,9 +120,9 @@ Partial Class analytics
         Me.Label2.Text = "DASHBOARD"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Timer1
+        'fadeIn
         '
-        Me.Timer1.Interval = 5
+        Me.fadeIn.Interval = 5
         '
         'menuTimer
         '
@@ -146,7 +146,7 @@ Partial Class analytics
         Me.totalRevenueLabel.ForeColor = System.Drawing.Color.White
         Me.totalRevenueLabel.Location = New System.Drawing.Point(28, 64)
         Me.totalRevenueLabel.Name = "totalRevenueLabel"
-        Me.totalRevenueLabel.Size = New System.Drawing.Size(166, 42)
+        Me.totalRevenueLabel.Size = New System.Drawing.Size(211, 42)
         Me.totalRevenueLabel.TabIndex = 1
         Me.totalRevenueLabel.Text = "$120.4k"
         '
@@ -456,7 +456,7 @@ Partial Class analytics
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents fadeIn As Timer
     Friend WithEvents menuTimer As Timer
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
