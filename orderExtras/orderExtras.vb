@@ -90,9 +90,12 @@ Public Class orderExtras
     End Sub
 
     Public Sub LoadExtrasData()
-        Dim query As String = "SELECT * FROM orderExtras"
+        Dim query As String = "
+        SELECT orderExtras.*, bookings.bReferenceNo 
+        FROM orderExtras
+        INNER JOIN bookings ON orderExtras.bId = bookings.bId"
 
-        Using conn As New SqlConnection(database.connectionString)
+        Using conn As New SqlConnection(database.ConnectionString)
             Dim adapter As New SqlDataAdapter(query, conn)
             Dim dt As New DataTable()
 
@@ -111,6 +114,7 @@ Public Class orderExtras
         End Using
     End Sub
 
+
     Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
         LoadExtrasData()
     End Sub
@@ -121,7 +125,8 @@ Public Class orderExtras
         If String.IsNullOrWhiteSpace(filter) Then
             extrasBindingSource.Filter = Nothing
         Else
-            extrasBindingSource.Filter = String.Format("oxExtras LIKE '%{0}%'", filter)
+            extrasBindingSource.Filter = String.Format("bReferenceNo LIKE '%{0}%' OR oxExtras LIKE '%{0}%'", filter)
         End If
     End Sub
+
 End Class

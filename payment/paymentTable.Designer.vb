@@ -40,6 +40,7 @@ Partial Class paymentTable
         Me.searchPaymentTextBox = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.paymentDGV = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         Me.bookId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.paymentMethod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.oxPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,7 +48,7 @@ Partial Class paymentTable
         Me.downPayment = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.amountDue = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.bookingRefenceNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.menuButton, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refreshButton, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -223,7 +224,7 @@ Partial Class paymentTable
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.paymentDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.paymentDGV.ColumnHeadersHeight = 40
-        Me.paymentDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookId, Me.paymentMethod, Me.oxPrice, Me.totalPrice, Me.downPayment, Me.amountDue, Me.status})
+        Me.paymentDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookId, Me.paymentMethod, Me.oxPrice, Me.totalPrice, Me.downPayment, Me.amountDue, Me.status, Me.bookingRefenceNo})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -274,6 +275,10 @@ Partial Class paymentTable
         Me.paymentDGV.ThemeStyle.RowsStyle.Height = 40
         Me.paymentDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
         Me.paymentDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
+        '
+        'dialogTimer
+        '
+        Me.dialogTimer.Interval = 5
         '
         'bookId
         '
@@ -330,9 +335,13 @@ Partial Class paymentTable
         Me.status.ReadOnly = True
         Me.status.Width = 155
         '
-        'dialogTimer
+        'bookingRefenceNo
         '
-        Me.dialogTimer.Interval = 5
+        Me.bookingRefenceNo.DataPropertyName = "bReferenceNo"
+        Me.bookingRefenceNo.HeaderText = "REFERENCE NO"
+        Me.bookingRefenceNo.Name = "bookingRefenceNo"
+        Me.bookingRefenceNo.ReadOnly = True
+        Me.bookingRefenceNo.Width = 200
         '
         'paymentTable
         '
@@ -384,4 +393,5 @@ Partial Class paymentTable
     Friend WithEvents downPayment As DataGridViewTextBoxColumn
     Friend WithEvents amountDue As DataGridViewTextBoxColumn
     Friend WithEvents status As DataGridViewTextBoxColumn
+    Friend WithEvents bookingRefenceNo As DataGridViewTextBoxColumn
 End Class

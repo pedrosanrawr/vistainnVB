@@ -29,9 +29,6 @@ Partial Class orderExtras
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(orderExtras))
         Me.dialogTimer = New System.Windows.Forms.Timer(Me.components)
         Me.oxExtrasDGV = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.bookId = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.orderExtrasItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.orderExtrasQuantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.searchOxExtrasTextBox = New Guna.UI2.WinForms.Guna2TextBox()
@@ -42,6 +39,10 @@ Partial Class orderExtras
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.refreshButton = New System.Windows.Forms.PictureBox()
         Me.menuButton = New System.Windows.Forms.PictureBox()
+        Me.bookId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.orderExtrasItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.orderExtrasQuantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bookingReferenceNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.oxExtrasDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +71,7 @@ Partial Class orderExtras
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.oxExtrasDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.oxExtrasDGV.ColumnHeadersHeight = 40
-        Me.oxExtrasDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookId, Me.orderExtrasItem, Me.orderExtrasQuantity})
+        Me.oxExtrasDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bookId, Me.orderExtrasItem, Me.orderExtrasQuantity, Me.bookingReferenceNo})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -121,27 +122,6 @@ Partial Class orderExtras
         Me.oxExtrasDGV.ThemeStyle.RowsStyle.Height = 40
         Me.oxExtrasDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Gray
         Me.oxExtrasDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White
-        '
-        'bookId
-        '
-        Me.bookId.DataPropertyName = "bId"
-        Me.bookId.HeaderText = "ID"
-        Me.bookId.Name = "bookId"
-        Me.bookId.ReadOnly = True
-        '
-        'orderExtrasItem
-        '
-        Me.orderExtrasItem.DataPropertyName = "oxExtras"
-        Me.orderExtrasItem.HeaderText = "ORDERED ITEMS"
-        Me.orderExtrasItem.Name = "orderExtrasItem"
-        Me.orderExtrasItem.ReadOnly = True
-        '
-        'orderExtrasQuantity
-        '
-        Me.orderExtrasQuantity.DataPropertyName = "oxQuantity"
-        Me.orderExtrasQuantity.HeaderText = "QUANTITY"
-        Me.orderExtrasQuantity.Name = "orderExtrasQuantity"
-        Me.orderExtrasQuantity.ReadOnly = True
         '
         'Guna2Panel1
         '
@@ -251,6 +231,34 @@ Partial Class orderExtras
         Me.menuButton.TabIndex = 21
         Me.menuButton.TabStop = False
         '
+        'bookId
+        '
+        Me.bookId.DataPropertyName = "bId"
+        Me.bookId.HeaderText = "ID"
+        Me.bookId.Name = "bookId"
+        Me.bookId.ReadOnly = True
+        '
+        'orderExtrasItem
+        '
+        Me.orderExtrasItem.DataPropertyName = "oxExtras"
+        Me.orderExtrasItem.HeaderText = "ORDERED ITEMS"
+        Me.orderExtrasItem.Name = "orderExtrasItem"
+        Me.orderExtrasItem.ReadOnly = True
+        '
+        'orderExtrasQuantity
+        '
+        Me.orderExtrasQuantity.DataPropertyName = "oxQuantity"
+        Me.orderExtrasQuantity.HeaderText = "QUANTITY"
+        Me.orderExtrasQuantity.Name = "orderExtrasQuantity"
+        Me.orderExtrasQuantity.ReadOnly = True
+        '
+        'bookingReferenceNo
+        '
+        Me.bookingReferenceNo.DataPropertyName = "bReferenceNo"
+        Me.bookingReferenceNo.HeaderText = "REFERENCE NO"
+        Me.bookingReferenceNo.Name = "bookingReferenceNo"
+        Me.bookingReferenceNo.ReadOnly = True
+        '
         'orderExtras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -294,4 +302,5 @@ Partial Class orderExtras
     Friend WithEvents bookId As DataGridViewTextBoxColumn
     Friend WithEvents orderExtrasItem As DataGridViewTextBoxColumn
     Friend WithEvents orderExtrasQuantity As DataGridViewTextBoxColumn
+    Friend WithEvents bookingReferenceNo As DataGridViewTextBoxColumn
 End Class

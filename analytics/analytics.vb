@@ -244,17 +244,19 @@ Public Class analytics
             End While
 
             For i = 0 To 2
-                Dim fromDate As Date = endDate.AddMonths(-range + (i * groupSize))
-                Dim toDate As Date = fromDate.AddMonths(groupSize)
+                Dim fromDate As Date = New Date(endDate.Year, endDate.Month, 1).AddMonths(-range + (i * groupSize))
+                Dim toDate As Date = fromDate.AddMonths(groupSize).AddDays(-1).AddMonths(1)
 
                 Dim groupRecords = records.Where(Function(r) r.Item1 >= fromDate AndAlso r.Item1 < toDate).ToList()
+
                 If groupRecords.Any() Then
                     revenues(i) = Math.Round(groupRecords.Sum(Function(r) r.Item2) / 1000, 2)
                     occupancies(i) = groupRecords.Count
                 End If
 
-                months(i) = fromDate.ToString("MMM yy") & " - " & toDate.AddMonths(-1).ToString("MMM yy")
+                months(i) = fromDate.ToString("MMM yy") & " - " & toDate.ToString("MMM yy")
             Next
+
 
             reportsLiveChart.Series = New SeriesCollection From {
             New ColumnSeries With {

@@ -120,9 +120,12 @@ Public Class paymentTable
     End Sub
 
     Public Sub LoadPaymentData()
-        Dim query As String = "SELECT * FROM payments"
+        Dim query As String = "
+        SELECT payments.*, bookings.bReferenceNo 
+        FROM payments
+        INNER JOIN bookings ON payments.bId = bookings.bId"
 
-        Using conn As New SqlConnection(database.connectionString)
+        Using conn As New SqlConnection(database.ConnectionString)
             Dim adapter As New SqlDataAdapter(query, conn)
             Dim dt As New DataTable()
 
@@ -136,11 +139,13 @@ Public Class paymentTable
                 paymentDGV.Columns("pId").Visible = False
                 paymentDGV.Columns("oxPrice").DefaultCellStyle.Format = "N2"
                 paymentDGV.Columns("totalPrice").DefaultCellStyle.Format = "N2"
+
             Catch ex As Exception
                 MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End Using
     End Sub
+
 
     Private Sub paymentDGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles paymentDGV.CellClick
         If e.RowIndex >= 0 Then
@@ -172,7 +177,7 @@ Public Class paymentTable
         If String.IsNullOrWhiteSpace(filter) Then
             paymentBindingSource.Filter = Nothing
         Else
-            paymentBindingSource.Filter = String.Format("Convert(bId, 'System.String') LIKE '%{0}%' OR pStatus LIKE '%{0}%'", filter)
+            paymentBindingSource.Filter = String.Format("bReferenceNo LIKE '%{0}%' OR pStatus LIKE '%{0}%'", filter)
         End If
     End Sub
 
